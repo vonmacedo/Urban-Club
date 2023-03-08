@@ -6,13 +6,14 @@ const maxItems = items.length;
 controls.forEach((control) => {
   control.addEventListener("click", (e) => {
     isLeft = e.target.classList.contains("arrow-left");
+    isRight = e.target.classList.contains("arrow-right");
 
     if (isLeft) {
-      currentItem += 1;
-    } else {
       currentItem -= 1;
+    } else {
+      currentItem += 1;
     }
-
+if (isRight)
     if (currentItem >= maxItems) {
       currentItem = 0;
     }

@@ -5,14 +5,15 @@
 }
 
 body {
-    background-color: #00050A;
+  background-color: rebeccapurple;
+  overflow-x: hidden;
 }
 
 /* HEADER*/
 .container {
     position: relative;
     padding: 15px;
-    max-width: 640px;
+    max-width: 60%;
     margin: 0 auto;
   }
   
@@ -33,7 +34,7 @@ body {
     width: 40px;
     color: #fff;
     transition: all 600ms ease-in-out;
-    background-color: #00050A;
+    background-color: transparent;
     opacity: 1;
     cursor: pointer;
     border: none;
@@ -48,21 +49,19 @@ body {
   }
 
   .arrow-left img{
+    margin-left: 500px;
       margin-bottom: -10px;
   }
   .arrow-left:hover,
   .arrow-right:hover {
     cursor: pointer;
   }
-  .arrow-left{
- transform: rotate(180deg);
-  }
   .arrow-right {
     right: 0;
     margin-right: -25px;
     left: auto;
     text-align: right;
-    background-color: #00050A;
+    background-color: transparent;
   }
   
   .gallery {
@@ -83,7 +82,15 @@ body {
     scroll-snap-align: center;
     opacity: 1;
   }
- 
+  .gallery-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  
+
+  .gallery-wrapper {
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+  }
 
 .btn-login {
     display: flex;
@@ -93,7 +100,8 @@ body {
 .btn-login button {
     width: 2.0%;
     margin-right: 1.0%;
-    background-color: #00050A;
+    background-color: transparent;
+    border: none;
 }
 
 .btn-login button:hover {
