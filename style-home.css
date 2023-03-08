@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: rebeccapurple;
+    background-color: #00050A;
 }
 
 /* HEADER*/
@@ -24,6 +24,7 @@ body {
   .arrow-right {
     position: absolute;
     top: 1;
+    margin-left: -25px;
     left: 0;
     right: auto;
     bottom: 1;
@@ -32,8 +33,8 @@ body {
     width: 40px;
     color: #fff;
     transition: all 600ms ease-in-out;
-    background: linear-gradient(to right, transparent 0%, black 200%);
-    opacity: 0.1;
+    background-color: #00050A;
+    opacity: 1;
     cursor: pointer;
     border: none;
   }
@@ -42,18 +43,26 @@ body {
     height: 100%;
     width: 100%;
   }
+  .arrow-right img{
+      margin-bottom: -10px;
+  }
+
+  .arrow-left img{
+      margin-bottom: -10px;
+  }
   .arrow-left:hover,
   .arrow-right:hover {
-    opacity: 1;
+    cursor: pointer;
   }
   .arrow-left{
  transform: rotate(180deg);
   }
   .arrow-right {
     right: 0;
+    margin-right: -25px;
     left: auto;
     text-align: right;
-    background: linear-gradient(to right, transparent 0%, black 200%);
+    background-color: #00050A;
   }
   
   .gallery {
@@ -74,14 +83,7 @@ body {
     scroll-snap-align: center;
     opacity: 1;
   }
-  .gallery-wrapper::-webkit-scrollbar {
-    display: none;
-  }
-
-  .gallery-wrapper {
-    -ms-overflow-style: none; 
-    scrollbar-width: none; 
-  }
+ 
 
 .btn-login {
     display: flex;
