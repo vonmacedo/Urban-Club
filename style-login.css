@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: #ffff;
+}
+
+body{
+    background-color: #00050a;
+}
+.Seta-Volta{
+   background-color: #00050a; 
+   border-color: #00050a;
+}
+hr{
+    top: 150px;
+    width: 1917px;
+    height: 6px;
+    background-color:#fa2f01;
+    border: none;
+}
