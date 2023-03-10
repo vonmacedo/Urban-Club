@@ -143,7 +143,6 @@ hr {
 
 /* HEADER FINAL*/
 
-
 h1 {
  
     
@@ -168,12 +167,16 @@ margin-bottom: 20px;
     margin-top: 48px;
    margin-left: 429px;
    margin-right: 385px;
-
+   margin-bottom: 3%;
 
 }
 
-
-
+.sessao2{
+  margin-bottom: -7%;
+}
+.atd{
+margin-top: -2%;
+}
  
 h2{
 
@@ -235,7 +238,7 @@ margin-left: 1274px;
 margin-top: 69px;
 margin-right: 30px;
   
-background-color:  rgba(204, 0, 0, 1);
+background-color:  #FF2A00;
 font-family: 'Roboto';
 font-weight: 800;
 font-size: 38px;
@@ -256,14 +259,12 @@ margin-bottom: 162px;
 /* PÓS SLIDER - FIM*/
 
 .loc{
-
-    background-color: #FF7560;
+    background-color: black;
 }
 .md{
    margin-left: 663px;
    margin-right: 622px;
-   margin-top: 61px;
-   
+   margin-top: 10px;
    font-size: 64px ;
    line-height: 75px;
 letter-spacing: -0.05em;
@@ -288,7 +289,7 @@ letter-spacing: -0.05em;
     width: 580px;
     height: 125px;
     border-radius: 18px;
-    background-color: #FF7560;
+    background-color: black;
     border-color: #FF2A00;
     margin-top: 324px;
     margin-right: 105px;
@@ -301,10 +302,18 @@ letter-spacing: -0.05em;
     height: 125px;
     border-radius: 18px;
     border-color: #FF2A00;
-    background-color: #FF7560;
+    background-color: black;
     margin-left: 230px;
     margin-right: 105px;
 
+}
+.mureta {
+ max-width: 100%;
+ display: flex;
+}
+.mureta .muralha{
+  width: 2,5%;
+  height: 50px;
 }
 
 .buttons button:hover{
@@ -312,6 +321,7 @@ letter-spacing: -0.05em;
     transition: 200ms;
     background-color: #FF2A00;
 }
+
 .foto{
     width: 775px;
     height: 775px;
