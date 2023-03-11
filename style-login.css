@@ -1,20 +1,122 @@
 *{
+    font-family: 'Roboto Flex' sans-serif;
     margin: 0;
     padding: 0;
     color: #ffff;
 }
 
-body{
+body{ 
     background-color: #00050a;
+    font-family: 'Roboto Flex' sans-serif;
+    height: 100vh;
+    width:100% 
 }
+
+
+#container{
+    height:100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login_form{
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    border-radius: 8px;
+    gap: 45px;
+    box-shadow: 5px 5px 8px rgba(0,0,0, 0.336);
+    height: fit-content;
+    list-style: none;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.imagens{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+#inputs{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.input-field{
+    font-size: 14px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+ 
+.input-box{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    cursor: text;
+    border-bottom: #F42100;
+}
+
+.input-field input{
+    width: 260px;
+    font-size: 16px;
+    padding: 0px 5px;
+}
+
+p{
+    font-family: 'Roboto Flex' sans-serif;
+    text-decoration: none;
+    font-size: 14px;
+    color: #F42100;
+}
+
+button{
+    border: none;
+    background-color: #F42100;
+    color: white;
+    padding: 7px;
+    font-size: 14px;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login h1{
+    align-items: center;
+    justify-content: space-around
+
+}
+
 .Seta-Volta{
    background-color: #00050a; 
    border-color: #00050a;
 }
+
 hr{
     top: 150px;
     width: 1917px;
     height: 6px;
-    background-color:#fa2f01;
+    background-color:#F42100;
     border: none;
 }
+footer{
+    
+    background-color: #F42100;
+    color: #FFF;
+    width: 90%;
+    height: 100px;    
+    text-align: center;
+    line-height: 100px;
+    bottom: 0;
+    position:absolute;
+}
+        
