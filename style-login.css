@@ -2,7 +2,6 @@
     font-family: 'Roboto Flex' sans-serif;
     margin: 0;
     padding: 0;
-    color: #ffff;
 }
 
 body{ 
@@ -11,7 +10,9 @@ body{
     height: 100vh;
     width:100% 
 }
-
+label{
+    color: #ffff;
+}
 
 #container{
     height:100vh;
@@ -33,7 +34,9 @@ body{
     list-style: none;
     justify-content: space-around;
     text-align: center;
+  
 }
+
 .btn-login {
     display: flex;
     justify-content: space-between;
@@ -61,7 +64,7 @@ body{
 }
 .imagens{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 13%;
     margin-top: 14.5%;
 }
