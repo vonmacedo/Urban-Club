@@ -23,7 +23,7 @@ label{
 }
 
 .login_form{
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #00050a;
     display: flex;
     flex-direction: column;
     padding: 30px 40px;
@@ -37,6 +37,7 @@ label{
   
 }
 
+
 .btn-login {
     display: flex;
     justify-content: space-between;
@@ -47,6 +48,10 @@ label{
     margin-right: 1.0%;
     background-color: transparent;
     border: none;
+}
+.forgot{
+    margin-top:-35px ;
+    margin-bottom: -2px;
 }
 
 .btn-login button:hover {
@@ -65,9 +70,11 @@ label{
 .imagens{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 13%;
     margin-top: 14.5%;
 }
+
 .imagens img{
     vertical-align:middle
 }
@@ -96,9 +103,15 @@ label{
     cursor: text;
     border-bottom: #F42100;
 }
+.input-box p{
 
+    margin-right: 325px;
+    margin-bottom: -10px;
+
+}
 .input-field input{
-    width: 260px;
+    width: 350px;
+    height: 20px;
     font-size: 16px;
     padding: 0px 5px;
 }
