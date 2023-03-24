@@ -2,6 +2,7 @@
     font-family: 'Roboto Flex' sans-serif;
     margin: 0;
     padding: 0;
+    text-decoration: none;
 }
 
 body{ 
@@ -49,9 +50,10 @@ label{
     margin-inline: 1%;
 }
 .forgot{
-    margin-top:-35px ;
-    margin-bottom: -2px;
+    margin-top:-30px ;
+    margin-bottom: -30px;
     margin-right: 250px ;
+    color: #F42100;
 }
 
 .btn-login button:hover {
@@ -59,7 +61,7 @@ label{
     transition: 200ms;
 }
 .btn-login .seta img{
- rotate: 180deg;
+ transform: rotate(180deg);
  height: 25px;
  margin-bottom: -5px;
 
@@ -150,12 +152,21 @@ button{
 
 .login h1{
     align-items: center;
-    justify-content: space-around
+    justify-content: space-around;
 
 }
-
-
-
+.pe{
+    float: left;
+}
+.pe1{
+    margin-top: 3px;
+    position: absolute;
+    margin-left: 40px;
+}
+.pe2{
+  margin-bottom: -85px;
+  margin-left: 10px;
+}
 .Seta-Volta{
    background-color: #00050a; 
    border-color: #00050a;
