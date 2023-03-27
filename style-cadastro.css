@@ -95,8 +95,14 @@ label{
     justify-content: space-around;
     align-items: center;
 }
- 
-.input-box-Email, .input-box-senha, .input-box-Apelido{
+.input-box-confirmar-senha label{
+    font-size: 16px;
+    margin-right: 257px;
+    margin-bottom: -10px;
+    color: #F42100;
+}
+
+.input-box-Email, .input-box-senha, .input-box-Apelido, .input-box-confirmar-senha{
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -105,7 +111,7 @@ label{
     cursor: text;
     border-bottom: #F42100;
 }
-.input-box-Email label, .input-box-senha label, .input-box-Apelido label{
+.input-box-Email label, .input-box-senha label, .input-box-Apelido label {
     font-size: 16px;
     margin-right: 325px;
     margin-bottom: -10px;

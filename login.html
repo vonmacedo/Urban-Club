@@ -24,8 +24,7 @@
             <hr>
 
         <main id="container">
-            
-            <form class="login_form">
+            <form  class="login_form"    action="" method="post" name="login">
                
             <div class="imagens">
                 <img  src="./img/facebook.png" height="60px" >
@@ -36,16 +35,16 @@
     <div id="inputs">
         
         <div class="input-box">
-            <label>Email</label>
+            <label for="Email">Email</label>
                 <div class="input-field">
-                   <input type="email" name="Email">
+                   <input type="email" name="Email"  placeholder="Exemplo@gmail.com" required>
                    <br><br>
                 </div>
         </div>
         <div class="input-box">
-            <label>Senha</label>
+            <label for="Senha">Senha</label>
                 <div class="input-field">
-                   <input type="password" name="Senha">
+                   <input type="password" name="Senha" required>
                    <br><br>
                    </div>
                 </div>
@@ -56,15 +55,13 @@
         </div>
     </div>
 
-
-
-            <button class="botao-login"> 
-                Login
-            </button>
-                <a href="index.html"class="forgot"> Esqueceu sua senha? </a>
-            <button class="botao-cadastrar"> 
-                <a href="cadastro.html"class="cadastro">Cadastrar
-            </button>
+    <button class="botao-login" type="submit"> 
+        Login
+    </button>
+        <a href="cadastro.html"class="forgot"> Esqueceu sua senha? </a>
+    <button class="botao-cadastrar"> 
+        <a href="cadastro.html"class="cadastro">Cadastrar </a>
+    </button>
     </form> 
  </main>
 

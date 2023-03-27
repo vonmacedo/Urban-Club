@@ -25,7 +25,7 @@
 
         <main id="container">
             
-            <form class="login_form">
+            <form class="login_form" action="" method="post" name="cadastro">
                
             <div class="imagens">
                 <img  src="./img/facebook.png" height="60px" >
@@ -36,36 +36,36 @@
     <div id="inputs">
         
         <div class="input-box-Email">
-            <label>Email</label>
-                <div class="input-field">
-                   <input type="email" name="Email">
+            <label for="Email">Email</label>
+                <div class="input-field" >
+                   <input type="email" name="Email" required placeholder="Exemplo@gmail.com">
                    <br><br>
                 </div>
         </div>
         <div class="input-box-Apelido">
-            <label>Apelido</label>
+            <label for="Apelido">Apelido</label>
                 <div class="input-field">
-                   <input type="password" name="Senha">
+                   <input type="" name="Apelido" required placeholder="Rex123">
                    <br><br>
                    </div>
                 </div>
         <div class="input-box-senha">
-            <label>Senha</label>
+            <label for="Senha">Senha</label>
                 <div class="input-field">
-                   <input type="email" name="Email">
+                   <input type="password" name="Senha" required>
                    <br><br>
                 </div>
         </div>
         <div class="input-box-confirmar-senha">
-            <label>Confirmar senha</label>
+            <label for="confirmar-senha">Confirmar senha</label>
                 <div class="input-field">
-                   <input type="password" name="Senha">
+                   <input type="password" name="confirmar-senha" required>
                    <br><br>
                    </div>
                 </div>
         </div>
     </div>
-            <button class="botao-cadastrar"> 
+            <button class="botao-cadastrar" type="submit" href="index.html"> 
                 Cadastrar
             </button>
     </form> 
