@@ -62,11 +62,12 @@ label{
 
 }
 
-.btn-login .logo {
+
+.btn-login .logotipo {
     width: 2.9%;
-    margin-left: 1.0%;
-    margin-bottom: 0.9%;
-    margin-top: 1.0%;
+    margin-left: 0.5%;
+    margin-bottom: 0.1%;
+    margin-top: 0.7%;
 }
 .imagens{
     display: flex;
@@ -95,12 +96,6 @@ label{
     justify-content: space-around;
     align-items: center;
 }
-.input-box-confirmar-senha label{
-    font-size: 16px;
-    margin-right: 257px;
-    margin-bottom: -10px;
-    color: #F42100;
-}
 
 .input-box-Email, .input-box-senha, .input-box-Apelido, .input-box-confirmar-senha{
     display:flex;
@@ -111,9 +106,23 @@ label{
     cursor: text;
     border-bottom: #F42100;
 }
-.input-box-Email label, .input-box-senha label, .input-box-Apelido label {
+.input-box-Email label, .input-box-senha label {
     font-size: 16px;
     margin-right: 325px;
+    margin-bottom: -10px;
+    color: #F42100;
+}
+
+.input-box-Apelido label {
+    font-size: 16px;
+    margin-right: 315px;
+    margin-bottom: -10px;
+    color: #F42100;
+}
+
+.input-box-confirmar-senha label{
+    font-size: 16px;
+    margin-right: 257px;
     margin-bottom: -10px;
     color: #F42100;
 }
@@ -165,7 +174,7 @@ button{
     margin-left: 40px;
 }
 .pe2{
-  margin-bottom: -85px;
+  margin-bottom: -75px;
   margin-left: 10px;
 }
 .Seta-Volta{
