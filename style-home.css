@@ -281,11 +281,7 @@ font-weight: bold;
 display: flex;
 justify-content: center;
 align-items: center;
-
-}
-.buttons img{
-
-
+gap: 160px;
 }
 .buttons p{
 display: flex ;
