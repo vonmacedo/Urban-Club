@@ -242,6 +242,9 @@ letter-spacing: -0.05em;
 margin-bottom: 150px;
 
 }
+.fp:hover{
+  cursor: pointer;
+}
 
 
 
