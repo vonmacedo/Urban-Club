@@ -22,10 +22,17 @@ label{
     display:flex;
     align-items:center;
     justify-content:center;
-} .botao-codigo{
+} 
 
-    padding: 8px 135px
+.botao-codigo{
+
+    padding: 9px 135px;
 }
+.botao-mudar-senha{
+
+    padding: 9px 138px
+}
+
 .confirm-email_form{
     background-color: #00050a;
     display: flex;
@@ -89,7 +96,7 @@ label{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 22px;
 }
 
 .input-field{
@@ -99,27 +106,40 @@ label{
     align-items: center;
 }
 
-.input-box, .input-box-confirmar-senha{
+.input-box{
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
     cursor: text;
     border-bottom: #F42100;
+    margin-bottom: 5px;
+}
+
+.input-box-confirmar-senha{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    cursor: text;
+    border-bottom: #F42100;
+    margin-bottom: 5px;
 }
 .input-box label{
     font-size: 16px;
-    margin-right: 327px;
+    margin-right: 324px;
     margin-bottom: -10px;
+    padding: 1px;
     color: #F42100;
 }
 
-
 .input-box-confirmar-senha label{
     font-size: 16px;
-    margin-right: 257px;
+    margin-right: 262px;
     margin-bottom: -10px;
+    padding: 1px;
     color: #F42100;
 }
 
