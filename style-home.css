@@ -4,20 +4,23 @@
     color: #ffff;
     text-decoration: none;
 }
-h1 h2{
-  font-family: 'Roboto' sans-serif;
-  font-style: normal;
-  font-weight: 800;
-}
-p{
-  font-family: 'Roboto Flex' sans-serif;
-  font-style: normal;
-  font-weight: 400;
-}
+
 body {
+  font-family: 'Roboto',sans-serif;
   background-color: black;
   overflow-x: hidden;
 }
+
+h1 h2{
+  font-style: normal;
+  font-weight: 900;
+}
+p{
+  
+  font-style: normal;
+  font-weight: 400;
+}
+
 
 /* HEADER*/
 #carousel-wrapper button
@@ -144,7 +147,7 @@ h1 {
 
 /* PÓS SLIDER - COMEÇO*/
 .p1{
-  font-family: 'Roboto Flex';
+  font-family: 'Roboto ', sans-serif;
   font-style: normal;
   font-weight: 400;
     font-size:24px;
@@ -176,7 +179,7 @@ h2{
 }
 
 .p2{
-  font-family: 'Roboto Flex';
+  font-family: 'Roboto ', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size:24px;
@@ -265,7 +268,7 @@ letter-spacing: -0.05em;
 }
 
 button{
-font-family: 'Roboto';
+font-family: 'Roboto', sans-serif;
 font-weight: bold;
 display: flex;
 justify-content: center;
