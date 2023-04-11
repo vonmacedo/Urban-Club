@@ -20,87 +20,73 @@ body {
 }
 
 /* HEADER*/
-.container {
-    position: relative;
-    padding: 15px;
-    max-width: 60%;
-    margin: 0 auto;
-  }
-  
-  .gallery-wrapper {
-    overflow-x: auto;
-  }
-  
-  .arrow-left,
-  .arrow-right {
-    position: absolute;
-    top: 1;
-    margin-left: -25px;
-    left: 0;
-    right: auto;
-    bottom: 1;
-    font-size: 20px;
-    line-height: 250px;
-    width: 40px;
-    color: #fff;
-    transition: all 600ms ease-in-out;
-    background-color: transparent;
-    opacity: 1;
-    cursor: pointer;
-    border: none;
-  }
-  .arrow-left img,
-  .arrow-right img{
-    height: 100%;
-    width: 100%;
-  }
-  .arrow-right img{
-      margin-bottom: -10px;
-  }
+#carousel-wrapper button
+{
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
 
-  .arrow-left img{
-    margin-left: 500px;
-      margin-bottom: -10px;
-  }
-  .arrow-left:hover,
-  .arrow-right:hover {
-    cursor: pointer;
-  }
-  .arrow-right {
-    right: 0;
-    margin-right: -25px;
-    left: auto;
-    text-align: right;
-    background-color: transparent;
-  }
-  
-  .gallery {
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 15px;
-  }
-  
-  .item {
-    width: 250px;
-    height: 250px;
-    flex-shrink: 0;
-    transition: all 600ms ease-in-out;
-    opacity: 0.5;
-  }
-  
-  .current-item {
-    scroll-snap-align: center;
-    opacity: 1;
-  }
-  .gallery-wrapper::-webkit-scrollbar {
-    display: none;
-  }
-  
+#carousel
+{ 
+  height: fit-content;
+  display: flex;
+  position: relative;
 
-  .gallery-wrapper {
-    -ms-overflow-style: none; 
-    scrollbar-width: none;
-  }
+  gap: 1rem;
+  padding: 1rem 0;
+  overflow-x: scroll;
+;
+}
+#carousel::-webkit-scrollbar
+{
+  background: transparent;
+  height: 0.5rem;
+}
+#carousel::-webkit-scrollbar-thumb
+{
+  background: rgb(0, 0, 0);
+  border-radius: 1rem;
+}
+
+.carousel-item
+{
+  width: 16rem;
+  background: #323232;
+  border-radius: 1rem;
+  height: 20rem;
+  flex-shrink: 0;
+
+}
+
+#carousel-wrapper
+{
+  right: 0;
+  position: relative;
+}
+
+#carousel-move-right,
+#carousel-move-left
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 5rem;
+  z-index: 3;
+  background: linear-gradient( 90deg, #11111100, #11111199 );
+}
+
+#carousel-move-left
+{
+  scale: -1;
+  left: 0;
+}
+
 
 .btn-login {
     display: flex;

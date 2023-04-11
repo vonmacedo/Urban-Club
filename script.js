@@ -1,37 +1,36 @@
-const controls = document.querySelectorAll(".control");
-let currentItem = 0;
-const items = document.querySelectorAll(".item");
-const maxItems = items.length;
 
-controls.forEach((control) => {
-  control.addEventListener("click", (e) => {
-    isLeft = e.target.classList.contains("arrow-left");
-    isRight = e.target.classList.contains("arrow-right");
+const carMoveRight = document.getElementById( "carousel-move-right" )
+const carMoveLeft  = document.getElementById( "carousel-move-left" )
+const carousel = document.getElementById( "carousel" )
 
-    if (isLeft) {
-      currentItem -= 1;
-    } else {
-      currentItem += 1;
-    }
-if (isRight)
-    if (currentItem >= maxItems) {
-      currentItem = 0;
-    }
+var movingInterval
+let intervalLength = 10
+var moveAmount     = 10
 
-    if (currentItem < 0) {
-      currentItem = maxItems - 1;
-    }
 
-    items.forEach((item) => item.classList.remove("current-item"));
+carMoveRight.addEventListener( "mousedown", function()
+{
+	movingInterval = setInterval( () => { moveCarouselRight( moveAmount ) }, intervalLength )
+})
+carMoveLeft.addEventListener( "mousedown", function()
+{
+	movingInterval = setInterval( () => { moveCarouselRight( -moveAmount ) }, intervalLength )
+})
 
-    items[currentItem].scrollIntoView({
-      behavior: "smooth",
-      inline: "center",
-      block:"center"
-      
-    });
 
-    items[currentItem].classList.add("current-item");
-  });
-});
 
+for ( let btn of [ carMoveRight, carMoveLeft ] )
+{
+  btn.addEventListener( "mouseup", () => {
+    clearInterval( movingInterval )
+  })
+  btn.addEventListener( "mouseout", () => {
+    clearInterval( movingInterval )
+  })
+}
+
+
+function moveCarouselRight( amount )
+{
+    carousel.scrollTo({ left: carousel.scrollLeft + amount, behavior: "auto" })
+}
