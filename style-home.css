@@ -311,21 +311,10 @@ justify-content: center;
     margin-bottom: 40px;
 }
 
-.b3{
-    width: 580px;
-    height: 125px;
-    border-radius: 18px;
-    border-color: #FF2A00;
-    background-color: black;
-    margin-left: 230px;
-    margin-right: 105px;
-
-}
 .rebo{
-  margin-left: -220px;
   width:100px;
   height: 100px;
-
+  border-radius: 15px;
 }
 .quadra{
   font-family: "Roboto-Black";
@@ -337,9 +326,9 @@ justify-content: center;
 }
 
 .skate{
-  margin-left: -220px;
   width: 100px;
   height: 100px;
+  border-radius: 15px;
 }
 
 .pista{
@@ -347,14 +336,9 @@ justify-content: center;
   font-weight: bold;
   font-size: 18px;
   text-align:center;
-  margin-right:30px;
-  margin-left: 45px;
+  margin-left: -100px;
 }
-.quebra-mar{
-  margin-left: -220px;
-  width: 100px;
-  height: 100px;
-}
+
 
 .buttons button:hover{
     cursor: pointer;
