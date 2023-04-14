@@ -43,6 +43,7 @@ body{
  
     display: flex;
 }
+
 .foto{
 height: 203px;
 margin-top: 49px;
@@ -55,7 +56,7 @@ border-radius: 140px;
 
 hr{ 
  
-    height: 976px;
+    height: 892px;
     width: 4px;
     background-color: #F42100;
     border: none;
@@ -110,11 +111,10 @@ margin-left: 80px;
 }
 
 .troca{
-    font-weight: 700;
+font-weight: 700;
 margin-left: 173px;
 font-size: 17px;
 margin-top: 377px;
-
 }
 
 .pessoa{
@@ -123,3 +123,70 @@ margin-top: 377px;
     font-weight: 600;
     font-size: 24px;
 }
+.imgmodog{
+    border-radius: 50%;
+    width: 280px;
+    height: 280px;
+background-color: #00417D;
+}
+.customacc .vl{
+    width: 1420px;
+    margin-top: 12%;
+}
+.image-container-mod{
+    display: inline-block;
+}
+#bola {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .trc{
+      display: flex;
+      margin-left: 280px;
+      margin-top: -270px;
+      margin-bottom: 270PX;
+
+  }
+  
+  #bola::-webkit-color-swatch {
+    border-radius: 50%;
+  }
+  
+  #bola::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+  
+  #bola::-moz-color-swatch {
+    border-radius: 50%;
+  }
+  
+  #bola::-moz-color-swatch-wrapper {
+    padding: 0;
+  }
+  
+  #bola::-ms-color-swatch {
+    border-radius: 50%;
+  }
+  
+  #bola::-ms-color-swatch-wrapper {
+    padding: 0;
+  }
+  
+ #bola::-moz-focus-inner {
+    border: none;
+  }
+  
+  #bola::-moz-focus-inner {
+    border: none;
+  }
+  
+  
+  #bola::-moz-focus-inner {
+    border: none;
+  }
+  
