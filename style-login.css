@@ -191,8 +191,16 @@ hr{
     background-color:#F42100;
     border: none;
 }
+.redes{
+    margin-top: 1.5%;
+   float: right;
+   
+  }
+  .redes img{
+    margin-right: 10px;
+    width: 30%;
+  }
 footer{
-    
     background-color: #F42100;
     color: #FFF;
     width: 100%;
@@ -201,5 +209,4 @@ footer{
     line-height: 1px;
     bottom: 0;
     position:bottom;
-}
-        
+  }    
