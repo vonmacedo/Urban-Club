@@ -195,7 +195,15 @@ h2{
   line-height: 100%;
   letter-spacing: -0.05em;
 }
-
+.redes{
+  margin-top: 1.5%;
+ float: right;
+ 
+}
+.redes img{
+  margin-right: 10px;
+  width: 30%;
+}
 .fotos{
 display: flex;
 justify-content: space-between;
