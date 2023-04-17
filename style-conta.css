@@ -126,6 +126,7 @@ margin-top: 377px;
 .imgmodog{
     border-radius: 50%;
     width: 280px;
+    margin-top: 100px;
     height: 280px;
 background-color: #00417D;
 }
@@ -133,8 +134,12 @@ background-color: #00417D;
     width: 1420px;
     margin-top: 12%;
 }
-.image-container-mod{
+.image-container-mod {
     display: inline-block;
+}
+#config{
+    position: absolute;
+    left: 50%;
 }
 #bola {
     width: 50px;
