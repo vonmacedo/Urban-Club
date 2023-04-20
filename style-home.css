@@ -141,14 +141,12 @@ hr {
 /* HEADER FINAL*/
 
 h1 {
- 
-    
     font-size: 64px;
     line-height: 75px;
     align-items: flex-end;
     text-align: center;
     margin-bottom: 20px;
-  margin-top: 122px;
+    margin-top: 122px;
 }
 
 
@@ -157,33 +155,38 @@ h1 {
   font-family: 'Roboto ', sans-serif;
   font-style: normal;
   font-weight: 400;
-    font-size:24px;
-    line-height: 100%;
-    letter-spacing: -0.05em;
-    margin-top: 48px;
- text-align: center;
-   margin-bottom: 3%;
+  font-size:24px;
+  line-height: 100%;
+  letter-spacing: -0.05em;
+  margin-top: 48px;
+  text-align: center;
+  margin-bottom: 3%;
 
 }
 
+section{
+  background-color: #00050a;
+}
 .Secao-2{
   margin-top: 10%;
 }
 .atd{
+  background-color: #00050a;
 margin-top: -2%;
 }
 
 .Secao-3{
+  background-color: #00050a;
   margin-top: -5%;
 }
  
 h2{
  text-align: center;
-    margin-top: 64px;
-   
-    line-height: 75px;
-    font-size: 64px;
+ margin-top: 64px;
+ line-height: 75px;
+ font-size: 64px;
 }
+
 
 .p2{
   font-family: 'Roboto ', sans-serif;
@@ -231,15 +234,16 @@ margin-right: 110px;
     margin-top: 50px;
 }
 .bs{
-    
-display: flex;
+ display: flex;
+ margin-left: 110px;
 }
+
 .fp{
 width: 200px;
 height: 40px;
 margin-left: 1381px;
 margin-top: 50px;
-  border: none;
+border: none;
 background-color:  #FF2A00;
 font-family: 'Roboto';
 font-weight: 800;
@@ -258,26 +262,56 @@ margin-bottom: 150px;
 /* PÓS SLIDER - FIM*/
 
 .loc{
-    background-color: black;
+    background-color: #00050a;
 }
+img .loc{
+  width: 100%;
+}
+
 .md{
+  margin-top: 40px;
+  margin-bottom: -50px;
+  height: 59px;
+  font-size: 35px;
+  line-height: 59px;
   text-align: center;
-   font-size: 64px ;
-   line-height: 75px;
+  font-size: 55px ;
+  margin-left: 150px;
+  line-height: 75px;
   letter-spacing: -0.05em;
 }
 
 .p3{
+  display: flex;
+  position: absolute;
+  padding: 8px;
   text-align: center;
-
-margin-top: 8px;
-
-
-font-size: 24px;
-line-height: 100%;
-letter-spacing: -0.05em;
+  margin-left: 632px;
+  margin-top: 75px;
+  margin-bottom: -115px;
+  font-size: 21px;
+  justify-content: center;
+  line-height: 100%;
+  letter-spacing: -0.03em;
+}
+.p4{
+  margin-top: 50px;
+  position: absolute;
+  padding: 23px;
+  left: 675px;
+  height: 200px;
+  width: 508px;
+  font-size: 20px;
+  display: flex;
+  align-items: flex-end;
+  text-align: justify;
 }
 
+
+.img-explore2{
+  float: right;
+ 
+}
 .photos{
     display: flex;
 }
