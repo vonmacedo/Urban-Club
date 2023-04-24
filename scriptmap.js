@@ -17,8 +17,27 @@ var mymap = L.map('mapid').setView([-23.9608, -46.3331], 13);
             mymap.removeControl(mymap.zoomControl);
 
             L.Control.geocoder({
-                defaultMarkGeocode: false,
+                defaultMarkGeocode: true,
                 placeholder: "Pesquisar endereço...",
+              }).addTo(mymap);
+              // desabilitar opção de zoom
+mymap.scrollWheelZoom.disable();
+mymap.doubleClickZoom.disable();
+mymap.boxZoom.disable();
+mymap.keyboard.disable();
 
+// desabilitar opção de arrastar
+mymap.dragging.disable();
+mymap.touchZoom.disable();
+mymap.tap.disable();
+// cria um ícone personalizado para o marcador
+var icon = L.icon({
+    iconUrl: 'path/to/icon.png',
+    iconSize: [32, 32],
+    popupAnchor: [0, -16]
+});
 
-            }).addTo(mymap);
+// cria um marcador com o ícone personalizado e adiciona um pop-up com informações
+var marker = L.marker([-23.9608, -46.3331], {icon: icon}).addTo(mymap)
+    .bindPopup("<b>Santos - SP </b>").openPopup();
+
