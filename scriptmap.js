@@ -7,7 +7,10 @@ var mymap = L.map('mapid').setView([-23.9608, -46.3331], 13);
                 'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
             id: 'mapbox.streets'
         }).addTo(mymap);
-
+        mymap.flyTo([-23.9608, -46.3331], 14.5, {
+            duration: 2  // duração em segundos da animação de zoom
+          });
+          
         L.marker([-23.9608, -46.3331]).addTo(mymap)
             .bindPopup("<b>Santos - SP </b>").openPopup();
 
