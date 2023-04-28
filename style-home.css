@@ -210,8 +210,7 @@ h2{
 display: flex;
 justify-content: space-between;
 align-items: left;
-margin-left: 140px;
-margin-right: 110px;
+gap: 40px;
 
 }
 
