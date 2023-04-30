@@ -21,6 +21,11 @@ p{
   font-weight: 400;
 }
 
+.nome{
+height: 30px;
+margin:34px;
+margin-right: 920px;
+}
 
 /* HEADER*/
 #carousel-wrapper button

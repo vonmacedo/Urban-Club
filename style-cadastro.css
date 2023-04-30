@@ -1,13 +1,16 @@
 *{
-    font-family: 'Roboto Flex' sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    line-height: 15px;
     margin: 0;
     padding: 0;
     text-decoration: none;
 }
 
 body{ 
+    font-family: 'Roboto', sans-serif;
+
     background-color: #00050a;
-    font-family: 'Roboto Flex' sans-serif;
     height: 100vh;
     width:100% 
 }
@@ -106,23 +109,28 @@ label{
     cursor: text;
     border-bottom: #F42100;
 }
-.input-box-Email label, .input-box-senha label {
+.input-box-Email label{
     font-size: 16px;
-    margin-right: 325px;
+    margin-right: 319px;
     margin-bottom: -10px;
     color: #F42100;
 }
-
+.input-box-senha label{
+    font-size: 16px;
+    margin-bottom: -10px;
+    color: #F42100;
+    margin-right: 311px;   
+}
 .input-box-Apelido label {
     font-size: 16px;
-    margin-right: 315px;
+    margin-right: 300px;
     margin-bottom: -10px;
     color: #F42100;
 }
 
 .input-box-confirmar-senha label{
     font-size: 16px;
-    margin-right: 257px;
+    margin-right: 220px;
     margin-bottom: -10px;
     color: #F42100;
 }
