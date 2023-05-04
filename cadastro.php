@@ -1,8 +1,15 @@
 <?php
+ 
+include("config.php");
 
-include('conexao.php');
 
-if 
+$email= $_POST['email'];
+$apelido=$_POST['apelido'];
+$senha=$_POST['senha'];
+$confirmar=$_POST['confirmar'];
+
+$result = mysqli_query($conexao, "INSERT INTO usuarios(email,apelido,senha,confirmar) VALUES('$email','$apelido','$senha','$confirmar')");
+
 ?>
 
 <!DOCTYPE html>
@@ -76,7 +83,7 @@ if
                    </div>
         </div>
     </div>
-            <button class="botao-cadastrar" type="submit" href="conta.html"> 
+            <button class="botao-cadastrar" type="submit" name ="submit" href="conta.html"> 
                 Cadastrar
             </button>
     </form> 
