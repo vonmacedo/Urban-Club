@@ -1,3 +1,10 @@
+<?php
+
+include('conexao.php');
+
+if 
+?>
+
 <!DOCTYPE html>
 <html lang="pt-Br">
 <head>

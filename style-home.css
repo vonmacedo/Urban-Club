@@ -213,9 +213,9 @@ h2{
 }
 .fotos{
 display: flex;
-justify-content: space-between;
+justify-content: space-around;
 align-items: left;
-gap: 40px;
+gap: 20px;
 
 }
 
