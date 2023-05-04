@@ -202,15 +202,7 @@ h2{
   line-height: 100%;
   letter-spacing: -0.05em;
 }
-.redes{
-  margin-top: 1.5%;
- float: right;
- 
-}
-.redes img{
-  margin-right: 10px;
-  width: 30%;
-}
+
 .fotos{
 display: flex;
 justify-content: space-around;
@@ -403,21 +395,8 @@ justify-content: center;
     margin-bottom: 105px;
 }
 
-.pe{
-  float: left;
-  color: #F42100;
-  background: none;
-  border: none;
-}
-.pe1{
-  margin-top: 3px;
-  position: absolute;
-  margin-left: 40px;
-}
-.pe2{
- margin-bottom: -75px;
- margin-left: 10px;
-}
+
+
 
 hr{
   top: 150px;
@@ -431,10 +410,41 @@ footer{
   background-color: #F42100;
   color: #FFF;
   width: 100%;
-  height: 100px;    
-  text-align: center;
+  height: 384px;    
   line-height: 1px;
   bottom: 0;
   position:bottom;
 }
-      
+
+.pe{
+  color: #F42100;
+  background: none;
+  border: none;
+ 
+  margin-top: 36px;
+  position: absolute;
+  margin-left: 86px;
+}
+.pe img {
+
+  height: 100px;
+}
+
+      .insta{
+position: absolute; 
+margin-top: 161px;
+       margin-left: 109px;
+      }
+
+      .gram{
+        font-family: 'Roboto Mono',monospace;
+        font-size: 20px;
+        letter-spacing: -0.05em;
+display: inline;
+align-items:
+
+      }
+      .rede{
+        position: absolute;
+        
+      }

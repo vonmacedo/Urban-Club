@@ -72,11 +72,6 @@ mymap.keyboard.disable();
 mymap.dragging.enable();
 mymap.touchZoom.enable();
 mymap.tap.disable();
-// cria um ícone personalizado para o marcador
-var icon = L.icon({
-    iconUrl: 'path/to/icon.png',
-    iconSize: [32, 32],
-    popupAnchor: [0, -16]
-});
+
 
 // cria um marcador com o ícone personalizado e adiciona um pop-up com informações
