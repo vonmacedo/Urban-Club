@@ -16,7 +16,6 @@ h1 h2{
   font-weight: 900;
 }
 p{
-  
   font-style: normal;
   font-weight: 400;
 }
@@ -429,7 +428,7 @@ footer{
       .insta{
         
         margin-left: 107px;
-        margin-top: 20px;
+        margin-top: 40px;
         display: flex;
         align-items: center;
       }
@@ -445,7 +444,7 @@ footer{
       }
       .rede{
         margin-left: 100px;
-        margin-top: 20px;
+        margin-top: 40px;
         display: flex;
         align-items: center;
       }
@@ -459,7 +458,7 @@ footer{
       }
       .artista{
         margin-left: 100px;
-        margin-top: 50px;
+        margin-top: 100px;
         margin-bottom: 20px;
       }
       .artista .art {
@@ -487,14 +486,18 @@ footer{
         
       }
       .direita{
-      margin-left: 10%;
-     
-      }
-      .direita p{
-        height: 100%;
-        width: 100%;
+      margin-left: 30%;
       }
       .direita h1{
         font-size: 30px;
        display: inline;
       }
+      .direita p{
+    text-align: justify;
+        font-size: 20px;
+        width: 70%;
+        margin-top: 0%;
+        margin-bottom: 1%;
+        line-height:1.2;
+      }
+  
