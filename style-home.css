@@ -430,12 +430,10 @@ footer{
         
         margin-left: 107px;
         margin-top: 20px;
+        display: flex;
+        align-items: center;
       }
-      .insta a{
-          display: flex;
-          align-items: center;
-          
-      }
+    
 
       .insta p{
         
@@ -448,11 +446,10 @@ footer{
       .rede{
         margin-left: 100px;
         margin-top: 20px;
-      }
-      .rede a{
         display: flex;
         align-items: center;
       }
+ 
       .rede p{
         font-family: 'Roboto Mono',monospace;
         font-size: 20px;
@@ -480,9 +477,24 @@ footer{
         display: inline;
         margin-left: 10px;
       }
-      .esquerda{
-        float: left;
+      span {
+        display: block;
+        margin-left: 20%;
+        font-size: 15px;
+      }
+      .base{
+        display: inline-flex;
+        
       }
       .direita{
-        
+      margin-left: 10%;
+     
+      }
+      .direita p{
+        height: 100%;
+        width: 100%;
+      }
+      .direita h1{
+        font-size: 30px;
+       display: inline;
       }
