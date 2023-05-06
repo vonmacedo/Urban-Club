@@ -408,7 +408,7 @@ hr{
 footer{
   background-color: #F42100;
 
-height: 85%;
+
 bottom: 0px;
   width: 100%;
 }
@@ -453,7 +453,6 @@ bottom: 0px;
       .rede{
         margin-left: 108px;
         margin-top: 15px;
-        margin-bottom: 50px;
         display: flex;
         align-items: center;
       }
@@ -466,7 +465,7 @@ bottom: 0px;
         margin-left: 10px;
       }
       .artista{
-        margin-left: 100px;
+        margin: 20px 90px;
       }
       .artista .art {
         display: flex;
@@ -499,16 +498,15 @@ bottom: 0px;
 
 
       .base{
-        background-color: #F42100;
         display: inline-flex;
         
       }
       .direita{
-        background-color: #F42100;
-        margin: 86px;
+        margin: 50px;
       margin-left: 174PX;
       }
       .direita h1, .canto h1{
+        margin-bottom: -35px;
         color:  #000000;
 
         font-family: 'Roboto Mono', monospace;
@@ -530,7 +528,7 @@ bottom: 0px;
       .canto{
         margin-left: 50px;
 font-size: 22px;
-    margin-top: 86px;
+    margin-top: 50px;
       }
 
     

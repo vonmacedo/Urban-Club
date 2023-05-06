@@ -1,5 +1,5 @@
 *{
-    font-family: 'Roboto Flex' sans-serif;
+    font-family: 'Roboto ', sans-serif;
     margin: 0;
     padding: 0;
     text-decoration: none;
@@ -7,7 +7,7 @@
 
 body{ 
     background-color: #00050a;
-    font-family: 'Roboto Flex' sans-serif;
+    font-family: 'Roboto ', sans-serif;
     height: 100vh;
     width:100% 
 }
@@ -107,7 +107,7 @@ label{
 }
 .input-box-senha label{
     font-size: 16px;
-    margin-right: 285px;
+    margin-right: 278px;
     margin-bottom: -10px;
     color: #F42100;
 }
@@ -118,7 +118,7 @@ label{
 
 .input-box-confirmar-senha label{
     font-size: 16px;
-    margin-right: 257px;
+    margin-right: 250px;
     margin-bottom: -10px;
     color: #F42100;
 }
@@ -203,13 +203,143 @@ hr{
     margin-right: 10px;
     width: 30%;
   }
-footer{
+  footer{
     background-color: #F42100;
-    color: #FFF;
     width: 100%;
-    height: 100px;    
-    text-align: center;
-    line-height: 1px;
-    bottom: 0;
-    position:bottom;
-  }    
+  }
+   footer a, footer span, footer p{
+    color:  #000000;
+  
+  
+   }
+   footer img{
+    height: 50px;
+   }
+   
+  .pe{
+    color: #F42100;
+    background: none;
+    border: none;
+     margin-left: 86px;
+     margin-top: 36px;
+  }
+  .pe img {
+  height: 100px;
+  }
+        .insta{
+          margin-left: 120px;
+          margin-top: 20px;
+          display: flex;
+          align-items: center;
+        }
+      
+  
+        .insta p{
+          
+          font-family: 'Roboto Mono',monospace;
+          font-size: 20px;
+          letter-spacing: -0.05em;
+          display: inline;
+          margin-left: 10px;
+        }
+  
+  
+        .insta2{
+          margin-left: 106px;
+          margin-top: 20px;
+          display: flex;
+          align-items: center;
+        }
+      
+  
+        .insta2 p{
+          
+          font-family: 'Roboto Mono',monospace;
+          font-size: 20px;
+          letter-spacing: -0.05em;
+          display: inline;
+          margin-left: 10px;
+        }
+        .rede{
+          margin-left: 120px;
+          margin-top: 15px;
+          display: flex;
+          align-items: center;
+        }
+   
+        .rede p{
+          font-family: 'Roboto Mono',monospace;
+          font-size: 20px;
+          letter-spacing: -0.05em;
+          display: inline;
+          margin-left: 10px;
+        }
+        .meio{
+  margin: 36px 172px;
+  
+  margin-right: 250px;
+        }
+        .artista .art {
+          display: flex;
+          align-items: center;
+        }
+        .artista .art img{
+          margin-left: 90px;
+        height: 80px;
+        
+        }
+        
+        
+        .artista p{
+          
+          Font-family: 'Roboto Mono',monospace;
+          font-size: 20px;
+          letter-spacing: -0.05em;
+          display: inline;
+          margin-left: 16px;
+        }
+        
+  
+  
+        .base{
+          display: inline-flex;
+          
+        }
+        .direita{
+          margin: 36px;
+        margin-left: 150px;
+        
+        }
+        .direita h1, .canto h1{
+          margin-bottom: 15px;
+          color:  #000000;
+  
+          font-family: 'Roboto Mono', monospace;
+          letter-spacing: -0.05em;
+          font-size: 22px;
+        }
+        .direita .jm{
+  margin-bottom: 50px;
+  
+        }
+        .direita p {
+          color:  #000000;
+  
+          font-family: 'Roboto Mono', monospace;
+      text-align: justify;
+          font-size: 20px;
+          line-height:20px;
+        }
+        .canto p{
+  
+          color:  #000000;
+          font-family: 'Roboto Mono', monospace;
+          font-size: 20px;
+          line-height:20px;
+        }
+        .canto{
+        
+  font-size: 22px;
+      margin-top: 50px;
+        }
+  
