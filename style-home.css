@@ -407,28 +407,36 @@ hr{
 
 footer{
   background-color: #F42100;
-  color: #FFF;
-  width: 100%;
-  height: 100%;    
-  line-height: 1px;
-  bottom: 0;
-  position:bottom;
-}
 
+height: 85%;
+bottom: 0px;
+  width: 100%;
+}
+ footer a, footer span, footer p{
+  color:  #000000;
+
+
+ }
+
+ footer img{
+  height: 50px;
+
+
+ }
 .pe{
   color: #F42100;
   background: none;
   border: none;
    margin-left: 86px;
+   margin-top: 36px;
 }
 .pe img {
 
   height: 100px;
 }
       .insta{
-        
         margin-left: 107px;
-        margin-top: 40px;
+        margin-top: 20px;
         display: flex;
         align-items: center;
       }
@@ -443,8 +451,9 @@ footer{
         margin-left: 10px;
       }
       .rede{
-        margin-left: 100px;
-        margin-top: 40px;
+        margin-left: 108px;
+        margin-top: 15px;
+        margin-bottom: 50px;
         display: flex;
         align-items: center;
       }
@@ -458,16 +467,20 @@ footer{
       }
       .artista{
         margin-left: 100px;
-        margin-top: 100px;
-        margin-bottom: 20px;
       }
       .artista .art {
         display: flex;
         align-items: center;
       }
+      .artista .art img{
+      height: 80px;
+      
+      }
+      
       .artista .job{
+        margin-bottom: -100%;
         margin-left: 5%;
-        font-size: 15px;
+        font-size: 16px;
       }
       .artista p{
         Font-family: 'Roboto Mono',monospace;
@@ -476,28 +489,52 @@ footer{
         display: inline;
         margin-left: 10px;
       }
-      span {
+       .artista span {
         display: block;
-        margin-left: 20%;
+        margin-bottom: -2%;
+        margin-top: -5%;
+        margin-left: 15%;
         font-size: 15px;
       }
+
+
       .base{
+        background-color: #F42100;
         display: inline-flex;
         
       }
       .direita{
-      margin-left: 30%;
+        background-color: #F42100;
+        margin: 86px;
+      margin-left: 174PX;
       }
-      .direita h1{
-        font-size: 30px;
+      .direita h1, .canto h1{
+        color:  #000000;
+
+        font-family: 'Roboto Mono', monospace;
+        letter-spacing: -0.05em;
+        font-size: 22px;
        display: inline;
       }
-      .direita p{
+      .direita p, .canto p{
+        color:  #000000;
+
+        font-family: 'Roboto Mono', monospace;
+    width: 672PX;
     text-align: justify;
         font-size: 20px;
-        width: 70%;
-        margin-top: 0%;
-        margin-bottom: 1%;
-        line-height:1.2;
+        margin-bottom: 0%;
+        line-height:20px;
       }
   
+      .canto{
+        margin-left: 50px;
+font-size: 22px;
+    margin-top: 86px;
+      }
+
+    
+     .trab{
+     margin-top: -100%;
+     }
+    
