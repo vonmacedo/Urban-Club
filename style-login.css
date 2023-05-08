@@ -33,31 +33,30 @@ label{
 }
 
 .login_form{
-    background-color: #00050a;
-    display: flex;
-    flex-direction: column;
-    padding: 30px 40px;
-    border-radius: 8px;
-    gap: 45px;
-    box-shadow: 5px 5px 8px rgba(0,0,0, 0.336);
-    height: fit-content;
-    list-style: none;
-    justify-content: space-around;
-    text-align: center; 
+  background-color: #00050a;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 40px;
+  border-radius: 8px;
+  gap: 45px;
+  box-shadow: 5px 5px 8px rgba(0,0,0, 0.336);
+  height: fit-content;
+  list-style: none;
+  justify-content: space-around;
+  text-align: center; 
 }
 
 .btn-login {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
-
 .btn-login button {
-    width: 5.0%;
-    margin-right: 1.0%;
-    background-color: transparent;
-    border: none;
-    margin-inline: 1%;
+  width: 2.0%;
+  margin-right: 1.0%;
+  background-color: transparent;
+  border: none;
+  margin-inline: 1%;
 }
 .forgot{
     margin-top:-30px ;
@@ -66,33 +65,34 @@ label{
 }
 
 .btn-login button:hover {
-    cursor: pointer;
-    transition: 200ms;
+  cursor: pointer;
+  transition: 200ms;
 }
 .btn-login .seta img{
- transform: rotate(180deg);
- height: 25px;
- margin-bottom: -5px;
+transform: rotate(180deg);
+height: 25px;
+margin-bottom: -5px;
 
 }
+
 
 .btn-login .logotipo {
-    margin-left: 0.5%;
-    margin-bottom: 0.1%;
-    margin-top: 0.7%;
+  width: 2.9%;
+  margin-left: 0.5%;
+  margin-bottom: 0.1%;
+  margin-top: 0.7%;
 }
-
 .imagens{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 13%;
-    margin-top: 14.5%;
-    margin-inline: 15%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 13%;
+  margin-top: 14.5%;
+  margin-inline: 15%;
 }
 
 .imagens img{
-    vertical-align:middle
+  vertical-align:middle
 }
 
 #inputs{
