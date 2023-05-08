@@ -8,9 +8,9 @@ if(isset($_POST['submit']))
 $email= $_POST['email'];
 $apelido=$_POST['apelido'];
 $senha=$_POST['senha'];
-$confirmar=$_POST['confirmar'];
 
-$result = mysqli_query($conexao, "INSERT INTO usuarios(email,apelido,senha,confirmar) VALUES('$email','$apelido','$senha','$confirmar')");
+
+$result = mysqli_query($conexao, "INSERT INTO usuarios(email,apelido,senha) VALUES('$email','$apelido','$senha')");
 }
 
 ?>
