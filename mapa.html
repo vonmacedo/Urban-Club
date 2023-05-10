@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,12 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style-mapa.css">
- <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src= "./scriptmap.js" defer></script>
 
     <title>Urban Club</title>
 
-
+    
 </head>
 <body>
     <header>
@@ -28,12 +28,17 @@
         
                 <div class="vl"></div> 
          </header>
+       
 
-    <div id="mapid">
+             <div id="map">
 
     </div>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
-<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <div class="btn-container">
+        <button id="btn-skate" class="skate">  Pistas de Skate</button>
+        <button id="btn-basquete" class="basquete"> Quadras de Basquete</button>
+      </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzNBI2kYX3g6lGasP_8lCqTceyhZwHBXw&callback=initMap"
+    async defer></script>
 
    
 </body>
