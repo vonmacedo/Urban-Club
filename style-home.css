@@ -219,8 +219,7 @@ gap: 20px;
 
 .emissario:hover {
   box-shadow: 0 0 8px #e22f0b;
-  border: solid 1px #FF2A00;
-  transition: all 0.3s linear;
+  
 }
 
 .basquete{
@@ -233,8 +232,7 @@ gap: 20px;
 
 .basquete:hover {
   box-shadow: 0 0 8px #e22f0b;
-  border: solid 1px #FF2A00;
-  transition: all 0.3s linear;
+  
 }
 
 .lio{
@@ -246,8 +244,7 @@ gap: 20px;
 
 .lio:hover {
   box-shadow: 0 0 8px #e22f0b;
-  border: solid 1px #FF2A00;
-  transition: all 0.3s linear;
+  
 }
 .bs{
  display: flex;
@@ -503,7 +500,7 @@ bottom: 0px;
       }
       .direita{
         margin: 50px;
-      margin-left: 174PX;
+        margin-left: 174PX;
       }
       .direita h1, .canto h1{
         margin-bottom: -35px;
@@ -512,14 +509,14 @@ bottom: 0px;
         font-family: 'Roboto Mono', monospace;
         letter-spacing: -0.05em;
         font-size: 22px;
-       display: inline;
+        display: inline;
       }
       .direita p, .canto p{
         color:  #000000;
 
         font-family: 'Roboto Mono', monospace;
-    width: 672PX;
-    text-align: justify;
+        width: 672PX;
+        text-align: justify;
         font-size: 20px;
         margin-bottom: 0%;
         line-height:20px;
@@ -527,8 +524,8 @@ bottom: 0px;
   
       .canto{
         margin-left: 50px;
-font-size: 22px;
-    margin-top: 50px;
+        font-size: 22px;
+        margin-top: 50px;
       }
 
     
