@@ -72,10 +72,7 @@ var map;
                     const location = results[0].geometry.location;
                     map.setCenter(location);
                     map.setZoom(15);
-                    const marker = new google.maps.Marker({
-                      position: location,
-                      map: map
-                    });
+                    
                   } else {
                     alert('Não foi possível encontrar o local.');
                   }

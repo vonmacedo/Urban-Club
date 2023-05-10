@@ -1,7 +1,6 @@
 *{
     margin: 0;
     padding: 0;
-    color: white;
     text-decoration: none;
     font-family: 'Roboto',sans-serif;
 }
@@ -55,13 +54,10 @@ body{
   }
   .btn-container {
     position: absolute;
+    display: flex;
     top: 10px;
-    left: 200px;
     z-index: 1;
   }
- 
-
-
 .btn-container button{
     text-align: center;
 letter-spacing: -0.05em;
@@ -69,30 +65,37 @@ font-size: 18px;
 font-weight: 600;
     color: white;
 width: 207px;   
-height: 45px;
-    margin-top: 80px;
+height: 35px;
+        margin-top: 80px;
     border: 4px solid #FF2A00;
     border-radius: 20px;
     background-color: #000000;
-}
-.skate{
-margin-left: 100px;
-
 }
 .pesq{
-    
-position: absolute;
-bottom: 760px;
-left: 10px;
-color: white;
-
+color: rgb(0, 0, 0);
+margin-left: 887px;
 }
-
+.pesq *{
+    color:rgb(255, 255, 255)
+}
+.btn-container .canto button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-container .basquete{
+    margin-top: 5.8px;
+}
 #search-input{
-    
-    height: 30px;
+    font-family: 'Roboto',sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+text-align: center;    
+height: 26.4px;
     background-color: #000000;
     border: 4px solid #FF2A00;
     border-radius: 20px;
-    width: 200px;
+    width: 270px;
 }
+
+    
