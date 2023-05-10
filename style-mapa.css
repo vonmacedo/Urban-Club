@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    color: black;
+    color: white;
     text-decoration: none;
     font-family: 'Roboto',sans-serif;
 }
@@ -74,4 +74,25 @@ height: 45px;
     border: 4px solid #FF2A00;
     border-radius: 20px;
     background-color: #000000;
+}
+.skate{
+margin-left: 100px;
+
+}
+.pesq{
+    
+position: absolute;
+bottom: 760px;
+left: 10px;
+color: white;
+
+}
+
+#search-input{
+    
+    height: 30px;
+    background-color: #000000;
+    border: 4px solid #FF2A00;
+    border-radius: 20px;
+    width: 200px;
 }

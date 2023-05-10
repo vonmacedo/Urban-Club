@@ -60,7 +60,8 @@ var map;
                   west: -46.4295
                 },
                 strictBounds: true
-              }
+              },
+              disableDefaultUI:true
             });	
 
             function searchPlace() {
