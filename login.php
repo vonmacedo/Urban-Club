@@ -1,57 +1,78 @@
 <?php
- 
-include("config.php");
 
-if(isset($_POST['submit']))
-{
+include('config.php');
 
-$email= $_POST['email'];
-$apelido=$_POST['apelido'];
-$senha=$_POST['senha'];
+if(isset($_POST['email']) || isset($_POST['senha'])){
 
+  if(strlen($_POST['email'])== 0){
+    echo "Prencha seu email";
+  } else if (strlen($_POST['senha'])== 0) {
+    echo "Preencha sua senha";
+  } else {
+    
+    if(isset($_POST['email'])){
+      
+      $email = $conexao ->real_escape_string($_POST['email']);
+      $senha = $conexao ->real_escape_string($_POST['senha']);
 
-$result = mysqli_query($conexao, "INSERT INTO usuarios(email,apelido,senha) VALUES('$email','$apelido','$senha')");
+      $sql_code = "SELECT * FROM usuarios WHERE email = '$email' AND senha = '$senha'";
+      $sql_query = $conexao->query($sql_code) or die ("Falha na conexão do código SQL: " .$conexao->error);
+
+      $quantidade = $sql_query->num_rows;
+
+      if($quantidade == 1){
+
+        $usuario = $sql_query->fetch_assoc();
+
+        if(!isset($SESSION)) {
+          session_start();
+        }
+        $_SESSION['email'] = $usuario['email'];
+        $_SESSION['senha'] = $ususario['senha'];
+
+        header("Location: mapa.php");
+
+      }
+    }
+  }
 }
 
-?>
 
+?>
 <!DOCTYPE html>
 <html lang="pt-Br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style-cadastro.css">
+    <link rel="stylesheet" href="style-login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700, 800&display=swap">
     <title>
-        Urban Club 
+        Urban Club
     </title>
 </head>
 <body>
-
     <header>
         <div class="btn-login">
-
+            
             <button class="logotipo">
-                <a href="index.html">
-                <img style=" width: 53px; height: 53px;" src="./img/image 10.png" alt="logo" class="logo">
-                </a>
-
+            <a href="index.html">
+            <img style=" width: 53px; height: 53px;" src="./img/image 10.png" alt="logo" class="logo">
+            </a>
+        </button>
             <button class="seta">
-               <a href="login.php">
+               <a href="index.html">
                 <img style="background-position: center; background-repeat: repeat; width: 25px ;" src="./img/seta.png">
                </a>
             </button>
         </div>
             <hr>
-        </header>
-        
+
         <main id="container">
-            
-            <form class="login_form" action="cadastro.php" method="post" name="cadastro">
+            <form  class="login_form" action="" method="post" name="login">
                
             <div class="imagens">
                 <img  src="./img/facebook.png" height="60px" >
@@ -59,53 +80,53 @@ $result = mysqli_query($conexao, "INSERT INTO usuarios(email,apelido,senha) VALU
                 <img src="./img/google.png" height="60px">
             </div>
 
+
     <div id="inputs">
-        <div class="input-box-Email">
+        
+        <div class="input-box">
             <label for="Email">Email</label>
-                <div class="input-field" >
-                   <input type="email" name="email" id= "email" required placeholder="Exemplo@gmail.com">
+                <div class="input-field">
+                   <input type="email" name="email"  placeholder="Exemplo@gmail.com" required>
                    <br><br>
                 </div>
         </div>
-        <div class="input-box-Apelido">
-            <label for="Apelido">Apelido</label>
-                <div class="input-field">
-                   <input type="text" name="apelido" id="apelido" required placeholder="Rex123">
-                   <br><br>
-                   </div>
-        </div>
-        <div class="input-box-senha">
+        <div class="input-box">
             <label for="Senha">Senha</label>
                 <div class="input-field">
-                   <input type="password" name="senha" id="senha" required>
-                   <br><br>
-                </div>
-        </div>
-        <div class="input-box-confirmar-senha">
-            <label for="confirmar-senha">Confirmar senha</label>
-                <div class="input-field">
-                   <input type="password" name="confirmar-senha" id= "confirmar-senha" required>
+                   <input type="password" name="senha" required>
                    <br><br>
                    </div>
+                </div>
+                <div class="input-check">
+                    <input type = "checkbox">
+                    <label> Lembrar de Mim </label>
+                </div>
         </div>
+    
     </div>
-            <button class="botao-cadastrar" type="submit" name ="submit" href="conta.html"> 
-                Cadastrar
-            </button>
+    
+    <button class="botao-login" type="submit" name="submit"> 
+        Login
+    </button>
+        <a href="confirma-email.html"class="forgot"> Esqueceu sua senha? </a>
+    <button class="botao-cadastrar" onclick="window.location.href='cadastro.php'"> 
+        Cadastrar
+    </button>
+    
     </form> 
  </main>
 
-
+    </header>
     
     <main id="content-primary">
     </main>
     <footer>
         <div class="base">
         <div class="esqurda">
-          <button class="pi">
+          <button class="pe">
             <div class="ub">
               <a href="index.html">
-          <img src="./img/Urban.png" height="60px"class="pi1">
+          <img src="./img/Urban.png" height="60px"class="pe1">
           
               </a> 
             </div>
@@ -126,7 +147,7 @@ $result = mysqli_query($conexao, "INSERT INTO usuarios(email,apelido,senha) VALU
   </div>
   <div class="direita">
    
-   <h1>Desenvolvedores</h1>
+    <h1>Desenvolvedores</h1>
     <p>Andrey Vanolli</p>
     <p>Felipe Amaral</p>
     <p>Gabriel Cosme</p>
