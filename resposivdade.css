@@ -209,6 +209,16 @@ font-size: 18px;
 .canto{
   margin-left: -1em;
 }
+.legal{
+  margin-top: 8em;
+  margin-left: -18em;
+}
+.ub{
+margin-left: 0.5em;
+}
+.dindin{
+  margin-left: -5em;
+}
 /*Código do login*/
 
 footer img{
