@@ -7,7 +7,7 @@ if(isset($_POST['submit']))
 
 $email= $_POST['email'];
 $apelido=$_POST['apelido'];
-$senha=$_POST['senha'];
+$senha= password_hash($_POST['senha'], PASSWORD_DEFAULT);
 
 
 $result = mysqli_query($conexao, "INSERT INTO usuarios(email,apelido,senha) VALUES('$email','$apelido','$senha')");
