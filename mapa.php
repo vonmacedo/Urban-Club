@@ -13,7 +13,7 @@ include('protect.php');
     <link rel="stylesheet" href="./style-mapa.css">
     <script src= "./scriptmap.js" defer></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzNBI2kYX3g6lGasP_8lCqTceyhZwHBXw&libraries=places&callback=initMap" async defer></script>
-
+    <link rel="stylesheet" href="./resposivdade.css">
     <title>Urban Club</title>
 
     

@@ -1,4 +1,77 @@
-@media (max-width: 1366px) {
+@media (min-width: 1300px) and (max-width: 1400px) {
+  #carousel-wrapper button
+{
+  background: none;
+	color: inherit;
+	border: none;
+  
+	padding: 0;
+  margin-left: 30%;
+  margin-right: 30%;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+#carousel
+{ 
+  height: fit-content;
+  display: flex;
+  position: relative;
+  width: 30%;
+  margin-left: 35%;
+  gap: 1rem;
+  padding: 1rem 0;
+  overflow-x: scroll;
+;
+}
+#carousel::-webkit-scrollbar
+{
+  background: transparent;
+  height: 0.5em;
+}
+#carousel::-webkit-scrollbar-thumb
+{
+  background: rgb(0, 0, 0);
+  border-radius: 1em;
+}
+
+.carousel-item{
+  background: #323232;
+  border-radius: 1em;
+  height: 20em;
+  flex-shrink: 0;
+}
+
+.carousel-item img{
+  width: 100%;
+  height: 100%;
+  border-radius: 3%;
+}
+
+#carousel-wrapper
+{
+  right: 0;
+  position: relative;
+}
+
+#carousel-move-right,
+#carousel-move-left
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 4em;
+  z-index: 3;
+  background: linear-gradient( 90deg, #11111100, #11111199 );
+}
+
+#carousel-move-left
+{
+  scale: -1;
+  left: 0;
+}
    .btn-login button{
    margin-right: 1.5em;   
    }
@@ -124,7 +197,6 @@ height: 2.273em;
 
 .direita{
   margin: 3.125em;
-  margin-left: 40px;
 }
 
 .direita p .canto p{
@@ -135,6 +207,136 @@ font-size: 18px;
 }
 
 .canto{
-  margin-left: 1px
+  margin-left: -1em;
 }
+/*Código do login*/
+
+footer img{
+ height: 3em;
+}
+
+.pi{
+ color: #F42100;
+ background: none;
+ border: none;
+  margin-top: 1.25em;
+}
+.pi img {
+height: 6.25em;
+}
+     .insta{
+       margin-left: 7.5em;
+       margin-top: 1.25em;
+       display: flex;
+       align-items: center;
+     }
+   
+
+     .insta p{
+       
+       font-family: 'Roboto Mono',monospace;
+       font-size: 20px;
+       letter-spacing: -0.05em;
+       display: inline;
+       margin-left: 0.625em;
+     }
+
+
+     .insta2{
+      margin-left: 2em;
+       margin-top: 1.25em;
+       display: flex;
+       align-items: center;
+     }
+   
+
+     .insta2 p{
+       
+       font-family: 'Roboto Mono',monospace;
+       font-size: 20px;
+       letter-spacing: -0.05em;
+       display: inline;
+     }
+     .rede{
+       margin-left: 7.5em;
+       margin-top: 0.9375em;
+       display: flex;
+       align-items: center;
+     }
+
+     .rede p{
+       font-family: 'Roboto Mono',monospace;
+       font-size: 20px;
+       letter-spacing: -0.05em;
+       display: inline;
+       margin-left: 0.625em;
+     }
+     .meio{
+margin: 2.25em;
+margin-right: 3em;
+     }
+     .artista .art {
+       display: flex;
+       align-items: center;
+       margin-left: -5em;
+     }
+     .artista .art img{
+       margin-left: 5.625em;
+     height: 5em;
+     
+     }
+
+     .artista p{
+       
+       Font-family: 'Roboto Mono',monospace;
+       font-size: 20px;
+       letter-spacing: -0.05em;
+       display: inline;
+       margin-left: 1em;
+     }
+     
+
+
+     .base{
+       display: inline-flex;
+       
+     }
+     .direita{
+       margin: 2.25em;
+     margin-left: 4.375em;
+     margin-right: 3em;
+     }
+     .direita h1, .canto h1{
+       margin-bottom: 0.9375em;
+       color:  #000000;
+
+       font-family: 'Roboto Mono', monospace;
+       letter-spacing: -0.05em;
+       font-size: 22px;
+     }
+     .direita .jm{
+margin-bottom: 3.125em;
+
+     }
+     .direita p {
+       color:  #000000;
+
+       font-family: 'Roboto Mono', monospace;
+   text-align: justify;
+       font-size: 20px;
+       line-height:1.25em;
+     }
+     .canto p{
+
+       color:  #000000;
+       font-family: 'Roboto Mono', monospace;
+       font-size: 20px;
+       line-height:1.25em;
+     }
+     .canto{
+     
+font-size: 22px;
+   margin-top: 3.125em;
+     }
+    
 }

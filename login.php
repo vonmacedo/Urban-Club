@@ -53,6 +53,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])){
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700, 800&display=swap">
+    <link rel="stylesheet" href="./resposivdade.css">
     <title>
         Urban Club
     </title>
