@@ -1,3 +1,140 @@
-@media only screen and (min-width: 1366) {
+@media (max-width: 1366px) {
+   .btn-login button{
+   margin-right: 1.5em;   
+   }
+
+   .btn-login .logotipo{
+margin-left: 1.5em;
+   }
+
+   h1{
+    line-height: 1.172em;
+    margin-bottom: 0.313em;
+margin-top: 1.906em;
+   }
+
+   .p1{
+    margin-top: 2em;
+margin-bottom: 1.3em;
+   }
+
+   .fotos{
    
+    gap: 1.25em;
+
+   }
+
+   .emissario{
+    visibility: hidden;
+   }
+
+   .basquete{
+    width: 31.25em;
+    margin-left: 34.375em;
+    margin-right: 6em;
+    margin-top: 3.125em;
+
+   }
+
+   .lio{
+    width: 31.25em;
+
+    margin-top: 3.125em;
+
+   }
+
+   .fp{
+
+width: 7.692em;
+margin-left: 30em;
+margin-top: 1.923em;
+margin-bottom:5.769em ;
+   }
+
+   .md{
+margin-top: 0.727em;
+margin-bottom: -0.909em ;
+margin-left: 0.636em;
+   }
+
+  .p3{
+    margin-left: 18.8em;
+
+    margin-top:3.571em;
+    margin-bottom: -5.476em;
+  }
+
+.p4{
+  margin-left: 20em;
+  height: 10em ;
+}
+
+.explore1{
+  width: 28.6em;
+  margin-left: -4.2em;
+  margin-right: -0.25em;
+}
+
+.explore2{
+  width: 28.6em;
+height: 21.5em;
+  margin-bottom:-0.25em ;
+}
+
+.pe{
+  margin-left: 1.375em;
+  margin-top: 2.25em;
+}
+.pe img{
+  height: 4.545em;
+}
+
+.insta{
+  margin-left: 1.87em;
+  margin-top: 1.25em;
+}
+
+.insta p{
+margin-left: 0.5em;
+
+}
+.insta img, .rede img{
+height: 2.273em;
+
+}
+.rede{
+  margin-left: 2em;
+  margin-top: 0.938em;
+}
+
+.rede p{
+  margin-left: 0.5em;
+}
+
+.artista{
+  margin: 1.25em 0.625em;
+}
+
+.artista img{
+  height: 3.636em;
+}
+.artista .job{
+  margin-left: 1em;
+}
+
+.direita{
+  margin: 3.125em;
+  margin-left: 40px;
+}
+
+.direita p .canto p{
+font-family: 'Roboto Mono',sans-serif;
+width: 31.6em;
+font-size: 18px;
+
+}
+
+.canto{
+  margin-left: 1px
+}
 }

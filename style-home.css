@@ -288,7 +288,6 @@ img .loc{
   margin-top: 40px;
   margin-bottom: -50px;
   height: 59px;
-  font-size: 35px;
   line-height: 59px;
   text-align: center;
   font-size: 55px ;
@@ -535,13 +534,5 @@ bottom: 0px;
     
      /* RESPONSIVIDADE*/
 
-     @media  (max-width:390px){
-.btn-login .logotipo{
-height: 0.3%;
-margin-right: 10%;
-
-
-}
-}
     
      
