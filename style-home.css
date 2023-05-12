@@ -290,10 +290,11 @@ img .loc{
   height: 59px;
   line-height: 59px;
   text-align: center;
+  justify-content: center;
   font-size: 55px ;
-  margin-left: 35px;
   line-height: 75px;
   letter-spacing: -0.05em;
+  word-spacing: 0.07em;
 }
 
 .p3{
@@ -301,7 +302,7 @@ img .loc{
   position: absolute;
   padding: 8px;
   text-align: center;
-  margin-left: 690px;
+  margin-left: 735px;
   margin-top: 75px;
   margin-bottom: -115px;
   font-size: 21px;
@@ -313,7 +314,7 @@ img .loc{
   margin-top: 50px;
   position: absolute;
   padding: 17px;
-  margin-left: 694px;
+  margin-left: 742px;
   height: 200px;
   width: 508px;
   font-size: 20px;
@@ -389,9 +390,6 @@ justify-content: center;
     margin-right: 230px;
     margin-bottom: 105px;
 }
-
-
-
 
 hr{
   top: 150px;
@@ -499,7 +497,7 @@ bottom: 0px;
       }
       .direita{
         margin: 50px;
-        margin-left: 174PX;
+        margin-left: 220PX;
       }
       .direita h1, .canto h1{
         margin-bottom: -35px;
@@ -522,7 +520,7 @@ bottom: 0px;
       }
   
       .canto{
-        margin-left: 50px;
+        margin-left: 160px;
         font-size: 22px;
         margin-top: 50px;
       }
