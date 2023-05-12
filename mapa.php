@@ -21,14 +21,17 @@ include('protect.php');
 <body>
     <header>
         <div class="btn-login">
-
-            <button class="logotipo">
+           <button class="logotipo">
            <a href="index.html">
            <img style=" width: 53px; height: 53px;" src="./img/image 10.png" alt="logo" class="logo">
            </a>
            </button>
 
-        <img src="./img/Login.svg" alt="login" class="login">
+           <button type="submit">
+           <a href="./conta.html">
+           <img src="./img/Login.svg" alt="login" class="login">
+           </a>
+           </button>
         </div>
         
                 <div class="vl"></div> 
