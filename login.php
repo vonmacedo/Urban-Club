@@ -184,7 +184,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])){
     <h1>Legal</h1>
     <p>Politica de privacidade</p>
     <p>Termos de uso</p>  
-    <p class="rules">2023 direitos reservados</p></div>
+    <p class="rules">2023 direitos reservados</p>
   </div>
   </footer>
 </body>

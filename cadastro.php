@@ -157,7 +157,7 @@ $result = mysqli_query($conexao, "INSERT INTO usuarios(email,apelido,senha) VALU
     </div>
 
   </div>
-  <div class="canto2">
+  <div class="canto">
     <h1>Legal</h1>
     <p>Politica de privacidade</p>
     <p>Termos de uso</p>  

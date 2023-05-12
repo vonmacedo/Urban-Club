@@ -55,7 +55,6 @@ label{
     margin-inline: 1%;
 }
 
-
 .btn-login button:hover {
     cursor: pointer;
     transition: 200ms;
@@ -291,29 +290,20 @@ footer{
         .artista .art img{
           margin-left: 90px;
         height: 80px;
-        
         }
-        
-        
         .artista p{
-          
           Font-family: 'Roboto Mono',monospace;
           font-size: 20px;
           letter-spacing: -0.05em;
           display: inline;
           margin-left: 16px;
         }
-        
-  
-  
         .base{
-          display: inline-flex;
-          
+          display: inline-flex; 
         }
         .direita{
           margin: 36px;
-        margin-left: 150px;
-        
+          margin-left: 150px;
         }
         .direita h1, .canto2 h1{
           margin-bottom: 15px;
@@ -324,27 +314,25 @@ footer{
           font-size: 22px;
         }
         .direita .jm{
-  margin-bottom: 50px;
+          margin-bottom: 50px;
   
         }
         .direita p {
           color:  #000000;
-  
           font-family: 'Roboto Mono', monospace;
-      text-align: justify;
+          text-align: justify;
           font-size: 20px;
           line-height:20px;
         }
-        .canto2 p{
-  
+        .canto p{
+
           color:  #000000;
           font-family: 'Roboto Mono', monospace;
           font-size: 20px;
           line-height:20px;
         }
-        .canto2{
-        
-  font-size: 22px;
-      margin-top: 50px;
+        .canto{
+          font-size: 22px;
+          margin-top: 50px;
         }
         
