@@ -305,7 +305,7 @@ footer{
           margin: 36px;
           margin-left: 150px;
         }
-        .direita h1, .canto2 h1{
+        .direita h1{
           margin-bottom: 15px;
           color:  #000000;
   
@@ -324,6 +324,14 @@ footer{
           font-size: 20px;
           line-height:20px;
         }
+        .canto h1{
+          margin-bottom: 15px;
+          color:  #000000;
+          font-family: 'Roboto Mono', monospace;
+          letter-spacing: -0.05em;
+          font-size: 22px;
+        }
+        
         .canto p{
 
           color:  #000000;

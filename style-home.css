@@ -431,6 +431,14 @@ bottom: 0px;
 .artista .dindin .insta{
   margin-left:18px;
 }
+.cont p{
+  margin-left: 5.6em;
+  margin-top:-1em;
+}
+.cont h1{
+  margin-top: 3em;
+  margin-left: 5em;
+}
 .dindin1 .legal{
   margin-left: 0%;
   margin-top: -3%;
@@ -527,10 +535,30 @@ bottom: 0px;
       }
   
       .canto{
-        margin-left: 110px;
+        float: right;
+        margin-top: -5em;
+        margin-right: -43.5em;
         font-size: 22px;
       }
-
+      .dindin h1{
+        margin-bottom: -35px;
+        color:  #000000;
+        margin-right: -100em;
+        font-family: 'Roboto Mono', monospace;
+        letter-spacing: -0.05em;
+        font-size: 22px;
+        display: inline;
+      }
+      .dindin p {
+        color:  #000000;
+        font-family: 'Roboto Mono', monospace;
+        width: 672PX;
+        text-align: justify;
+        margin-right: -6em;
+        font-size: 20px;
+        margin-bottom: 0%;
+        line-height:20px;
+      }
     
      .trab{
      margin-top: -100%;
