@@ -160,7 +160,18 @@ button{
     justify-content: space-around;
 
 }
-
+.pe{
+    float: left;
+}
+.pe1{
+    margin-top: 3px;
+    position: absolute;
+    margin-left: 40px;
+}
+.pe2{
+  margin-bottom: -75px;
+  margin-left: 10px;
+}
 
 .Seta-Volta{
    background-color: #00050a; 

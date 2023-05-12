@@ -126,10 +126,10 @@ if(isset($_POST['email']) || isset($_POST['senha'])){
     <footer>
         <div class="base">
         <div class="esqurda">
-          <button class="pe">
+          <button class="pi">
             <div class="ub">
               <a href="index.html">
-          <img src="./img/Urban.png" height="60px"class="pe1">
+          <img src="./img/Urban.png" height="60px"class="pi1">
           
               </a> 
             </div>
@@ -150,7 +150,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])){
   </div>
   <div class="direita">
    
-    <h1>Desenvolvedores</h1>
+   <h1>Desenvolvedores</h1>
     <p>Andrey Vanolli</p>
     <p>Felipe Amaral</p>
     <p>Gabriel Cosme</p>
