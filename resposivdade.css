@@ -367,8 +367,8 @@ border-radius: 8.75em;
 
 hr{ 
 
-  height: 100px;
-  width: 1px;
+  height: 1000px;
+  width: 3px;
   background-color: #F42100;
   border: none;
 }
@@ -389,7 +389,9 @@ font-size: 1.4375em;
 font-weight: 800;
 line-height: 10%;
 border: none;
-width: 19.5em;
+margin-top: -20%;
+margin-left: -20%;
+width: 15.5em;
 border: 0.0625em solid #FF2A00;
 background-color: #00050a;
 }
@@ -417,7 +419,7 @@ border: #F42100;
 
 .conta{
     padding: 1.4375em 0.375em 1.4375em 0.375em;
-    margin-top: 2em;
+    margin-top: 1em;
     margin-left: 5em;
     color: #FFFFFF;
     font-family: 'Roboto',sans-serif;
@@ -426,8 +428,8 @@ border: #F42100;
     font-weight: 800;
     line-height: 100%;
     border: none;
-    width: 19.5em;
-    height: 4.5em;
+    width: 15.5em;
+    height: 3.5em;
     border: 0.0625em solid #FF2A00;
     background-color: #00050a;
   }
@@ -439,7 +441,7 @@ border: #F42100;
 
 .troca{
 font-weight: 700;
-font-size: 1.0625em;
+font-size: 2.0625em;
 }
 
 .pessoa{
@@ -450,30 +452,32 @@ font-size: 1.0625em;
 }
 .imgmodog{
   border-radius: 50%;
-  width: 17.5em;
-  margin-top: 0.625em;
-  height: 17.5em;
+  width: 12.5em;
+  margin-top: 5.625em;
+  margin-bottom: -13em;
+  height: 12.5em;
   background-color: #00417D;
 }
 .customacc{
-margin-left: 0.625em;
+margin-left: -31.625em;
 }
-.vl2{ top: 9.375em;
+.vl2{ 
 margin-left: -0.625em;
-margin-top: 0.625em;
 width: 86em;
 height: 0.25em;
 background-color:#F42100;
 border: none;
 }
 .image-container-mod {
+  margin-left: 35em;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .chag{
-margin-top: 90%;
-display: flex; flex-direction: column;
+margin-top: 100%;
+display: flex; 
+flex-direction: column;
 justify-content: center;
   align-items: center;
 }
@@ -482,6 +486,7 @@ justify-content: center;
   left: 50%;
 }
 #bola {
+  margin-top: 10em;
   width: 3.125em;
   height: 3.125em;
   border-radius: 50%;
@@ -492,10 +497,8 @@ justify-content: center;
 
 .trc{
     display: flex;
-    margin-left: 17.5em;
-    margin-top: -16.875em;
-    margin-bottom: 270PX;
-
+    margin-left: 13.5em;
+    margin-top: -9.875em;
 }
 .div-with-plus {
   position: relative;
@@ -530,9 +533,9 @@ justify-content: center;
 }
 .div-with-plus{
   background-color: #5c5b5b;
-  margin-top: 2.5%;
+  margin-top: 8.5%;
   border-radius: 10%;
-  margin-left: 1%;
+  margin-left: 50%;
 }
 .first{
   float: left;
