@@ -428,6 +428,13 @@ bottom: 0px;
 
   height: 100px;
 }
+.artista .dindin .insta{
+  margin-left:18px;
+}
+.dindin1 .legal{
+  margin-left: 0%;
+  margin-top: -3%;
+}
       .insta{
         margin-left: 107px;
         margin-top: 20px;
@@ -497,7 +504,7 @@ bottom: 0px;
       }
       .direita{
         margin: 50px;
-        margin-left: 220PX;
+        margin-left: -120px;
       }
       .direita h1, .canto h1{
         margin-bottom: -35px;
@@ -520,9 +527,8 @@ bottom: 0px;
       }
   
       .canto{
-        margin-left: 160px;
+        margin-left: 110px;
         font-size: 22px;
-        margin-top: 50px;
       }
 
     

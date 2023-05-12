@@ -302,7 +302,7 @@ margin-right: 250px;
       margin-left: 150px;
       
       }
-      .direita h1, .canto h1{
+      .direita h1, .canto2 h1{
         margin-bottom: 15px;
         color:  #000000;
 
@@ -322,14 +322,14 @@ margin-bottom: 50px;
         font-size: 20px;
         line-height:20px;
       }
-      .canto p{
+      .canto2 p{
 
         color:  #000000;
         font-family: 'Roboto Mono', monospace;
         font-size: 20px;
         line-height:20px;
       }
-      .canto{
+      .canto2{
       
 font-size: 22px;
     margin-top: 50px;

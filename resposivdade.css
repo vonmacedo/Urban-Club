@@ -195,9 +195,7 @@ height: 2.273em;
   margin-left: 1em;
 }
 
-.direita{
-  margin: 3.125em;
-}
+
 
 .direita p .canto p{
 font-family: 'Roboto Mono',sans-serif;
@@ -205,13 +203,16 @@ width: 31.6em;
 font-size: 18px;
 
 }
-
+.canto2{
+  margin-left: -89%;
+  margin-top: 12%;
+}
 .canto{
-  margin-left: -1em;
+  margin-left: 2em;
+  margin-right: -20em;
 }
 .legal{
-  margin-top: 8em;
-  margin-left: -18em;
+  margin-right: 0%;
 }
 .ub{
 margin-left: 0.5em;
@@ -219,8 +220,19 @@ margin-left: 0.5em;
 .dindin{
   margin-left: -5em;
 }
+.artista .dindin{
+  margin-left: 0em;
+}
+.artista .dindin img{
+  width: 2em;
+  height: 2em;
+}
 /*Código do login*/
-
+.artista2 .dindin img, .artista2 .dindin{
+  width: 2em;
+  height: 2em;
+  margin-left: 0em;
+} 
 footer img{
  height: 3em;
 }
@@ -281,9 +293,9 @@ height: 6.25em;
        display: inline;
        margin-left: 0.625em;
      }
-     .meio{
-margin: 2.25em;
-margin-right: 3em;
+     .meio .canto{
+margin: 4.25em;
+margin-right: -19em;
      }
      .artista .art {
        display: flex;
@@ -292,7 +304,7 @@ margin-right: 3em;
      }
      .artista .art img{
        margin-left: 5.625em;
-     height: 5em;
+     height: 3em;
      
      }
 
@@ -367,8 +379,8 @@ border-radius: 8.75em;
 
 hr{ 
 
-  height: 1000px;
-  width: 3px;
+  height: 5px;
+  width: 100%;
   background-color: #F42100;
   border: none;
 }
