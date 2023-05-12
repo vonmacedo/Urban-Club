@@ -26,40 +26,105 @@
  <div class="barra-perfil">
     
     <div class="usuario">
-    <div class="fotos"> 
-<img class="foto"src="./img/perfil.png" alt="foto">
+    <div > 
+<img id="imageBackground"src="./img/perfil.png" alt="foto">
 <br>
 <p class="pessoa">*INSERIR NOME USUÁRIO*</p>
 <div class="botoes">
 <button class="conta">CONFIGURAÇÃO DE CONTA</button>
 <br>
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="chag">
+<a href="index.html" class="troca">Sair</a>
 <a  href="login.html" class="troca">Trocar de Conta</a>
-
+</div>
 </div>
     </div>
 <hr> 
 <div class="customacc">
+    <h1 id="config">CONFIGURAÇÃO DO PERFIL</h1>
+    <br><br>
       <div class="image-container-mod">
-          <BR>
-        <h1 id="config">CONFIGURAÇÃO DO PERFIL</h1>
-        <br>
-        <img src="./img/perfil.png" class="imgmodog" alt="imgmod">
-            <abbr class ="trc" title="mudar a cor do fundo"> <input type="color" id="bola"></abbr>  
+        <abbr title="Clique para selecionar um icone!" >   <img src="./img/perfil.png" class="imgmodog" alt="imgmod"> <abbr > 
+            <abbr class ="trc" title="Muda a cor do fundo"> <input type="color" id="bola"></abbr>  
+            <button id="changeColorButton">SALVAR</button>       
       </div>
-      <div class="vl"></div> 
+      <div class="vl2"></div> 
+<div id="pop-up" class="hidden">
+  <img src="./img/perfil2.png" alt="Imagem 1" class="imagem-popup">
+  <img src="./img/perfil3.png" alt="Imagem 2" class="imagem-popup">
+  <img src="./img/perfil4.png" alt="Imagem 3" class="imagem-popup">
+  <img src="./img/perfil.png" alt="Imagem 4" class="imagem-popup">
+</div>
+<h1 id="config">SEUS LOCAIS FAVORITOS</h1>
+<div class="div-with-plus" >
+    <h1 class="first"><a href="mapa.php"> Adicione seu local</a></h1>
 </div>
 </div>
-
+</div>
 
 <footer>
-    <button class="pe">
-        <a href="index.html">
-    <img src="./img/logope.png" height="60px"class="pe1">
-    <img src="./img/texto.png" height="20px" class="pe2"> 
-        </a> 
-  </button>
+    <div class="base">
+    <div class="esqurda">
+      <button class="pi">
+        <div class="ub">
+          <a href="index.html">
+      <img src="./img/Urban.png" height="60px"class="pi1">
+      
+          </a> 
+        </div>
+
+    </button>
+
+<div class="insta">
+  <img src="./img/insta.png" onclick="window.location.href='https://www.instagram.com/UrbanClubSantos/';" style="cursor: pointer;"> 
+    <p ><a href="https://www.instagram.com/UrbanClubSantos/" >Instagram</a></p> 
+ </div>
+
+
+<div class="rede">
+  <img src="./img/DISCOED.png" onclick="window.location.href='https://twitter.com/UrbanClub_ofc?t=Fht9QqwDdwFeynMv1H5Nhw&s=08';"  style="cursor: pointer;">
+    <p ><a href="https://twitter.com/UrbanClub_ofc?t=Fht9QqwDdwFeynMv1H5Nhw&s=08" >Discord</a></p> 
+</div>
+
+</div>
+<div class="direita">
+
+<h1>Desenvolvedores</h1>
+<p>Andrey Vanolli</p>
+<p>Felipe Amaral</p>
+<p>Gabriel Cosme</p>
+<p>Gabriel Recco</p>
+<p class="jm">João Macedo</p>
+<h1>Contato da empresa </h1>
+<p>urbanclub07@gmail.com</p>
+
+</div>
+
+<div class="meio">
+<div class="artista">
+    <div class="art">
+     <img src="./img/artista.png"> <br>
+      <p >Patricio Diniz</p>
+    </div>
+  </div>
+<div class="insta2">
+  
+  <img src="./img/insta.png" onclick="window.location.href='https://www.instagram.com/patricio.ilustra/';"  style="cursor: pointer;"> 
+    <p ><a href="https://www.instagram.com/patricio.ilustra/">patricio.ilustra</a></p> 
+</div>
+<div class="insta2">
+  <img  src="./img/Behance.png" onclick="window.location.href='https://www.behance.net/PatricioDiniz';" style="cursor: pointer;"> 
+    <p ><a href="https://www.behance.net/PatricioDiniz">Patricio Diniz  </a></p> 
+</div>
+
+</div>
+<div class="canto">
+<h1>Legal</h1>
+<p>Politica de privacidade</p>
+<p>Termos de uso</p>  
+<p class="rules">2023 direitos reservados</p></div>
+</div>
 </footer>
 </body>
 </html>
