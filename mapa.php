@@ -34,13 +34,13 @@ include('protect.php');
         </div>
         
                 <div class="vl"></div> 
+                
          </header>
        
+             <div id="map"></div>
+             <aside><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum, aliquid temporibus adipisci nam aperiam incidunt vero, minima vitae illo minus repellat. Libero odit magni ut ducimus maxime voluptates, quia est.</p></aside>
 
-             <div id="map">
-
-    </div>
-    
+         
   
     <div class="btn-container">
     <div class="canto">

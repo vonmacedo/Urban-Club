@@ -39,7 +39,18 @@ body{
     margin-bottom: 0.5%;
     margin-top: 1.0%;
 }
-
+aside{
+    position: absolute;
+        top: 5.5em;
+        left: none;
+        width: 20em;
+        z-index: 2;
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        
+}
 .vl {
     top: 150px;
     width: 100%;
