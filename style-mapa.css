@@ -1,4 +1,4 @@
-*{
+ *{
     margin: 0;
     padding: 0;
     text-decoration: none;
@@ -39,7 +39,11 @@ body{
     margin-bottom: 0.5%;
     margin-top: 1.0%;
 }
-aside{
+.hidden{
+    display: none;
+}
+#aside{
+   
     position: absolute;
         top: 5.5em;
         left: none;

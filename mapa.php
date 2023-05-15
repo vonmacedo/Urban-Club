@@ -38,7 +38,8 @@ include('protect.php');
          </header>
        
              <div id="map"></div>
-             <aside><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum, aliquid temporibus adipisci nam aperiam incidunt vero, minima vitae illo minus repellat. Libero odit magni ut ducimus maxime voluptates, quia est.</p></aside>
+
+             <div id="aside" class="hidden"><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum, aliquid temporibus adipisci nam aperiam incidunt vero, minima vitae illo minus repellat. Libero odit magni ut ducimus maxime voluptates, quia est.</p></div>
 
          
   
