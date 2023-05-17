@@ -3,19 +3,23 @@ var map;
 var marker1 = {
   position: { lat: -23.9616758, lng: -46.3167502 },
   title: "Praça Palmares",
-  type: "skate"
+  type: "skate",
+  photoUrl: "./img/praça-plamares.png"
 };
 
 var marker2 = {
   position: { lat: -23.968807732192566, lng: -46.35150499213918 },
   title: "Pista Quebra Mar",
-  type: "skate"
+  type: "skate",
+  photoUrl: "url_da_foto_skate.jpg"
+
 };
 
 var marker3 = {
   position: { lat: -23.947473172399416, lng: -46.3538606979173 },
   title: "Lagoa Skate Plaza",
-  type: "skate"
+  type: "skate",
+  photoUrl: "url_da_foto_skate.jpg"
 };
 
 //basquete
@@ -23,19 +27,22 @@ var marker3 = {
 var marker4 = {
   position: { lat: -23.968618795130748, lng: -46.35038078657946 },
   title: "Quadra Quebra-Mar",
-  type: "basquete"
+  type: "basquete",
+  photoUrl: "url_da_foto_skate.jpg"
 };
 
 var marker5 = {
   position: { lat: -23.978323795344334, lng: -46.30096832729573 },
   title: "Quadra Abor",
-  type: "basquete"
+  type: "basquete",
+  photoUrl: "url_da_foto_skate.jpg"
 };
 
 var marker6 = {
   position: { lat: -23.93471937248423, lng: -46.321169032077776 },
   title: "Ginásio SDAS",
-  type: "basquete"
+  type: "basquete",
+  photoUrl: "url_da_foto_skate.jpg"
 };
 
 var markers = [marker1, marker2, marker3, marker4, marker5, marker6];
@@ -90,16 +97,31 @@ function initMap() {
       title: markers[i].title,
       map: map,
       visible: true,
-      type: markers[i].type
-		});
+      type: markers[i].type,
+      photoUrl: markers[i].photoUrl
+    });
     markers[i].marker = marker;
-
+  
     marker.addListener('click', function() {
       var aside = document.getElementById('aside');
       aside.classList.remove('hidden');
-      // Aqui você pode realizar qualquer lógica adicional para exibir a variável "Aside" correspondente ao marcador clicado
+
+      var markerName = document.getElementById('marker-name');
+      var markerPhoto = document.getElementById('marker-photo');
+      markerName.textContent = this.getTitle();
+      markerPhoto.src = this.photoUrl;
+      
     });
   }
+  map.addListener('click', function(event) {
+    var aside = document.getElementById('aside');
+    var asideContent = document.getElementById('aside-content');
+  
+    // Verifica se o clique ocorreu fora do aside
+    if (!aside.contains(event.target) && asideContent !== event.target) {
+      aside.classList.add('hidden'); // Adiciona a classe 'hidden' para esconder o aside
+    }
+  });
 
   document.getElementById('btn-skate').addEventListener('click', function() {
     filterMarkers('skate');
