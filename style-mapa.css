@@ -32,6 +32,18 @@ body{
     cursor: pointer;
     transition: 200ms;
 }
+#lane1 {
+ margin-right: -4%;
+  }
+  #lane1 p{
+      color: white    
+  }
+  #lane1 li{
+      gap: 10px;
+    display: flex;
+    align-items: center;
+      margin: 4%  4% ;
+  }
 #marker-name{
     display: flex;
     align-items: center;
@@ -39,6 +51,7 @@ body{
 }
 #marker-photo{
     width: 100%;
+    border-radius: 5%;
 }
 .btn-login .logotipo { 
     width: 2.9%;
@@ -54,7 +67,7 @@ body{
     position: absolute;
         top: 5.5em;
         left: none;
-        width: 20em;
+        width: 19em;
         z-index: 2;
         background-color: #00050a;
         padding: 10px;
@@ -62,17 +75,32 @@ body{
         border-top: 4.5px solid #F42100;
         border-bottom:  3px solid #F42100;;
         border-radius: 4px;
-        
 }
+#lane1{
+    margin-top: 5%;
+    border-top: 2px solid #F42100;
+    border-bottom:  2px solid #F42100;
+}
+
 h1{
     color: white;
 }
 
 #imgrow {
+    margin-top: 2%;
     gap: 45px;
     display: flex;
   justify-content: center;
     
+}
+#imgrow  button{
+    background-color: #00050a;
+    padding: 0%;
+    border: 0em;
+}
+#imgrow  button:hover
+{
+    cursor: pointer
 }
 .vl {
     top: 150px;
