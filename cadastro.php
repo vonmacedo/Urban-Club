@@ -4,13 +4,13 @@ include("config.php");
 
 if(isset($_POST['submit']))
 {
-
+  
 $email= $_POST['email'];
 $apelido=$_POST['apelido'];
-$senha= password_hash($_POST['senha'], PASSWORD_DEFAULT);
+$senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 
 
-$result = mysqli_query($conexao, "INSERT INTO usuarios(email,apelido,senha) VALUES('$email','$apelido','$senha')");
+$result = mysqli_query($conexao, "INSERT INTO cadastro(email,apelido,senha) VALUES('$email','$apelido','$senha')");
 }
 
 ?>

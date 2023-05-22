@@ -3,7 +3,7 @@
 $host = 'localhost';
 $usuario = 'root';
 $senha = '';
-$database = 'cadastro';
+$database = 'urbanclub';
  
 $conexao = new mysqli($host,$usuario,$senha,$database);
 

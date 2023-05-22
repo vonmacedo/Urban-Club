@@ -15,7 +15,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])){
       $email = $conexao ->real_escape_string($_POST['email']);
       $senha = $conexao ->real_escape_string($_POST['senha']);
 
-      $sql_code = "SELECT * FROM usuarios WHERE email = '$email'LIMIT 1";
+      $sql_code = "SELECT * FROM cadastro WHERE email = '$email'LIMIT 1";
       $sql_query = $conexao->query($sql_code) or die ("Falha na conexão do código SQL: " .$conexao->error);
 
       $quantidade = $sql_query->num_rows;
@@ -23,13 +23,14 @@ if(isset($_POST['email']) || isset($_POST['senha'])){
       if($quantidade == 1){
  
         $usuario = $sql_query->fetch_assoc();
+
         if(password_verify($senha,$usuario['senha'])){
 
-          if(!isset($SESSION)) {
+          if(!isset($_SESSION)) {
             session_start();
           }
           $_SESSION['email'] = $usuario['email'];
-          $_SESSION['senha'] = $ususario['senha'];
+          $_SESSION['senha'] = $usuario['senha'];
   
           header("Location: mapa.php");
         }
@@ -108,7 +109,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])){
     
     </div>
     
-    <button class="botao-login" type="submit" name="submit" onclick="logar(); return false"> 
+    <button class="botao-login" type="submit" onclick="logar(); return false"> 
         Login
     </button>
         <a href="confirma-email.html"class="forgot"> Esqueceu sua senha? </a>
