@@ -9,37 +9,50 @@ var markers = [
     position: { lat: -23.9616758, lng: -46.3167502 },
     title: "Praça Palmares",
     type: "skate",
-    photoUrl: "./img/praça-plamares.png"
+    photoUrl: "./img/praça-plamares.png",
+    tempo: "24 horas",
+    icpv: "Publico"
   },
   {
     position: { lat: -23.968807732192566, lng: -46.35150499213918 },
     title: "Pista Quebra Mar",
     type: "skate",
-    photoUrl: "url_da_foto_skate.jpg"
+    photoUrl: "url_da_foto_skate.jpg",
+    tempo: "Todos os dias 8H as 22H",
+    icpv: "Publico"
   },
   {
     position: { lat: -23.947473172399416, lng: -46.3538606979173 },
     title: "Lagoa Skate Plaza",
     type: "skate",
-    photoUrl: "url_da_foto_skate.jpg"
+    photoUrl: "url_da_foto_skate.jpg",
+    tempo: "todos os dias 8H AS 22H",
+    icpv: "Publico"
   },
   {
     position: { lat: -23.968618795130748, lng: -46.35038078657946 },
     title: "Quadra Quebra-Mar",
     type: "basquete",
-    photoUrl: "url_da_foto_skate.jpg"
+    photoUrl: "url_da_foto_skate.jpg",
+    tempo: "Todos os dias 8H as 22H",
+    icpv: "Publico"
   },
   {
     position: { lat: -23.978323795344334, lng: -46.30096832729573 },
     title: "Quadra Abor",
     type: "basquete",
-    photoUrl: "url_da_foto_skate.jpg"
+    photoUrl: "url_da_foto_skate.jpg",
+    tempo: "Segunda a sexta (8H AS 19H)",
+    icpv: "Publico"
   },
   {
     position: { lat: -23.93471937248423, lng: -46.321169032077776 },
     title: "Ginásio SDAS",
     type: "basquete",
-    photoUrl: "url_da_foto_skate.jpg"
+    photoUrl: "url_da_foto_skate.jpg",
+    tempo: "Segunda a sexta (14H AS 22H)",
+    icpv: "Publico"
+    
   }
 ];
 
@@ -95,18 +108,26 @@ function initMap() {
       position: markers[i].position,
       title: markers[i].title,
       map: map,
-      visible: true,
+      visible: false, // Começa oculto
       type: markers[i].type,
-      photoUrl: markers[i].photoUrl
+      photoUrl: markers[i].photoUrl,
+      tempo: markers[i].tempo, 
+      icpv: markers[i].icpv,
+      icon: {
+        url: './img/1con.png', // URL da imagem do ícone personalizado
+        scaledSize: new google.maps.Size(25, 30), // Tamanho do ícone
+        origin: new google.maps.Point(0, 0), // Ponto de origem do ícone
+        anchor: new google.maps.Point(25, 50) // Ponto de ancoragem do ícone
+      }
     });
-
+    markers[i].marker = marker;
     marker.addListener('click', function() {
       var aside = document.getElementById('aside');
       aside.classList.remove('hidden');
 
       document.getElementById('localizacao').textContent = this.position;
-      document.getElementById('aberto-24h').textContent = ""; // Preencher com a informação correta
-      document.getElementById('tipo-local').textContent = this.type;
+      document.getElementById('aberto-24h').textContent = this.tempo;
+      document.getElementById('tipo-local').textContent = this.icpv;
 
       var markerName = document.getElementById('marker-name');
       var markerPhoto = document.getElementById('marker-photo');
@@ -130,7 +151,15 @@ function initMap() {
   document.getElementById('btn-skate').addEventListener('click', function() {
     filterMarkers('skate');
   });
-
+  document.getElementById('btn-tudo').addEventListener('click', function() {
+    showAllMarkers();
+  });
+  
+  function showAllMarkers() {
+    for (var i = 0; i < markers.length; i++) {
+      markers[i].marker.setVisible(true);
+    }
+  }
   document.getElementById('btn-basquete').addEventListener('click', function() {
     filterMarkers('basquete');
   });
@@ -141,11 +170,18 @@ function initMap() {
     const userMarker = new google.maps.Marker({
       position: userPosition,
       map: map,
-      title: 'Sua localização'
+      title: 'Sua localização',
+      icon: {
+        url: './img/inicio.png', // URL da imagem do ícone personalizado
+        scaledSize: new google.maps.Size(15, 15), // Tamanho do ícone
+        origin: new google.maps.Point(0, 0), // Ponto de origem do ícone
+        anchor: new google.maps.Point(25, 50) // Ponto de ancoragem do ícone
+      }
     });
   }, function() {
     window.alert('Não foi possível obter a localização do usuário.');
   });
+  map.setOptions({ styles: [{ featureType: 'poi', elementType: 'labels', stylers: [{ visibility: 'off' }] }] });
 }
 
 function filterMarkers(type) {

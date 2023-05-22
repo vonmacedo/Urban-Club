@@ -32,6 +32,9 @@ body{
     cursor: pointer;
     transition: 200ms;
 }
+#tipo-local, #aberto-24h, #localizacao{
+    color: white;
+}
 #lane1 {
  margin-right: -4%;
   }
@@ -120,6 +123,10 @@ h1{
     top: 10px;
     z-index: 1;
   }
+  .btn-container button:hover
+  {
+    cursor: pointer;
+  }
 .btn-container button{
     text-align: center;
 letter-spacing: -0.05em;
@@ -146,6 +153,9 @@ margin-left: 887px;
     justify-content: center;
 }
 .btn-container .basquete{
+    margin-top: 5.8px;
+}
+.btn-container .tudo{
     margin-top: 5.8px;
 }
 #search-input{
