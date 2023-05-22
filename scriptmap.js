@@ -10,48 +10,48 @@ var markers = [
     title: "Praça Palmares",
     type: "skate",
     photoUrl: "./img/praça-plamares.png",
-    tempo: "24 horas",
-    icpv: "Publico"
+    tempo: "Todos os dias 24 horas.",
+    icpv: "Publico."
   },
   {
     position: { lat: -23.968807732192566, lng: -46.35150499213918 },
     title: "Pista Quebra Mar",
     type: "skate",
-    photoUrl: "url_da_foto_skate.jpg",
-    tempo: "Todos os dias 8H as 22H",
-    icpv: "Publico"
+    photoUrl: "./img/skate-quebra-mar.jpg",
+    tempo: "Todos os dias 8H as 22H.",
+    icpv: "Publico."
   },
   {
     position: { lat: -23.947473172399416, lng: -46.3538606979173 },
     title: "Lagoa Skate Plaza",
     type: "skate",
-    photoUrl: "url_da_foto_skate.jpg",
-    tempo: "todos os dias 8H AS 22H",
-    icpv: "Publico"
+    photoUrl: "./img/lagoa.png",
+    tempo: "Todos os dias 8H AS 22H.",
+    icpv: "Publico."
   },
   {
     position: { lat: -23.968618795130748, lng: -46.35038078657946 },
     title: "Quadra Quebra-Mar",
     type: "basquete",
-    photoUrl: "url_da_foto_skate.jpg",
-    tempo: "Todos os dias 8H as 22H",
-    icpv: "Publico"
+    photoUrl: "./img/bas-quebra-mar.jpeg",
+    tempo: "Todos os dias 8H as 22H.",
+    icpv: "Publico."
   },
   {
     position: { lat: -23.978323795344334, lng: -46.30096832729573 },
     title: "Quadra Abor",
     type: "basquete",
-    photoUrl: "url_da_foto_skate.jpg",
-    tempo: "Segunda a sexta (8H AS 19H)",
-    icpv: "Publico"
+    photoUrl: "./img/abor-quadra-bas.jpg",
+    tempo: "Segunda a sexta (8H AS 19H).",
+    icpv: "Publico."
   },
   {
     position: { lat: -23.93471937248423, lng: -46.321169032077776 },
     title: "Ginásio SDAS",
     type: "basquete",
-    photoUrl: "url_da_foto_skate.jpg",
-    tempo: "Segunda a sexta (14H AS 22H)",
-    icpv: "Publico"
+    photoUrl: "./img/bas-ginasio-sdas.jpg",
+    tempo: "Segunda a sexta (14H AS 22H).",
+    icpv: "Privado."
     
   }
 ];

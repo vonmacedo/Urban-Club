@@ -62,7 +62,17 @@ include('protect.php');
     </div>
     </div>
     <div id="lane2">
-  <h1>ola</h1>
+      <form  class="coment_form" action="" method="post" name="comentario">
+        <div class="input-box-coment">
+          <label for="coment"></label>
+              <div class="input-coment">
+                 <input type="text" name="comentario" id="comentario" required placeholder="Comentar">
+                 </div>
+      </div>
+      </form>
+      <div class="review">
+        <p>EXEMPLO</p>
+      </div>
     </div>
   </div>
     <div class="btn-container">
@@ -76,7 +86,6 @@ include('protect.php');
             <button id="search-btn" type="button">Pesquisar</button>
         </div>
     </div>
-     
     <script src="./scriptmap.js" defer></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzNBI2kYX3g6lGasP_8lCqTceyhZwHBXw&libraries=places&callback=initMap" async defer></script>
 </body>

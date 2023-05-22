@@ -32,6 +32,29 @@ body{
     cursor: pointer;
     transition: 200ms;
 }
+.input-box-coment{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.input-box-coment .input-coment input{
+  background-color: #00050a;
+  padding: 0%;
+  margin-left: -33%;
+  border: 0px;
+  width: 170%;
+  border-bottom:  2px solid #F42100;  
+  color: white;
+  margin-bottom: 10%;
+}
+#lane2 .review{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+        border: 1px solid #F42100;
+ }
 #tipo-local, #aberto-24h, #localizacao{
     color: white;
 }
