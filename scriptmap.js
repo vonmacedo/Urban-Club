@@ -198,3 +198,43 @@ navigator.geolocation.getCurrentPosition(function(position) {
 }, function() {
   window.alert('Não foi possível obter a localização do usuário.');
 });
+
+// Função para adicionar um lugar à tabela "lugares"
+function adicionarLugar(titulo, latitude, longitude) {
+      // Aqui você pode fazer uma requisição HTTP para enviar os dados do marcador para o servidor e adicionar o lugar à tabela "lugares"
+      // Você pode usar a biblioteca Fetch API, Axios ou qualquer outra biblioteca para fazer a requisição
+  
+   
+  
+      // Exemplo usando Fetch API
+      fetch('config.php', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+              titulo: titulo,
+              latitude: latitude,
+              longitude: longitude
+          })
+      })
+      .then(response => response.json())
+      .then(data => {
+          console.log('Lugar adicionado com sucesso:', data);
+      })
+      .catch(error => {
+          console.error('Erro ao adicionar o lugar:', error);
+      });
+  }
+  
+   
+  
+  // Supondo que você tenha a lista de marcadores "markers" com as informações de cada marcador
+  for (let i = 0; i < markers.length; i++) {
+  const marker = markers[i];
+  const titulo = marker.title;
+  const latitude = marker.position.lat;
+  const longitude = marker.position.lng;
+   // Chamada da função para adicionar o lugar na tabela "lugares"
+  adicionarLugar(titulo, latitude, longitude);
+  }
