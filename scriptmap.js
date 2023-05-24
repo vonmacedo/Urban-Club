@@ -6,6 +6,7 @@ var directionsRenderer;
 
 var markers = [
   {
+    idLugar:1,
     position: { lat: -23.9616758, lng: -46.3167502 },
     title: "Praça Palmares",
     type: "skate",
@@ -14,6 +15,7 @@ var markers = [
     icpv: "Publico."
   },
   {
+    idLugar:2,
     position: { lat: -23.968807732192566, lng: -46.35150499213918 },
     title: "Pista Quebra Mar",
     type: "skate",
@@ -22,6 +24,7 @@ var markers = [
     icpv: "Publico."
   },
   {
+    idLugar:3,
     position: { lat: -23.947473172399416, lng: -46.3538606979173 },
     title: "Lagoa Skate Plaza",
     type: "skate",
@@ -30,6 +33,8 @@ var markers = [
     icpv: "Publico."
   },
   {
+    idLugar:4,
+
     position: { lat: -23.968618795130748, lng: -46.35038078657946 },
     title: "Quadra Quebra-Mar",
     type: "basquete",
@@ -38,6 +43,8 @@ var markers = [
     icpv: "Publico."
   },
   {
+    idLugar:5,
+
     position: { lat: -23.978323795344334, lng: -46.30096832729573 },
     title: "Quadra Abor",
     type: "basquete",
@@ -46,6 +53,8 @@ var markers = [
     icpv: "Publico."
   },
   {
+    idLugar:6,
+
     position: { lat: -23.93471937248423, lng: -46.321169032077776 },
     title: "Ginásio SDAS",
     type: "basquete",
@@ -235,42 +244,34 @@ navigator.geolocation.getCurrentPosition(function(position) {
   window.alert('Não foi possível obter a localização do usuário.');
 });
 
-// Função para adicionar um lugar à tabela "lugares"
-function adicionarLugar(titulo, latitude, longitude) {
-      // Aqui você pode fazer uma requisição HTTP para enviar os dados do marcador para o servidor e adicionar o lugar à tabela "lugares"
-      // Você pode usar a biblioteca Fetch API, Axios ou qualquer outra biblioteca para fazer a requisição
+// Função para tratar o clique no botão de favoritar
+function favoritarLugar(idLugar) {
+  // Realizar requisição AJAX para favoritar o lugar
+  $.ajax({
+    url: 'favoritar.php', // Arquivo PHP que trata a requisição
+    method: 'POST',
+    data: { id_lugar: idLugar }, // Enviar o ID do lugar favoritado
+    success: function(response) {
+      // Tratar a resposta do servidor
+      var data = JSON.parse(response);
+      if (data.message) {
+        alert(data.message); // Exibir mensagem de sucesso ou erro
+      }
+    },
+    error: function(xhr, status, error) {
+      console.error(error); // Exibir erro no console, se houver
+    }
+  });
+}
+
+var btnsalvar = document.getElementById('btn-salvar');
+
+btnsalvar.addEventListener('click',function(){
+favoritarLugar();
+
+});
+
   
-   
   
-      // Exemplo usando Fetch API
-      fetch('config.php', {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-              titulo: titulo,
-              latitude: latitude,
-              longitude: longitude
-          })
-      })
-      .then(response => response.json())
-      .then(data => {
-          console.log('Lugar adicionado com sucesso:', data);
-      })
-      .catch(error => {
-          console.error('Erro ao adicionar o lugar:', error);
-      });
-  }
   
-   
   
-  // Supondo que você tenha a lista de marcadores "markers" com as informações de cada marcador
-  for (let i = 0; i < markers.length; i++) {
-  const marker = markers[i];
-  const titulo = marker.title;
-  const latitude = marker.position.lat;
-  const longitude = marker.position.lng;
-   // Chamada da função para adicionar o lugar na tabela "lugares"
-  adicionarLugar(titulo, latitude, longitude);
-  }
