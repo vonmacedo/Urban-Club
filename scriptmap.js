@@ -4,6 +4,8 @@ var currentRoute = null;
 var directionsService;
 var directionsRenderer;
 
+const tipoImagem = document.getElementById('tipo-imagem');
+const typel = document.getElementById('typel')
 var markers = [
   {
     position: { lat: -23.9616758, lng: -46.3167502 },
@@ -135,6 +137,14 @@ function initMap() {
       markerPhoto.src = this.photoUrl;
 
       currentMarkerPosition = this.getPosition();
+;
+if (this.type === 'basquete') {
+  tipoImagem.src = './img/basquete.png';
+  typel.textContent = 'Basquete';
+} else if (this.type === 'skate') {
+  tipoImagem.src = './img/skate.png';
+  typel.textContent = 'Skate';
+}
     });
   }
 
@@ -264,7 +274,6 @@ function adicionarLugar(titulo, latitude, longitude) {
   }
   
    
-  
   // Supondo que você tenha a lista de marcadores "markers" com as informações de cada marcador
   for (let i = 0; i < markers.length; i++) {
   const marker = markers[i];
