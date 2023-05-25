@@ -77,14 +77,24 @@ body{
 }
 #marker-photo{
     width: 100%;
+    height: 100%;
     border-radius: 5%;
 }
-.btn-login .logotipo { 
-    width: 2.9%;
-    margin-left: 0.8%;
-    margin-bottom: 0.5%;
-    margin-top: 1.0%;
-}
+#local-info li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 4% 4%;
+  }
+  #tipo-imagem {
+    width: 35px;
+    height: 30px;
+    color: white;
+  }
+  
+  #typel {
+    color: white;
+  }
 .hidden{
     display: none;
 }
