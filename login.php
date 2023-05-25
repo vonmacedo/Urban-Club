@@ -21,10 +21,10 @@ if(isset($_POST['email']) || isset($_POST['senha'])){
       $quantidade = $sql_query->num_rows;
 
       if($quantidade == 1){
- 
-        $usuario = $sql_query->fetch_assoc();
 
         if(password_verify($senha,$usuario['senha'])){
+          
+          $usuario = $sql_query->fetch_assoc();
 
           if(!isset($_SESSION)) {
             session_start();
@@ -50,6 +50,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style-login.css">
+    <script src= "./scriptcadastro.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
@@ -77,7 +78,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])){
             <hr>
 
         <main id="container">
-            <form  class="login_form" action="" method="post" name="login">
+            <form  class="login_form" method="post" name="login">
                
             <div class="imagens">
                 <img  src="./img/facebook.png" height="60px" >
@@ -90,15 +91,16 @@ if(isset($_POST['email']) || isset($_POST['senha'])){
         <div class="input-box">
             <label for="Email">Email</label>
                 <div class="input-field">
-                   <input type="email" name="email"  placeholder="Exemplo@gmail.com" required>
+                   <input type="email" name="email" id="email" placeholder="Exemplo@gmail.com" required>
                    <br><br>
                 </div>
         </div>
         <div class="input-box">
             <label for="Senha">Senha</label>
                 <div class="input-field">
-                   <input type="password" name="senha" required>
+                   <input type="password" name="senha" id="senha" required>
                    <br><br>
+                   <small id="textForm"></small>
                    </div>
                 </div>
                 <div class="input-check">

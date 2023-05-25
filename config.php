@@ -2,7 +2,7 @@
 
 $host = 'localhost';
 $usuario = 'root';
-$senha = 'root';
+$senha = '';
 $database = 'urbanclub';
  
 $conexao = new mysqli($host,$usuario,$senha,$database);
