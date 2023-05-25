@@ -3,7 +3,7 @@ var currentMarkerPosition;
 var currentRoute = null;
 var directionsService;
 var directionsRenderer;
-
+var centerButton = document.getElementById("center-button");
 const tipoImagem = document.getElementById('tipo-imagem');
 const typel = document.getElementById('typel')
 var markers = [
@@ -173,12 +173,28 @@ if (this.type === 'basquete') {
   document.getElementById('btn-tudo').addEventListener('click', function() {
     showAllMarkers();
   });
-  
   function showAllMarkers() {
     for (var i = 0; i < markers.length; i++) {
       markers[i].marker.setVisible(true);
     }
   }
+  centerButton.addEventListener("click", function() {
+    // Verifica se o navegador suporta a API de geolocalização
+    if (navigator.geolocation) {
+        // Obtém a localização atual do usuário
+        navigator.geolocation.getCurrentPosition(function(position) {
+            // Obtém as coordenadas de latitude e longitude da localização atual
+            var userLocation = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude,
+                behavior: 'smooth'
+            };
+
+            // Centraliza o mapa na localização atual do usuário
+            map.setCenter(userLocation);
+        });
+    }
+});
   document.getElementById('btn-basquete').addEventListener('click', function() {
     filterMarkers('basquete');
   });
@@ -279,11 +295,7 @@ var btnsalvar = document.getElementById('btn-salvar');
 btnsalvar.addEventListener('click',function(){
 favoritarLugar();
 
-});
-
-  
-  
-  
+});  
    
   // Supondo que você tenha a lista de marcadores "markers" com as informações de cada marcador
   for (let i = 0; i < markers.length; i++) {
@@ -294,4 +306,3 @@ favoritarLugar();
    // Chamada da função para adicionar o lugar na tabela "lugares"
   adicionarLugar(titulo, latitude, longitude);
   }
-  
