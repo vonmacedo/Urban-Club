@@ -27,6 +27,7 @@ $result = mysqli_query($conexao, "INSERT INTO cadastro(email,apelido,senha) VALU
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700, 800&display=swap">
     <link rel="stylesheet" href="./resposivdade.css">
+    
     <title>
         Urban Club 
     </title>
@@ -85,7 +86,7 @@ $result = mysqli_query($conexao, "INSERT INTO cadastro(email,apelido,senha) VALU
         <div class="input-box-confirmar-senha">
             <label for="confirmar-senha">Confirmar senha</label>
                 <div class="input-field">
-                   <input type="password" name="confirmar-senha" id= "confirmar-senha" required>
+                   <input type="password" name="confirmar" id= "confirmar" required>
                    <br><br>
                    </div>
         </div>
@@ -95,8 +96,6 @@ $result = mysqli_query($conexao, "INSERT INTO cadastro(email,apelido,senha) VALU
             </button>
     </form> 
  </main>
-
-
     
     <main id="content-primary">
     </main>

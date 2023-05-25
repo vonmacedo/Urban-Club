@@ -478,6 +478,7 @@ bottom: 0px;
       }
       .artista .art {
         display: flex;
+        margin-top: 35px;
         align-items: center;
       }
       .artista .art img{
@@ -512,7 +513,7 @@ bottom: 0px;
       }
       .direita{
         margin: 50px;
-        margin-left: -120px;
+        margin-left: -10px;
       }
       .direita h1, .canto h1{
         margin-bottom: -35px;
@@ -536,10 +537,11 @@ bottom: 0px;
   
       .canto{
         float: right;
-        margin-top: -5em;
+        margin-top: -4.0em;
         margin-right: -43.5em;
         font-size: 22px;
       }
+
       .dindin h1{
         margin-bottom: -35px;
         color:  #000000;
@@ -549,6 +551,7 @@ bottom: 0px;
         font-size: 22px;
         display: inline;
       }
+      
       .dindin p {
         color:  #000000;
         font-family: 'Roboto Mono', monospace;

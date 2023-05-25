@@ -109,7 +109,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])){
     
     </div>
     
-    <button class="botao-login" type="submit" onclick="logar(); return false"> 
+    <button class="botao-login" type="submit" onclick='entrar()'> 
         Login
     </button>
         <a href="confirma-email.html"class="forgot"> Esqueceu sua senha? </a>
