@@ -11,6 +11,9 @@ $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 
 
 $result = mysqli_query($conexao, "INSERT INTO cadastro(email,apelido,senha) VALUES('$email','$apelido','$senha')");
+
+header("Location: login.php");
+
 }
 
 ?>
@@ -22,6 +25,7 @@ $result = mysqli_query($conexao, "INSERT INTO cadastro(email,apelido,senha) VALU
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style-cadastro.css">
+    <script src= "./scriptcadastro.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
@@ -79,14 +83,14 @@ $result = mysqli_query($conexao, "INSERT INTO cadastro(email,apelido,senha) VALU
         <div class="input-box-senha">
             <label for="Senha">Senha</label>
                 <div class="input-field">
-                   <input type="password" name="senha" id="senha" required>
+                   <input type="password" name="senha" id="senha" required onchange='confereSenha()';>
                    <br><br>
                 </div>
         </div>
         <div class="input-box-confirmar-senha">
             <label for="confirmar-senha">Confirmar senha</label>
                 <div class="input-field">
-                   <input type="password" name="confirmar" id= "confirmar" required>
+                   <input type="password" name="confirmar" id= "confirmar" required onchange='confereSenha()';>
                    <br><br>
                    </div>
         </div>
