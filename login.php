@@ -21,10 +21,11 @@ if(isset($_POST['email']) || isset($_POST['senha'])){
       $quantidade = $sql_query->num_rows;
 
       if($quantidade == 1){
+        
+        $usuario = $sql_query->fetch_assoc();
 
         if(password_verify($senha,$usuario['senha'])){
           
-          $usuario = $sql_query->fetch_assoc();
 
           if(!isset($_SESSION)) {
             session_start();
