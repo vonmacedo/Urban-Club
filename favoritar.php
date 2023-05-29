@@ -1,36 +1,30 @@
 <?php
+// Receba os dados do lugar favoritado via POST
+$latitude = $_POST['latitude'];
+$longitude = $_POST['longitude'];
 
-include("config.php");
+// Conecte-se ao banco de dados
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "lugares_favoritos";
 
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-
-
-// Verificar se o usuário está autenticado e obter o ID do usuário
-
-// Obtém o ID do lugar favoritado enviado via POST
-$idLugar = $_POST['id_lugar'];
-
-// Verificar se o lugar já está favoritado pelo usuário
-$stmt = $conexao->prepare('SELECT * FROM favoritos WHERE id_cadastro AND id_lugar = ?');
-$stmt->bind_param('ii',  $idLugar);
-$stmt->execute();
-$resultado = $stmt->get_result();
-
-if ($resultado->num_rows > 0) {
-    // O lugar já está favoritado pelo usuário, você pode mostrar uma mensagem ou retornar um status indicando isso
-    echo json_encode(['message' => 'Lugar já está favoritado']);
-    exit;
+// Verifique a conexão
+if ($conn->connect_error) {
+    die("Falha na conexão: " . $conn->connect_error);
 }
 
-// Inserir o favorito na tabela de favoritos
-$stmt = $conexao->prepare('INSERT INTO fav(id_lugar) VALUES (?, ?)');
+// Insira os dados na tabela lugares_favoritos
+$sql = "INSERT INTO lugares_favoritos (nome, latitude, longitude)
+        VALUES ('Lugar Favoritado', '$latitude', '$longitude')";
 
-if ($stmt->execute()) {
-    echo json_encode(['message' => 'Lugar favoritado com sucesso']);
+if ($conn->query($sql) === TRUE) {
+    echo "Lugar favoritado com sucesso!";
 } else {
-    echo json_encode(['message' => 'Erro ao favoritar o lugar']);
+    echo "Erro ao favoritar o lugar: " . $conn->error;
 }
 
-$stmt->close();
-$conexao->close();
+$conn->close();
 ?>

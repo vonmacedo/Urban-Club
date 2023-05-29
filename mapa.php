@@ -68,7 +68,7 @@ include('protect.php');
           </div>        
         </div>
         <div id="imgrow">
-            <button id="btn-rota" type="button"><img src="./img/rota.png" alt="rotas"></button>
+            <button id="btn-rota" type="button" ><img src="./img/rota.png" alt="rotas"></button>
             <button id="btn-salvar" type="button"><img src="./img/salvar.png" alt="salvar"></button>
             <button id="btn-coment" type="button"><img src="./img/coment.png" alt="comentário"></button>
             <button id="btn-compar" type="button"><img src="./img/compar.png" alt="compartilhar"></button>        

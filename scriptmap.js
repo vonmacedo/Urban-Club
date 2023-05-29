@@ -113,7 +113,6 @@ function initMap() {
   }
 
   document.getElementById('search-btn').addEventListener('click', searchPlace);
-
   for (var i = 0; i < markers.length; i++) {
     var marker = new google.maps.Marker({
       position: markers[i].position,
@@ -124,6 +123,7 @@ function initMap() {
       photoUrl: markers[i].photoUrl,
       tempo: markers[i].tempo, 
       icpv: markers[i].icpv,
+      idlugar: markers[i].idlugar,
       icon: {
         url: './img/1con.png', // URL da imagem do ícone personalizado
         scaledSize: new google.maps.Size(25, 30), // Tamanho do ícone
@@ -145,18 +145,16 @@ function initMap() {
       markerName.textContent = this.getTitle();
       markerPhoto.src = this.photoUrl;
 
-      currentMarkerPosition = this.getPosition();
-;
-if (this.type === 'basquete') {
-  tipoImagem.src = './img/basquete.png';
-  typel.textContent = 'Basquete';
-} else if (this.type === 'skate') {
-  tipoImagem.src = './img/skate.png';
-  typel.textContent = 'Skate';
-}
-    });
-  }
-
+   
+    currentMarkerPosition = this.getPosition();
+    if (this.type === 'basquete') {
+      tipoImagem.src = './img/basquete.png';
+      typel.textContent = 'Basquete';
+    } else if (this.type === 'skate') {
+      tipoImagem.src = './img/skate.png';
+      typel.textContent = 'Skate';
+    }
+  });
   map.addListener('click', function(event) {
     var aside = document.getElementById('aside');
     var asideContent = document.getElementById('aside-content');
@@ -217,6 +215,26 @@ if (this.type === 'basquete') {
     window.alert('Não foi possível obter a localização do usuário.');
   });
   map.setOptions({ styles: [{ featureType: 'poi', elementType: 'labels', stylers: [{ visibility: 'off' }] }] });
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('btn-salvar').addEventListener('click', function(event) {
+        event.preventDefault();
+
+        var idLugar = document.getElementById('id_lugar').value;
+        var lugar = document.getElementById('lugar').value;
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'favoritar.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                console.log(xhr.responseText);
+            } else if (xhr.status !== 200) {
+                console.log('Erro: ' + xhr.status);
+            }
+        };
+        xhr.send('id_lugar=' + encodeURIComponent(idLugar) + '&lugar=' + encodeURIComponent(lugar));
+    });
+});
 }
 
 function filterMarkers(type) {
@@ -269,40 +287,4 @@ navigator.geolocation.getCurrentPosition(function(position) {
 }, function() {
   window.alert('Não foi possível obter a localização do usuário.');
 });
-
-// Função para tratar o clique no botão de favoritar
-function favoritarLugar(idLugar) {
-  // Realizar requisição AJAX para favoritar o lugar
-  $.ajax({
-    url: 'favoritar.php', // Arquivo PHP que trata a requisição
-    method: 'POST',
-    data: { id_lugar: idLugar }, // Enviar o ID do lugar favoritado
-    success: function(response) {
-      // Tratar a resposta do servidor
-      var data = JSON.parse(response);
-      if (data.message) {
-        alert(data.message); // Exibir mensagem de sucesso ou erro
-      }
-    },
-    error: function(xhr, status, error) {
-      console.error(error); // Exibir erro no console, se houver
-    }
-  });
 }
-
-var btnsalvar = document.getElementById('btn-salvar');
-
-btnsalvar.addEventListener('click',function(){
-favoritarLugar();
-
-});  
-   
-  // Supondo que você tenha a lista de marcadores "markers" com as informações de cada marcador
-  for (let i = 0; i < markers.length; i++) {
-  const marker = markers[i];
-  const titulo = marker.title;
-  const latitude = marker.position.lat;
-  const longitude = marker.position.lng;
-   // Chamada da função para adicionar o lugar na tabela "lugares"
-  adicionarLugar(titulo, latitude, longitude);
-  }
