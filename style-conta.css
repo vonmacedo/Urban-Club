@@ -12,23 +12,29 @@ body{
     width:100% 
 }
 
-.logotipo{
-    display: flex;
-    justify-content: space-between;
-}
-.logo{
-    width: 2.9%;
-    margin-left: 0.8%;
-    margin-bottom: 0.5%;
-    margin-top: 1.0%;
+.btn-login {
+  display: flex;
+  justify-content: space-between;
 }
 
-.login{
-    width: 2.0%;
-    margin-right: 1.0%;
-    background-color: transparent;
-    border: none;
-    margin-inline: 1%;
+.btn-login button {
+  width: 2.0%;
+  margin-right: 1.0%;
+  background-color: transparent;
+  border: none;
+  margin-inline: 1%;
+}
+
+.btn-login button:hover {
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.btn-login .logotipo { 
+  width: 2.9%;
+  margin-left: 0.8%;
+  margin-bottom: 0.5%;
+  margin-top: 1.0%;
 }
 /* HEADER FINAL*/
 
