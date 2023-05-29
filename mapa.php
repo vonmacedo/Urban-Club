@@ -18,13 +18,13 @@ include('protect.php');
  
     
 </head>
-<body>s
+<body>
     <header>
         <div class="btn-login">
            <button class="logotipo">
-           <a href="index.html">
-           <img style=" width: 53px; height: 53px;" src="./img/image 10.png" alt="logo" class="logo">
-           </a>
+           <a href="./index.html">
+            <img style=" width: 53px; height: 53px;" src="./img/image 10.png" alt="logo" class="logo">
+            </a>
            </button>
 
            <button type="submit">
