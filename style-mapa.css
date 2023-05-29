@@ -225,10 +225,12 @@ h1{
     position: relative;
   }
   .btn-container {
+    margin-top: -15px;
     position: absolute;
     display: flex;
     top: 10px;
-    z-index: 1;
+height: 0px
+;    z-index: 1;
   }
   .btn-container button:hover
   {
@@ -277,4 +279,11 @@ height: 26.4px;
     width: 270px;
 }
 
+
+@media (min-width: 1300px) and (max-width: 1400px) {
+.pesq{
+  margin-left: 40em;
+}
+
+}
     

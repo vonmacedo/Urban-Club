@@ -185,7 +185,8 @@ height: 2.273em;
 }
 
 .artista{
-  margin: 1.25em 0.625em;
+margin-top: 10.76em;
+margin-left: -15.5em;
 }
 
 .artista img{
@@ -207,12 +208,13 @@ font-size: 18px;
   margin-left: -89%;
   margin-top: 12%;
 }
-.canto{
-  margin-left: 2em;
-  margin-right: -20em;
+.canto p{
+  margin-left: -1000px;
+  margin-right: -500em;
 }
-.legal{
-  margin-right: 0%;
+.legal p{
+color: white;
+  margin-left: -500000000000px;
 }
 .ub{
 margin-left: 0.5em;
@@ -227,6 +229,7 @@ margin-left: 0.5em;
   width: 2em;
   height: 2em;
 }
+
 /*Código do login*/
 .artista2 .dindin img, .artista2 .dindin{
   width: 2em;
@@ -262,8 +265,12 @@ height: 6.25em;
        display: inline;
        margin-left: 0.625em;
      }
-
-
+.cont{
+  margin-left: 0.7em;
+}
+.cont p{
+margin-top: 0.2em;
+}
      .insta2{
       margin-left: 2em;
        margin-top: 1.25em;
@@ -325,8 +332,8 @@ margin-right: -19em;
      }
      .direita{
        margin: 2.25em;
-     margin-left: 4.375em;
-     margin-right: 3em;
+     margin-left: -12em;
+     margin-right: em;
      }
      .direita h1, .canto h1{
        margin-bottom: 0.9375em;
@@ -356,9 +363,7 @@ margin-bottom: 3.125em;
        line-height:1.25em;
      }
      .canto{
-     
 font-size: 22px;
-   margin-top: 3.125em;
      }
     
 
@@ -537,7 +542,7 @@ justify-content: center;
 
 .div-with-plus::after {
   width: 0.625em;
-  margin-top: 23%;
+  margin-top: 23%;  
   height: 50%;
   border-radius: 100%;
   left: 50%;
@@ -553,4 +558,11 @@ justify-content: center;
   float: left;
   margin: 78% 0% 0% 16%;
 }
+
+/* MAPA /*/
+
+.pesq{
+  margin-top: 100px;
+}
+
 }
