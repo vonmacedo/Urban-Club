@@ -124,35 +124,35 @@ margin-top: 1.923em;
 margin-bottom:5.769em ;
    }
 
-   .md{
-margin-top: 0.727em;
-margin-bottom: -0.909em ;
-margin-left: 0.636em;
-   }
+    .md{
+  margin-top: 0.727em;
+  margin-bottom: -0.909em ;
+  margin-left: 0.636em;
+    }
 
-  .p3{
-    margin-left: 18.8em;
+    .p3{
+      margin-left: 18.8em;
 
-    margin-top:3.571em;
-    margin-bottom: -5.476em;
+      margin-top:3.571em;
+      margin-bottom: -5.476em;
+    }
+
+  .p4{
+    margin-left: 20em;
+    height: 10em ;
   }
 
-.p4{
-  margin-left: 20em;
-  height: 10em ;
-}
+  .explore1{
+    width: 28.6em;
+    margin-left: -4.2em;
+    margin-right: -0.25em;
+  }
 
-.explore1{
-  width: 28.6em;
-  margin-left: -4.2em;
-  margin-right: -0.25em;
-}
-
-.explore2{
-  width: 28.6em;
-height: 21.5em;
-  margin-bottom:-0.25em ;
-}
+  .explore2{
+    width: 28.6em;
+  height: 21.5em;
+    margin-bottom:-0.25em ;
+  }
 
 .pe{
   margin-left: 1.375em;
@@ -367,6 +367,12 @@ font-size: 22px;
      }
     
 
+@media screen {
+  
+}
+
+
+
 /*Página de perfil */
 .barra-perfil{
  
@@ -566,3 +572,66 @@ justify-content: center;
 }
 
 }
+
+
+@media (min-width: 1600px) and (max-width: 1800px) {
+  .fotos{
+   
+    gap: 1.25em;
+
+   }
+
+   .emissario{
+    visibility: hidden;
+   }
+
+   .basquete{
+    width: 31.25em;
+    margin-left: 34.375em;
+    margin-right: 10em;
+    margin-top: 3.125em;
+
+   }
+
+   .lio{
+    width: 31.25em;
+
+    margin-top: 3.125em;
+   }
+
+   .fp{
+margin-left: 40em;
+
+   }
+
+   .md{
+    margin-top: 0.727em;
+    margin-bottom: -0.909em ;
+    margin-left: 0.636em;
+       }
+    
+      .p3{
+        margin-left: 25.7em;
+    
+        margin-top:3.571em;
+        margin-bottom: -5.476em;
+      }
+    
+    .p4{
+      margin-left: 27em;
+      height: 10em ;
+    }
+    
+    .explore1{
+      width: 28.6em;
+      margin-left: -4.2em;
+      margin-right: -0.25em;
+    }
+    
+    .explore2{
+      width: 28.6em;
+    height: 21.5em;
+      margin-bottom:-0.25em ;
+    }
+
+   }
