@@ -50,7 +50,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style-login.css">
+    <link rel="stylesheet" href="./css/style-login">
     <script src= "./scriptcadastro.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,12 +65,12 @@ if(isset($_POST['email']) || isset($_POST['senha'])){
         <div class="btn-login">
             
             <button class="logotipo">
-            <a href="index.html">
+           <a href="index.html">
             <img style=" width: 53px; height: 53px;" src="./img/image 10.png" alt="logo" class="logo">
             </a>
         </button>
             <button class="seta">
-               <a href="index.html">
+               <a href="./index.html">
                 <img style="background-position: center; background-repeat: repeat; width: 25px ;" src="./img/seta.png">
                </a>
             </button>
