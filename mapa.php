@@ -11,8 +11,8 @@ include('protect.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style-mapa.css">
-    <script src= "./scriptmap.js" defer></script>
+    <link rel="stylesheet" href="./css/style-mapa.css">
+    <script src= "./js/scriptmap.js" defer></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzNBI2kYX3g6lGasP_8lCqTceyhZwHBXw&libraries=places&callback=initMap" async defer></script>
     <title>Urban Club</title>
  

@@ -348,3 +348,34 @@ footer{
           margin-top: 50px;
         }
         
+
+         /* RESPONSIVIDADE /*/
+
+
+      @media (min-width: 1300px) and (max-width: 1400px) {
+        /* FOOTER /*/
+        .pi{
+          margin-left: 2.5em;
+          margin-right: 50px;
+        }
+  
+        .insta{
+          margin-left:4.3em;
+        }
+  
+        .rede{
+          margin-left: 4.3em;
+        }
+  
+  
+        .meio{
+          visibility: hidden;
+        }
+  
+        .direita{
+  
+        margin-right: -31.25em;
+        }
+        }
+  
+  
