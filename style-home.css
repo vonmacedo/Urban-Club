@@ -302,7 +302,7 @@ img .loc{
   position: absolute;
   padding: 8px;
   text-align: center;
-  margin-left: 735px;
+  margin-left: 690px;
   margin-top: 75px;
   margin-bottom: -115px;
   font-size: 21px;
@@ -314,7 +314,7 @@ img .loc{
   margin-top: 50px;
   position: absolute;
   padding: 17px;
-  margin-left: 742px;
+  margin-left: 690px;
   height: 200px;
   width: 508px;
   font-size: 20px;
@@ -450,7 +450,25 @@ bottom: 0px;
         align-items: center;
       }
     
+.tt{
+  margin-left: 107px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
 
+.tt img{
+  height: 40px;
+}
+
+.tt p{
+        
+  font-family: 'Roboto Mono',monospace;
+  font-size: 20px;
+  letter-spacing: -0.05em;
+  display: inline;
+  margin-left: 10px;
+}
       .insta p{
         
         font-family: 'Roboto Mono',monospace;

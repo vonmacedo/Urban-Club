@@ -272,6 +272,10 @@ footer{
           display: flex;
           align-items: center;
         }
+        .rede img{
+
+        height: 40px;
+        }
    
         .rede p{
           font-family: 'Roboto Mono',monospace;

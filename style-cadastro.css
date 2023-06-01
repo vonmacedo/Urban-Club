@@ -278,6 +278,10 @@ footer{
           display: inline;
           margin-left: 10px;
         }
+
+        .rede img {
+          height: 40px;
+        }
         .meio{
   margin: 36px 172px;
   
