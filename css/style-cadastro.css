@@ -353,6 +353,12 @@ footer{
 
 
       @media (min-width: 1300px) and (max-width: 1400px) {
+        .login_form{
+        margin-bottom: 30px;
+        }
+        
+        
+        
         /* FOOTER /*/
         .pi{
           margin-left: 2.5em;
