@@ -1,3 +1,11 @@
+<?php
+
+session_start();
+
+ob_start();
+include('config.php');
+
+?>
 <!DOCTYPE html>
 <html lang="pt-Br">
 <head>
@@ -14,6 +22,7 @@
     </title>
 </head>
 <body>
+  
     <header>
         <div class="btn-login">
 
@@ -30,29 +39,86 @@
         </div>
             <hr>
 
+            <?php
+  $dados 
+  =filter_input_array(INPUT_POST, FILTER_DEFAULT);
+  $query_email = "SELECT id_cadastro, email, apelido
+  FROM cadastro
+  WHERE email = ?
+  LIMIT 1";
+
+$result_email = $conexao->prepare($query_email);
+if ($result_email === false) {
+die("Error preparing the statement: " . $conexao->error);
+}
+
+$email = $dados['email'];
+$result_email->bind_param('s', $email);
+$result_execution = $result_email->execute();
+
+if ($result_execution === false) {
+die("Error executing the statement: " . $result_email->error);
+}
+
+$result_email->store_result();
+
+if ($result_email->num_rows != 0) {
+$result_email->bind_result($id_cadastro, $email, $apelido);
+$result_email->fetch();
+
+$row_email = [
+'id_cadastro' => $id_cadastro,
+'email' => $email,
+'apelido' => $apelido
+];
+
+var_dump($row_email);
+
+$recuperar_senha = password_hash($row_email['id_cadastro'] . $row_email['email'],
+PASSWORD_DEFAULT);
+
+
+$query_up_email = "UPDATE cadastro
+
+SET recuperar_senha =:recuperar_senha
+WHERE id_cadastro =:id_cadastro
+LIMIT 1";
+
+$editar_email = $conexao->prepare($query_up_email);
+$editar_email->bind_param(':recuperar_senha', $dados[email]);
+    $editar_email->bind_param(':id_cadastro', $row_email['id_cadastro']);
+
+    
+
+
+}
+
+
+
+$result_email->close();
+$conexao->close();
+
+
+  ?>
         <main id="container">
             <form class="nova-senha_form" action="" method="post" name="nova-senha">
     <div id="inputs">
       
         <div class="input-box-senha">
-            <label for="Senha">Nova Senha</label>
+            <label for="Email">E-mail</label>
                 <div class="input-field">
-                   <input type="password" name="Senha" required>
+                   <input type="text" name="email" placeholder="Digite seu email">
                    <br><br>
                 </div>
         </div>
-        <div class="input-box-confirmar-senha">
-            <label for="confirmar-senha">Confirmar senha</label>
-                <div class="input-field">
-                   <input type="password" name="confirmar-senha" required>
-                   <br><br>
-                   </div>
+     
                  
         </div>
 
     </div>
-    <button class="botao-login" type="submit" onclick="window.location.href='login.html'"> 
-        Login
+
+    <input type="submit" class="botao-login" name="recuperar" value="Recuperar">
+        
     </button>
     </form> 
  </main>
