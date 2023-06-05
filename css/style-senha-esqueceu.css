@@ -3,10 +3,12 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
+    background-color: white;
+
 }
 
 body{ 
-    background-color: #00050a;
+    background-color: white;
     font-family: 'Roboto ', sans-serif;
     height: 100vh;
     width:100% 
