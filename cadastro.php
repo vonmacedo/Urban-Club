@@ -93,6 +93,12 @@ header("Location: login.php");
                    <br><br>
                    </div>
         </div>
+        <div class="check-box">
+                    <input type = "checkbox">
+                    <a> Aceito os Termos de Uso
+                      
+                    </a>
+                </div>
     </div>
             <button class="botao-cadastrar" type="submit" name ="submit" href="conta.html"> 
                 Cadastrar
