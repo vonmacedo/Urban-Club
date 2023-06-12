@@ -216,24 +216,7 @@ function initMap() {
   });
   map.setOptions({ styles: [{ featureType: 'poi', elementType: 'labels', stylers: [{ visibility: 'off' }] }] });
   document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('btn-salvar').addEventListener('click', function(event) {
-        event.preventDefault();
-
-        var idLugar = document.getElementById('id_lugar').value;
-        var lugar = document.getElementById('lugar').value;
-
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'favoritar.php', true);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                console.log(xhr.responseText);
-            } else if (xhr.status !== 200) {
-                console.log('Erro: ' + xhr.status);
-            }
-        };
-        xhr.send('id_lugar=' + encodeURIComponent(idLugar) + '&lugar=' + encodeURIComponent(lugar));
-    });
+    
 });
 }
 
@@ -288,3 +271,43 @@ navigator.geolocation.getCurrentPosition(function(position) {
   window.alert('Não foi possível obter a localização do usuário.');
 });
 }
+
+
+
+  function addfav(marker) {
+    var dados = {
+      idLugar: marker.idLugar,
+      title: marker.title
+    };
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "mapa.php", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        // A solicitação foi concluída com sucesso
+        console.log(xhr.responseText);
+      }
+    };
+    xhr.send(JSON.stringify(dados));
+  }
+
+
+ 
+
+  document.getElementById('btn-salvar').addEventListener('click', function() {
+    var marker = markers.find(function(m) {
+      return m.position.lat === currentMarkerPosition.lat() && m.position.lng === currentMarkerPosition.lng();
+    });
+  
+    if (marker) {
+      addfav(marker);
+    }
+  });
+ 
+  
+  
+  
+  
+
+

@@ -1,7 +1,36 @@
 <?php
 
-include('protect.php');
+include('config.php');
 
+session_start();
+
+// Verifica se o usuário está logado
+if (!isset($_SESSION['email'])) {
+    echo "Usuário não está logado.";
+    exit;
+}
+
+// Recupera o id_cadastro do usuário logado na sessão
+$idCadastro = $_SESSION['id_cadastro'];
+
+$data = json_decode(file_get_contents("php://input"), true);
+
+// Insere os dados na tabela de favoritos
+$idLugar = $data["idLugar"];
+$title = $data["title"];
+
+$sql = "INSERT INTO FAV (id_lugar, lugar, id_cadastro) VALUES (?, ?, ?)";
+$stmt = $conexao->prepare($sql);
+$stmt->bind_param("iss", $idLugar, $title, $idCadastro);
+
+if ($stmt->execute()) {
+    echo "Favorito adicionado com sucesso.";
+} else {
+    echo "Erro ao adicionar favorito: " . $stmt->error;
+}
+
+$stmt->close();
+$conexao->close();
 ?>
 
 <!DOCTYPE html>

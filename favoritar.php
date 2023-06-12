@@ -18,7 +18,7 @@ $username = "root";
 
 $password = "root";
 
-$dbname = "places";
+$dbname = "urbanclub";
 
 
 
@@ -39,7 +39,7 @@ if ($conn->connect_error) {
 
 // Insira os dados na tabela lugares_favoritos
 
-$sql = "INSERT INTO lugares_favoritos (latitude, longitude)
+$sql = "INSERT INTO fav (latitude, longitude)
 
         VALUES ('$latitude', '$longitude')";
 
