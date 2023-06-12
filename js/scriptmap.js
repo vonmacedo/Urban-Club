@@ -311,3 +311,26 @@ navigator.geolocation.getCurrentPosition(function(position) {
   
 
 
+
+document.addEventListener("DOMContentLoaded", function() {
+  var form = document.querySelector(".coment_form");
+  var input = document.querySelector("#comentario");
+  var review = document.querySelector(".review");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    var comentario = input.value;
+    if (comentario.trim() !== "") {
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "comentario.php", true);
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          review.innerHTML = "<p>" + comentario + "</p>";
+          input.value = "";
+        }
+      };
+      xhr.send("comentario=" + encodeURIComponent(comentario));
+    }
+  });
+});

@@ -37,193 +37,91 @@ body{
   margin-top: 1.0%;
 }
 /* HEADER FINAL*/
-
-/* BARRA DO CANTO*/
-
-.barra-perfil{
- 
-    display: flex;
+.start{
+  border-top:  5px solid #F42100;
+  margin-bottom: 20px;
+  overflow: auto; 
+}
+.start button{
+  padding: 5px 10px; /* Ajuste o padding para aumentar o tamanho do fundo */
+  margin-left: 10px; /* Adiciona um espaçamento entre os botões */
+  background-color: #F42100; /* Cor de fundo do botão */
+  border: none; /* Remove a borda do botão */
+  border-radius: 10%;
+}.aval {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#imageBackground{
-height:200px;
-max-width: 188px;
-margin-top: 49px;
-margin-left: 149px;
-margin-right: 148px;
-background-color: #00417D;
-border-radius: 140px;
+.avaliacao {
+  margin-top: 20px; /* Adiciona espaço entre as avaliações */
 }
 
-hr{ 
- 
-    height: 892px;
-    width: 4px;
-    background-color: #F42100;
-    border: none;
+.aval{
+  border-top: 2px solid #F42100;
+  border-bottom:  2px solid #F42100; 
+  margin-bottom: 30px;
 }
-
-.vl {
-    top: 150px;
-    width: 100%;
-    height: 4px;
-    background-color:#F42100;
-    border: none;
-  }
- #changeColorButton{
-  padding: 23px 6px 23px 6px;
-  color: #FFFFFF;
-  font-family: 'Roboto',sans-serif;
-  letter-spacing: -0.05em;
-  font-size: 23px;
-  font-weight: 800;
-  line-height: 100%;
-  border: none;
-  width: 312px;
-  border: 1px solid #FF2A00;
-  background-color: #00050a;
- }
- .hidden {
-  display: none;
- 
-}
-
-#pop-up {
-  background-color: #000000;
-  border: 2px solid #FF2A00;
-  position: fixed;
-  top: 25%;
-  left: 39%;
-  transform: translate(-50%, -50%);
-}
-
-.imagem-popup {
-  width: 120px;
-  height: 120px;
-  margin: 10px;
-  border-radius: 10px;
-  border: #F42100;
-}
-
-  .conta{
-      padding: 23px 6px 23px 6px;
-      margin-top: 32px;
-      margin-left: 80px;
-      color: #FFFFFF;
-      font-family: 'Roboto',sans-serif;
-      letter-spacing: -0.05em;
-      font-size: 23px;
-      font-weight: 800;
-      line-height: 100%;
-      border: none;
-      width: 312px;
-      height: 72px;
-      border: 1px solid #FF2A00;
-      background-color: #00050a;
-    }
-.botoes button:hover, #changeColorButton:hover {
-    cursor: pointer;
-    transition: 200ms;
-    background-color: #FF2A00;
-}
-
-.troca{
-font-weight: 700;
-font-size: 17px;
-}
-
-.pessoa{
-    margin-left: 100px;
-    line-height: 29px;
-    font-weight: 600;
-    font-size: 24px;
-}
-.imgmodog{
-    border-radius: 50%;
-    width: 280px;
-    margin-top: 10px;
-    height: 280px;
-    background-color: #00417D;
-}
-.customacc{
-  margin-left: 10px;
-}
-.vl2{ top: 150px;
-  margin-left: -10px;
+.comentario{
   margin-top: 10px;
-  width: 96em;
-  height: 4px;
-  background-color:#F42100;
-  border: none;
+  margin-bottom: 30px;
+  border-top:  2px solid #F42100; 
+  border-left:  2px solid #F42100; 
 }
-.image-container-mod {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.chag{
-  margin-top: 90%;
-  display: flex; flex-direction: column;
+.usercenter {
+  display: flex;
   justify-content: center;
+  align-items: center; /* Define a altura total da tela */
+}
+  img {
+    float: left; /* Alinha a imagem à esquerda */
+  }
+  .lugarvisitado button{
+    border: none;
+    padding: 0%;
+  }
+  .start img{
+    background-color: darkblue;
+    border-radius: 50%;
+  margin-right: 2%;
+  }.friend-container {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-}
-#config{
-    position: absolute;
-    left: 50%;
-}
-#bola {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: none;
-    outline: none;
-    cursor: pointer;
-  }
-
-  .trc{
-      display: flex;
-      margin-left: 280px;
-      margin-top: -270px;
-      margin-bottom: 270PX;
-
   }
   
-  #bola::-webkit-color-swatch {
+  .friend-info {
+    display: flex;
+    align-items: center;
+    border:  2px solid #F42100; 
     border-radius: 50%;
   }
   
-  #bola::-webkit-color-swatch-wrapper {
-    padding: 0;
-  }
-  
-  #bola::-moz-color-swatch {
-    border-radius: 50%;
-  }
-  
-  #bola::-moz-color-swatch-wrapper {
-    padding: 0;
-  }
-  
-  #bola::-ms-color-swatch {
-    border-radius: 50%;
-  }
-  
-  #bola::-ms-color-swatch-wrapper {
-    padding: 0;
-  }
-  
- #bola::-moz-focus-inner {
-    border: none;
-  }
-  
-  #bola::-moz-focus-inner {
-    border: none;
+  .friend-info .friend {
+    margin-right: 10px; /* Adiciona um espaçamento entre a imagem e o texto */
   }
   
   
-  #bola::-moz-focus-inner {
-    border: none;
+  .text-container {
+    float: left; /* Alinha o texto ao lado da imagem */
   }
+  
+  .name,
+  .button-container {
+    display: inline-block; /* Coloca os elementos em linha */
+    vertical-align: middle; /* Alinha verticalmente os elementos */
+  }
+  
+  .button-container button {
+    margin-left: 10px; /* Adiciona um espaçamento entre os botões */
+  }
+  
+  .info-container h3 {
+    display: inline-block; /* Coloca os elementos h3 em linha */
+    margin-right: 10px; /* Adiciona um espaçamento entre os elementos h3 */
+  }
+  
 
   footer{
     background-color: #F42100;
@@ -362,46 +260,5 @@ font-size: 17px;
         
   font-size: 22px;
       margin-top: 50px;
-        }
-        .div-with-plus {
-          position: relative;
-          width:  350px;
-          height: 300px;
-          border: 1px solid #F42100;
-        }
-        
-        .div-with-plus::before,
-        .div-with-plus::after {
-          position: absolute;
-          content: '';
-          background-color: rgb(255, 255, 255);
-        }
-        
-        .div-with-plus::before {
-          width: 50%;
-          margin-left: 25%;
-          height: 10px;
-          border-radius: 100%;
-          top: 50%;
-          transform: translateY(-50%);
-        }
-        
-        .div-with-plus::after {
-          width: 10px;
-          margin-top: 23%;
-          height: 50%;
-          border-radius: 100%;
-          left: 50%;
-          transform: translateX(-50%);
-        }
-        .div-with-plus{
-          margin-top: 4%;
-          background-color: #5c5b5b;
-          border-radius: 10%;
-          margin-left: 1%;
-        }
-        .first{
-          float: left;
-          margin: 70% 0% 0% 13%;
         }
       
