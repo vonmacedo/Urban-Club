@@ -68,11 +68,24 @@ include('protect.php');
           </div>        
         </div>
         <div id="imgrow">
-            <button id="btn-rota" type="button" ><img src="./img/rota.png" alt="rotas"></button>
-            <button id="btn-salvar" type="button"><img src="./img/salvar.png" alt="salvar"></button>
-            <button id="btn-coment" type="button"><img src="./img/coment.png" alt="comentário"></button>
-            <button id="btn-compar" type="button"><img src="./img/compar.png" alt="compartilhar"></button>        
-          </div>
+  <button id="btn-rota" type="button" class="btn-with-hover-text">
+    <img src="./img/rota.png" alt="rotas">
+    <span class="hover-text">Criar rota</span>
+  </button>
+  <button id="btn-salvar" type="button" class="btn-with-hover-text">
+    <img src="./img/salvar.png" alt="salvar">
+    <span class="hover-text">Favoritar lugar</span>
+  </button>
+  <button id="btn-coment" type="button" class="btn-with-hover-text">
+    <img src="./img/coment.png" alt="comentário">
+    <span class="hover-text">Comentar</span>
+  </button>
+  <button id="btn-compar" type="button" class="btn-with-hover-text">
+    <img src="./img/compar.png" alt="compartilhar">
+    <span class="hover-text">Compartilhar</span>
+  </button>
+</div>
+
      
     <div id="lane1">
       <ul class="image-list"></ul>
@@ -87,17 +100,20 @@ include('protect.php');
     </div>
     </div>
     <div id="lane2">
-      <form  class="coment_form" action="" method="post" name="comentario">
-        <div class="input-box-coment">
-          <label for="coment"></label>
-              <div class="input-coment">
-                 <input type="text" name="comentario" id="comentario" required placeholder="Comentar">
-                 </div>
-      </div>
-      </form>
-      <div class="review">
-        <p>EXEMPLO</p>
-      </div>
+    <form class="coment_form" action="" method="post" name="comentario">
+  <div class="input-box-coment">
+    <label for="comentario"></label>
+    <div class="input-coment">
+      <input type="text" name="comentario" id="comentario" required placeholder="Comentar">
+    </div>
+  </div>
+  <button id="btn-comentar" type="submit">Comentar</button>
+</form>
+<div class="review">
+  <p>EXEMPLO</p>
+</div>
+
+
     </div>
   </div>
     <div class="btn-container">
