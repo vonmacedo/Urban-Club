@@ -1,11 +1,4 @@
-<?php
 
-session_start();
-
-ob_start();
-include('config.php');
-
-?>
 <!DOCTYPE html>
 <html lang="pt-Br">
 <head>
@@ -38,74 +31,46 @@ include('config.php');
             </button>
         </div>
             <hr>
+<?php
+  include("config.php");
+$erro = array();
 
-            <?php
-  $dados 
-  =filter_input_array(INPUT_POST, FILTER_DEFAULT);
-  $query_email = "SELECT id_cadastro, email, apelido
-  FROM cadastro
-  WHERE email = ?
-  LIMIT 1";
+if(isset($_POST['OK'])){
 
-$result_email = $conexao->prepare($query_email);
-if ($result_email === false) {
-die("Error preparing the statement: " . $conexao->error);
-}
+  $email = $conexao->escape_string($_POST['email']);
 
-$email = $dados['email'];
-$result_email->bind_param('s', $email);
-$result_execution = $result_email->execute();
-
-if ($result_execution === false) {
-die("Error executing the statement: " . $result_email->error);
-}
-
-$result_email->store_result();
-
-if ($result_email->num_rows != 0) {
-$result_email->bind_result($id_cadastro, $email, $apelido);
-$result_email->fetch();
-
-$row_email = [
-'id_cadastro' => $id_cadastro,
-'email' => $email,
-'apelido' => $apelido
-];
-
-var_dump($row_email);
-
-$recuperar_senha = password_hash($row_email['id_cadastro'] . $row_email['email'],
-PASSWORD_DEFAULT);
-
-
-$query_up_email = "UPDATE cadastro
-
-SET recuperar_senha =:recuperar_senha
-WHERE id_cadastro =:id_cadastro
-LIMIT 1";
-
-$editar_email = $conexao->prepare($query_up_email);
-$editar_email->bind_param(':recuperar_senha', $dados[email]);
-    $editar_email->bind_param(':id_cadastro', $row_email['id_cadastro']);
-
-    
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+$erro[] = "E-mail inválido";
 
 
 }
 
 
+if(count($erro) == 0){
 
-$result_email->close();
-$conexao->close();
 
+
+
+  $novasenha = substr(md5(time()), 0, 6);
+$nscriptografada = md5(md5($novasenha));
+
+
+if(mail($email, "Sua nova senha", "Sua nova senha:", $novasenha)){
+
+$sql_code = "UPDATE  cadastro SET senha = '$nscriptografada' WHERE email = '$email'";
+$sql_query = $mysqli->query($sql_code) or die ($mysqli->error);
+}
+
+}
+}
 
   ?>
         <main id="container">
-            <form class="nova-senha_form" action="" method="post" name="nova-senha">
+            <form class="nova-senha_form" action="" method="POST" name="nova-senha">
     <div id="inputs">
       
         <div class="input-box-senha">
-            <label for="Email">E-mail</label>
+            <label for="email">E-mail</label>
                 <div class="input-field">
                    <input type="text" name="email" placeholder="Digite seu email">
                    <br><br>
@@ -116,9 +81,8 @@ $conexao->close();
         </div>
 
     </div>
-
-    <input type="submit" class="botao-login" name="recuperar" value="Recuperar">
-        
+<button class="btn-login"> ENVIAR
+    <input type="submit"   name="OK" value="OK">
     </button>
     </form> 
  </main>

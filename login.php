@@ -114,7 +114,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])){
     <button class="botao-login" type="submit" onclick='entrar()'> 
         Login
     </button>
-        <a href="confirma-email.html"class="forgot"> Esqueceu sua senha? </a>
+        <a href="senha-esqueceu.php"class="forgot"> Esqueceu sua senha? </a>
     <button class="botao-cadastrar" class="button" onclick="window.location.href='cadastro.php'"> 
         Cadastrar
     </button>
