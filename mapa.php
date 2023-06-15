@@ -9,9 +9,8 @@ if (!isset($_SESSION['email'])) {
     echo "Usuário não está logado.";
     exit;
 }
-
-// Recupera o id_cadastro do usuário logado na sessão
-$idCadastro = $_SESSION['id_cadastro'];
+if (isset($_GET['id_cadastro'])) {
+  $id_cadastro = $_GET['id_cadastro'];
 
 $data = json_decode(file_get_contents("php://input"), true);
 
@@ -31,8 +30,8 @@ if ($stmt->execute()) {
 
 $stmt->close();
 $conexao->close();
+}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

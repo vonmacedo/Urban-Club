@@ -1,19 +1,23 @@
 <?php
- 
 include("config.php");
 
-if(isset($_POST['submit']))
-{
-  
-$email= $_POST['email'];
-$apelido=$_POST['apelido'];
-$senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+if(isset($_POST['submit'])) {
+    $email = $_POST['email'];
+    $apelido = $_POST['apelido'];
+    $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 
+    $result = mysqli_query($conexao, "INSERT INTO cadastro(email, apelido, senha) VALUES('$email', '$apelido', '$senha')");
 
-$result = mysqli_query($conexao, "INSERT INTO cadastro(email,apelido,senha) VALUES('$email','$apelido','$senha')");
-
-header("Location: login.php");
-
+    if ($result) {
+        // Obtém o ID do cadastro inserido
+        $id_cadastro = mysqli_insert_id($conexao);
+        
+        // Redireciona para a página do mapa com o ID do cadastro como parâmetro na URL
+        header("Location: mapa.php?id_cadastro=$id_cadastro");
+        exit();
+    } else {
+        echo "Erro ao cadastrar o usuário: " . mysqli_error($conexao);
+    }
 }
 
 ?>
