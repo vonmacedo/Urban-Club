@@ -98,10 +98,8 @@ if(isset($_POST['submit'])) {
                    </div>
         </div>
         <div class="check-box">
-                    <input type = "checkbox">
-                    <a> Aceito os Termos de Uso
-                      
-                    </a>
+                    <input type = "checkbox" id="checkbox" required>
+                    <a href="teste.html"> Aceito os Termos de Uso </a>
                 </div>
     </div>
             <button class="botao-cadastrar" type="submit" name ="submit" href="conta.html"> 
