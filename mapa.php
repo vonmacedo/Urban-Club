@@ -1,7 +1,5 @@
 <?php
-
 include('config.php');
-
 session_start();
 
 // Verifica se o usuário está logado
@@ -10,18 +8,16 @@ if (!isset($_SESSION['email'])) {
     exit;
 }
 if (isset($_GET['id_cadastro'])) {
-  $id_cadastro = $_GET['id_cadastro'];
-
+    $idCadastro = $_GET['id_cadastro'];
+}
 $data = json_decode(file_get_contents("php://input"), true);
 
-// Insere os dados na tabela de favoritos
 $idLugar = $data["idLugar"];
 $title = $data["title"];
 
 $sql = "INSERT INTO FAV (id_lugar, lugar, id_cadastro) VALUES (?, ?, ?)";
 $stmt = $conexao->prepare($sql);
 $stmt->bind_param("iss", $idLugar, $title, $idCadastro);
-
 if ($stmt->execute()) {
     echo "Favorito adicionado com sucesso.";
 } else {
@@ -30,7 +26,6 @@ if ($stmt->execute()) {
 
 $stmt->close();
 $conexao->close();
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -100,7 +95,7 @@ $conexao->close();
     <img src="./img/rota.png" alt="rotas">
     <span class="hover-text">Criar rota</span>
   </button>
-  <button id="btn-salvar" type="button" class="btn-with-hover-text">
+  <button id="btn-salvar" type="button"  onclick="adicionarAosFavoritos"class="btn-with-hover-text">
     <img src="./img/salvar.png" alt="salvar">
     <span class="hover-text">Favoritar lugar</span>
   </button>

@@ -3,6 +3,8 @@ var currentMarkerPosition;
 var currentRoute = null;
 var directionsService;
 var directionsRenderer;
+var idLugarmap;
+var titilemap;
 var centerButton = document.getElementById("center-button");
 const tipoImagem = document.getElementById('tipo-imagem');
 const typel = document.getElementById('typel')
@@ -123,7 +125,7 @@ function initMap() {
       photoUrl: markers[i].photoUrl,
       tempo: markers[i].tempo, 
       icpv: markers[i].icpv,
-      idlugar: markers[i].idlugar,
+      idLugar: markers[i].idLugar,
       icon: {
         url: './img/1con.png', // URL da imagem do ícone personalizado
         scaledSize: new google.maps.Size(25, 30), // Tamanho do ícone
