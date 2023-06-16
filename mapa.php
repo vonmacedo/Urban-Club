@@ -1,12 +1,6 @@
 <?php
 include('config.php');
 session_start();
-
-// Verifica se o usuário está logado
-if (!isset($_SESSION['email'])) {
-    echo "Usuário não está logado.";
-    exit;
-}
 if (isset($_GET['id_cadastro'])) {
     $idCadastro = $_GET['id_cadastro'];
 }
