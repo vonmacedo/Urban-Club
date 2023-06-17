@@ -1,25 +1,55 @@
 <?php
-include('config.php');
-session_start();
-if (isset($_GET['id_cadastro'])) {
-    $idCadastro = $_GET['id_cadastro'];
-}
-$data = json_decode(file_get_contents("php://input"), true);
 
-$idLugar = $data["idLugar"];
-$title = $data["title"];
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "urbanclub";
 
-$sql = "INSERT INTO FAV (id_lugar, lugar, id_cadastro) VALUES (?, ?, ?)";
-$stmt = $conexao->prepare($sql);
-$stmt->bind_param("iss", $idLugar, $title, $idCadastro);
-if ($stmt->execute()) {
-    echo "Favorito adicionado com sucesso.";
-} else {
-    echo "Erro ao adicionar favorito: " . $stmt->error;
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+  die("Falha na conexão com o banco de dados: " . $conn->connect_error);
 }
 
-$stmt->close();
-$conexao->close();
+session_start(); // Inicia a sessão
+
+// Verifica se o usuário está logado
+  $id_cadastro = $_SESSION['id_cadastro'];
+
+  // Verifica se o botão "Salvar" foi clicado
+  if (isset($_POST['salvar'])) {
+    $sql = "SELECT * FROM lugares";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($result->num_rows > 0) {
+      // Processa os resultados
+      while ($row = $result->fetch_assoc()) {
+        // Obtém os dados do lugar
+        $idLugar = $row['id_lugar'];
+        $titulo = $row['titulo'];
+        $longitude = $row['longitude'];
+        $latitude = $row['latitude'];
+      }
+    } else {
+      echo "Nenhum resultado encontrado.";
+    }
+    $sql = "INSERT INTO FAV (id_lugar, lugar, id_cadastro) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("iss", $idLugar, $titulo, $id_cadastro);
+
+    if ($stmt->execute()) {
+      echo "Favorito adicionado com sucesso.";
+      exit;
+    } else {
+      echo "Erro ao adicionar favorito: " . $stmt->error;
+      exit;
+    }
+
+    $stmt->close();
+  }
+
+$conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,10 +119,12 @@ $conexao->close();
     <img src="./img/rota.png" alt="rotas">
     <span class="hover-text">Criar rota</span>
   </button>
-  <button id="btn-salvar" type="button"  onclick="adicionarAosFavoritos"class="btn-with-hover-text">
+  <form method="POST">
+  <button id="btn-salvar" type="submit"  class="btn-with-hover-text" name="salvar">
     <img src="./img/salvar.png" alt="salvar">
     <span class="hover-text">Favoritar lugar</span>
   </button>
+</form>
   <button id="btn-coment" type="button" class="btn-with-hover-text">
     <img src="./img/coment.png" alt="comentário">
     <span class="hover-text">Comentar</span>
