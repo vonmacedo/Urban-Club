@@ -1,25 +1,19 @@
 <?php
-
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "urbanclub";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
+include("config.php");
+if ($conexao->connect_error) {
   die("Falha na conexão com o banco de dados: " . $conn->connect_error);
 }
 
 session_start(); // Inicia a sessão
 
 // Verifica se o usuário está logado
-  $id_cadastro = $_SESSION['id_cadastro'];
-
+$id_cadastro = mysqli_insert_id($conexao);
+echo $_SESSION['id_cadastro'];
+$sql = "SELECT * FROM cadastro" ;
   // Verifica se o botão "Salvar" foi clicado
   if (isset($_POST['salvar'])) {
     $sql = "SELECT * FROM lugares";
-    $stmt = $conn->prepare($sql);
+    $stmt = $conexao->prepare($sql);
     $stmt->execute();
     $result = $stmt->get_result();
     if ($result->num_rows > 0) {
@@ -35,7 +29,7 @@ session_start(); // Inicia a sessão
       echo "Nenhum resultado encontrado.";
     }
     $sql = "INSERT INTO FAV (id_lugar, lugar, id_cadastro) VALUES (?, ?, ?)";
-    $stmt = $conn->prepare($sql);
+    $stmt = $conexao->prepare($sql);
     $stmt->bind_param("iss", $idLugar, $titulo, $id_cadastro);
 
     if ($stmt->execute()) {
@@ -49,7 +43,7 @@ session_start(); // Inicia a sessão
     $stmt->close();
   }
 
-$conn->close();
+$conexao->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -7,11 +7,11 @@ if(isset($_POST['submit'])) {
     $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 
     $result = mysqli_query($conexao, "INSERT INTO cadastro(email, apelido, senha) VALUES('$email', '$apelido', '$senha')");
-
+    session_start();
     if ($result) {
         // Obtém o ID do cadastro inserido
         $id_cadastro = mysqli_insert_id($conexao);
-        
+        $_SESSION['id_cadastro'] = $id_cadastro;
         // Redireciona para a página do mapa com o ID do cadastro como parâmetro na URL
         header("Location: mapa.php?id_cadastro=$id_cadastro");
         exit();
