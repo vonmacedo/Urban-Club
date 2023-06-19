@@ -295,25 +295,6 @@ navigator.geolocation.getCurrentPosition(function(position) {
   }
 
 
- 
-
-  document.getElementById('btn-salvar').addEventListener('click', function() {
-    var marker = markers.find(function(m) {
-      return m.position.lat === currentMarkerPosition.lat() && m.position.lng === currentMarkerPosition.lng();
-    });
-  
-    if (marker) {
-      addfav(marker);
-    }
-  });
- 
-  
-  
-  
-  
-
-
-
 document.addEventListener("DOMContentLoaded", function() {
   var form = document.querySelector(".coment_form");
   var input = document.querySelector("#comentario");
@@ -336,4 +317,46 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+$('marker').click(function() {
+  // Obtém os dados do lugar clicado
+  var idLugar = $(this).data('idLugar');
+  var titulo = $(this).data('title');
 
+  // Envia os dados para o PHP por meio de uma requisição AJAX
+  $.ajax({
+    url: 'mapa.php', // O arquivo PHP onde você processará as informações
+    method: 'POST',
+    data: {
+      idLugar: idLugar,
+      titulo: titulo
+    },
+    success: function(response) {
+      // Processa a resposta do PHP, se necessário
+      alert(response);
+    },
+    error: function(xhr, status, error) {
+      // Trata erros na requisição AJAX, se necessário
+      console.error(error);
+    }
+  });
+});
+marker.addListener('click', function() {
+  var idLugar = this.idLugar;
+  var titulo = this.title;
+
+  // Send the data to PHP via AJAX
+  $.ajax({
+    url: 'mapa.php',
+    method: 'POST',
+    data: {
+      idLugar: idLugar,
+      titulo: titulo
+    },
+    success: function(response) {
+      console.log(response);
+    },
+    error: function(xhr, status, error) {
+      console.error(error);
+    }
+  });
+});

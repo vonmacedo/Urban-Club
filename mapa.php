@@ -1,50 +1,56 @@
 <?php
 include("config.php");
 if ($conexao->connect_error) {
-  die("Falha na conexão com o banco de dados: " . $conn->connect_error);
+  die("Falha na conexão com o banco de dados: " . $conexao->connect_error);
 }
 
 session_start(); // Inicia a sessão
 
 // Verifica se o usuário está logado
-$id_cadastro = mysqli_insert_id($conexao);
-echo $_SESSION['id_cadastro'];
-$sql = "SELECT * FROM cadastro" ;
-  // Verifica se o botão "Salvar" foi clicado
-  if (isset($_POST['salvar'])) {
-    $sql = "SELECT * FROM lugares";
-    $stmt = $conexao->prepare($sql);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    if ($result->num_rows > 0) {
-      // Processa os resultados
-      while ($row = $result->fetch_assoc()) {
-        // Obtém os dados do lugar
-        $idLugar = $row['id_lugar'];
-        $titulo = $row['titulo'];
-        $longitude = $row['longitude'];
-        $latitude = $row['latitude'];
-      }
-    } else {
-      echo "Nenhum resultado encontrado.";
-    }
-    $sql = "INSERT INTO FAV (id_lugar, lugar, id_cadastro) VALUES (?, ?, ?)";
-    $stmt = $conexao->prepare($sql);
-    $stmt->bind_param("iss", $idLugar, $titulo, $id_cadastro);
+if (!isset($_SESSION['id_cadastro'])) {
+  die("Usuário não está logado");
+}
 
-    if ($stmt->execute()) {
-      echo "Favorito adicionado com sucesso.";
-      exit;
-    } else {
-      echo "Erro ao adicionar favorito: " . $stmt->error;
-      exit;
-    }
+// Obtenha os dados dos lugares
+$sql = "SELECT * FROM lugares";
+$stmt = $conexao->prepare($sql);
+$stmt->execute();
+$result = $stmt->get_result();
 
-    $stmt->close();
+// Verifica se existem resultados
+if ($result->num_rows > 0) {
+  // Processa os resultados
+  while ($row = $result->fetch_assoc()) {
+    // Obtém os dados do lugar
+    $idLugar = $row['id_lugar'];
+    $titulo = $row['titulo'];
+    $longitude = $row['longitude'];
+    $latitude = $row['latitude'];     
   }
+} else {
+  echo "Nenhum resultado encontrado.";
+}
+// Verifica se o botão "Salvar" foi clicado
+if (isset($_POST['salvar'])) {
+
+  // Insere o favorito no banco de dados
+  $sql = "INSERT INTO FAV (id_lugar, lugar, id_cadastro) VALUES (?, ?, ?)";
+  $stmt = $conexao->prepare($sql);
+  $stmt->bind_param("iss", $idLugar, $titulo, $_SESSION['id_cadastro']);
+
+  if ($stmt->execute()) {
+    echo "Favorito adicionado com sucesso.";
+  } else {
+    echo "Erro ao adicionar favorito: " . $stmt->error;
+  }
+
+  $stmt->close();
+}
 
 $conexao->close();
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
