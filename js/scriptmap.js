@@ -135,6 +135,33 @@ function initMap() {
     });
     markers[i].marker = marker;
     marker.addListener('click', function() {
+      var idLugar = this.idLugar;
+      var title = this.title;
+    
+      // Criar objeto FormData
+      var formData = new FormData();
+      formData.append('idLugar', idLugar);
+      formData.append('title', title);
+    
+      // Fazer a requisição AJAX usando Fetch API
+      fetch('mapa.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(function(response) {
+        if (response.ok) {
+          return response.text();
+        } else {
+          throw new Error('Erro na requisição AJAX: ' + response.status);
+        }
+      })
+      .then(function(responseText) {
+        // A resposta do servidor PHP está pronta
+        console.log(responseText);
+      })
+      .catch(function(error) {
+        console.error(error);
+      });
       var aside = document.getElementById('aside');
       aside.classList.remove('hidden');
 
@@ -258,7 +285,6 @@ function createRoute(destination) {
 }
 
 var btnRota = document.getElementById('btn-rota');
-
 // Adiciona o evento de clique ao botão
 btnRota.addEventListener('click', function() {
   if (currentMarkerPosition) {
@@ -273,27 +299,6 @@ navigator.geolocation.getCurrentPosition(function(position) {
   window.alert('Não foi possível obter a localização do usuário.');
 });
 }
-
-
-
-  function addfav(marker) {
-    var dados = {
-      idLugar: marker.idLugar,
-      title: marker.title
-    };
-
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "mapa.php", true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        // A solicitação foi concluída com sucesso
-        console.log(xhr.responseText);
-      }
-    };
-    xhr.send(JSON.stringify(dados));
-  }
-
 
 document.addEventListener("DOMContentLoaded", function() {
   var form = document.querySelector(".coment_form");
@@ -314,49 +319,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       };
       xhr.send("comentario=" + encodeURIComponent(comentario));
-    }
-  });
-});
-$('marker').click(function() {
-  // Obtém os dados do lugar clicado
-  var idLugar = $(this).data('idLugar');
-  var titulo = $(this).data('title');
-
-  // Envia os dados para o PHP por meio de uma requisição AJAX
-  $.ajax({
-    url: 'mapa.php', // O arquivo PHP onde você processará as informações
-    method: 'POST',
-    data: {
-      idLugar: idLugar,
-      titulo: titulo
-    },
-    success: function(response) {
-      // Processa a resposta do PHP, se necessário
-      alert(response);
-    },
-    error: function(xhr, status, error) {
-      // Trata erros na requisição AJAX, se necessário
-      console.error(error);
-    }
-  });
-});
-marker.addListener('click', function() {
-  var idLugar = this.idLugar;
-  var titulo = this.title;
-
-  // Send the data to PHP via AJAX
-  $.ajax({
-    url: 'mapa.php',
-    method: 'POST',
-    data: {
-      idLugar: idLugar,
-      titulo: titulo
-    },
-    success: function(response) {
-      console.log(response);
-    },
-    error: function(xhr, status, error) {
-      console.error(error);
     }
   });
 });
