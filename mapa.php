@@ -12,28 +12,46 @@ if (!isset($_SESSION['id_cadastro'])) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idLugar']) && isset($_POST['title'])) {
   $idLugar = $_POST['idLugar'];
   $title = $_POST['title'];
+  $comentario = $_POST['comentario'];
 
-  // Verifica se o lugar já está nos favoritos do usuário
-  $sql = "SELECT * FROM FAV WHERE id_lugar = ? AND id_cadastro = ?";
-  $stmt = $conexao->prepare($sql);
-  $stmt->bind_param("ii", $idLugar, $_SESSION['id_cadastro']);
-  $stmt->execute();
-  $result = $stmt->get_result();
+  // Verifica se o comentário está definido
+  if (isset($_POST['comentario'])) {
+    $comentario = $_POST['comentario'];
 
-  if ($result->num_rows > 0) {
-    echo "favorito_existente";
-    exit;
-  }
+    // Verifica se o lugar já está nos favoritos do usuário
+    $sql = "SELECT * FROM FAV WHERE id_lugar = ? AND id_cadastro = ?";
+    $stmt = $conexao->prepare($sql);
+    $stmt->bind_param("ii", $idLugar, $_SESSION['id_cadastro']);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-  // Insere o favorito no banco de dados
-  $sql = "INSERT INTO FAV (id_lugar, lugar, id_cadastro) VALUES (?, ?, ?)";
-  $stmt = $conexao->prepare($sql);
-  $stmt->bind_param("iss", $idLugar, $title, $_SESSION['id_cadastro']);
+    if ($result->num_rows > 0) {
+      echo "favorito_existente";
+      exit;
+    }
 
-  if ($stmt->execute()) {
-    echo "favorito_adicionado";
+    // Insere o favorito no banco de dados
+    $sql = "INSERT INTO FAV (id_lugar, lugar, id_cadastro) VALUES (?, ?, ?)";
+    $stmt = $conexao->prepare($sql);
+    $stmt->bind_param("iss", $idLugar, $title, $_SESSION['id_cadastro']);
+
+    if ($stmt->execute()) {
+
+      // Insere o comentário no banco de dados
+      $sql = "INSERT INTO comentario (comentario, id_cadastro, id_lugar) VALUES (?, ?, ?)";
+      $stmt = $conexao->prepare($sql);
+      $stmt->bind_param("sii", $comentario, $_SESSION['id_cadastro'], $idLugar);
+
+      if ($stmt->execute()) {
+        echo "comentario_adicionado";
+      } else {
+        echo "Erro ao adicionar comentário: " . $stmt->error;
+      }
+    } else {
+      echo "Erro ao adicionar favorito: " . $stmt->error;
+    }
   } else {
-    echo "Erro ao adicionar favorito: " . $stmt->error;
+    echo "Comentário não está definido.";
   }
 
   $stmt->close();
@@ -43,6 +61,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idLugar']) && isset($
 
 $conexao->close();
 ?>
+
+
 
 
 <!DOCTYPE html>
@@ -150,7 +170,7 @@ $conexao->close();
       <input type="text" name="comentario" id="comentario" required placeholder="Comentar">
     </div>
   </div>
-  <button id="btn-comentar" type="submit">Comentar</button>
+  <button id="btn-comentar" type="POST">Comentar</button>
 </form>
 <div class="review">
   <p>EXEMPLO</p>

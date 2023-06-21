@@ -300,25 +300,36 @@ navigator.geolocation.getCurrentPosition(function(position) {
 });
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  var form = document.querySelector(".coment_form");
-  var input = document.querySelector("#comentario");
-  var review = document.querySelector(".review");
-
-  form.addEventListener("submit", function(event) {
-    event.preventDefault();
-    var comentario = input.value;
-    if (comentario.trim() !== "") {
-      var xhr = new XMLHttpRequest();
-      xhr.open("POST", "comentario.php", true);
-      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          review.innerHTML = "<p>" + comentario + "</p>";
-          input.value = "";
-        }
-      };
-      xhr.send("comentario=" + encodeURIComponent(comentario));
+document.getElementsByClassName('btn-comentar')[0].addEventListener('submit', function(e) {
+  e.preventDefault(); // Evita o envio padrão do formulário
+  
+  // Obter o valor do campo de comentário
+  var comentario = document.getElementById('comentario').value;
+  
+  // Criar objeto FormData e adicionar o valor do campo de comentário
+  var formData2 = new FormData();
+  formData2.append('comentario', comentario);
+  
+  // Enviar a requisição AJAX
+  fetch('mapa.php', {
+    method: 'POST',
+    body: formData2
+  })
+  .then(function(response) {
+    if (response.ok) {
+      return response.text();
+    } else {
+      throw new Error('Erro na requisição AJAX: ' + response.status);
     }
+  })
+  .then(function(responseText) {
+    // A resposta do servidor PHP está pronta
+    console.log(responseText);
+    
+    // Limpar o campo de comentário
+    document.getElementById('comentario').value = '';
+  })
+  .catch(function(error) {
+    console.error(error);
   });
 });
