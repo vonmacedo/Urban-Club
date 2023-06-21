@@ -11,9 +11,13 @@ if(isset($_POST['submit'])) {
     if ($result) {
         // Obtém o ID do cadastro inserido
         $id_cadastro = mysqli_insert_id($conexao);
+        $apelido = $_POST['apelido'];
+        $email = $_POST['email'];
+        $_SESSION['apelido'] = $apelido;
         $_SESSION['id_cadastro'] = $id_cadastro;
+        $_SESSION['email'] = $email;
         // Redireciona para a página do mapa com o ID do cadastro como parâmetro na URL
-        header("Location: mapa.php?id_cadastro=$id_cadastro");
+        header("Location: mapa.php?");
         exit();
     } else {
         echo "Erro ao cadastrar o usuário: " . mysqli_error($conexao);

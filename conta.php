@@ -1,3 +1,14 @@
+<?php
+include("config.php");
+
+session_start(); // Inicia a sessão
+
+// Verifica se o usuário está logado
+if (!isset($_SESSION['id_cadastro'])) {
+  die("Usuário não está logado");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-Br">
 <head>
@@ -33,19 +44,19 @@
 
     <img src="./img/perfil.png">
     <div class="text-container">
-      <h1 class="name">*NOME*</h1>
+    <h1 class="name"><?php echo $_SESSION['apelido']; ?></h1>
       <div class="button-container">
         <button class="btnprivatemap">Editar Perfil</button>
         <button class="btnfollow">Editar Mapa Privado</button>
       </div>
-      <h2>"EMAIL"</h2>
+      <h2><?php echo $_SESSION['email']; ?></h2>
       <div class="info-container">
-        <h3>"NAMIGOS"</h3>
+        <h3>0</h3>
         <h3>AMIGOS</h3>
+        <h3>0</h3>
         <h3>LOCAIS SALVOS</h3>
-        <h3>"NLOCAIS SALVOS"</h3>
+        <h3>0</h3>
         <h3>AVALIAÇÕES</h3>
-        <h3>"NAVALIAÇÕES"</h3>
       </div>
       <p>*DESCRIÇÃO*</p>
     </div>
@@ -67,18 +78,15 @@
 <div class="aval">
   <h1>AVALIAÇÕES</h1>
   <div class="avaliacao">
-    <h4>*lugarfeitoavaliação*</h4>
+    <h4>Adicione seu primeiro local</h4>
     <div class="comentario">
-      <p>NOME</p>
-      <p>NOTA</p>
-      <p>corpodaavaliação</p>
     </div>
   </div>
 </div>
 
 </div>
 <div class="lugarvisitado">
-  <button><img src="./img/abor-quadra-bas.jpg"</button>
+  <button><img src=""</button>
 </div>
 <footer>
     <div class="base">
