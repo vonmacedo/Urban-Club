@@ -39,6 +39,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idLugar']) && isset($
   $stmt->close();
 } else {
   echo "Requisição inválida.";
+  echo  $_SESSION['id_cadastro'];
+  echo $_SESSION['apelido'];
+  echo  $_SESSION['email'];
 }
 
 $conexao->close();
