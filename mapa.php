@@ -12,11 +12,9 @@ if (!isset($_SESSION['id_cadastro'])) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idLugar']) && isset($_POST['title'])) {
   $idLugar = $_POST['idLugar'];
   $title = $_POST['title'];
-  $comentario = $_POST['comentario'];
-
+}
   // Verifica se o comentário está definido
-  if (isset($_POST['comentario'])) {
-    $comentario = $_POST['comentario'];
+ 
 
     // Verifica se o lugar já está nos favoritos do usuário
     $sql = "SELECT * FROM FAV WHERE id_lugar = ? AND id_cadastro = ?";
@@ -38,21 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idLugar']) && isset($
     if ($stmt->execute()) {
 
       // Insere o comentário no banco de dados
-      $sql = "INSERT INTO comentario (comentario, id_cadastro, id_lugar) VALUES (?, ?, ?)";
-      $stmt = $conexao->prepare($sql);
-      $stmt->bind_param("sii", $comentario, $_SESSION['id_cadastro'], $idLugar);
-
-      if ($stmt->execute()) {
-        echo "comentario_adicionado";
-      } else {
-        echo "Erro ao adicionar comentário: " . $stmt->error;
-      }
-    } else {
-      echo "Erro ao adicionar favorito: " . $stmt->error;
-    }
-  } else {
-    echo "Comentário não está definido.";
-  }
+     
 
   $stmt->close();
 } else {
