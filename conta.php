@@ -55,7 +55,7 @@ if (!isset($_SESSION['id_cadastro'])) {
         <h3>AMIGOS</h3>
         <h3>0</h3>
         <h3>LOCAIS SALVOS</h3>
-        <h3>0</h3>
+        <h3>1</h3>
         <h3>AVALIAÇÕES</h3>
       </div>
       <p>
@@ -68,33 +68,96 @@ if (!isset($_SESSION['id_cadastro'])) {
   </div>
 </div>
 
-
-
 <div class="friend-container">
   <p class="am">Amigos</p>
   <div class="friend-info">
-<img src="./img/recco.png" alt="foto-recco">  
+    <img src="./img/recco.png" alt="foto-recco">  
   </div>
   <p class="friend2">Recco</p>
 </div>
 
-
 </div>
 <div class="aval">
-  <h1 class="ava" >AVALIAÇÕES</h1>
-  <div class="avaliacao">
-    <h4>Adicione seu primeiro local</h4>
-    <div class="comentario">
-    </div>
+  <h1 class="ava">AVALIAÇÕES</h1>
+
+  <?php
+  $query = "SELECT C.comentario, L.titulo
+            FROM comentario AS C
+            INNER JOIN lugares AS L ON C.id_lugar = L.id_lugar
+            WHERE C.id_cadastro = {$_SESSION['id_cadastro']}";
+
+  $result = mysqli_query($conexao, $query);
+
+  if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+      $comentario = $row['comentario'];
+      $lugar = $row['titulo'];
+
+      echo "<div class='avaliacao'>";
+      echo "<h3>Comentário: " . $comentario . "</h3>";
+      echo "<p>Lugar: " . $lugar . "</p>";
+      echo "</div>";
+    }
+  } else {
+    echo "<p>Não há avaliações disponíveis.</p>";
+  }
+
+  // Libera os resultados
+  mysqli_free_result($result);
+  ?>
+
+</div>
   </div>
 </div>
 
-</div>
-
 <div class="lugarvisitado">
-<p>EXIBIR OS FAVORITOS AQUI</p>
 
-  <button><img src=""</button>
+        <?php
+        // Obtém os lugares favoritos do usuário
+        $query = "SELECT lugares.id_lugar, lugares.titulo, lugares.longitude, lugares.latitude FROM FAV 
+        INNER JOIN lugares ON FAV.id_lugar = lugares.id_lugar
+        WHERE FAV.id_cadastro = {$_SESSION['id_cadastro']}";
+
+        // Execute the query
+        $result = mysqli_query($conexao, $query);
+
+        // Check if there are results
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $idLugar = $row['id_lugar'];
+                $titulo = $row['titulo'];
+                $longitude = $row['longitude'];
+                $latitude = $row['latitude'];
+
+                // Check if there is an image for the current place
+                if (isset($imagensFavoritos[$idLugar])) {
+                    $imagem = $imagensFavoritos[$idLugar];
+                } else {
+                    // Use the placeholder image if no specific image is available
+                    $imagem = './img/placeholder.jpg';
+                }
+        ?>
+
+                <div class="favorito">
+                    <h3><?php echo $titulo; ?></h3>
+                   
+                   <button> <img src="<?php echo $imagem; ?>" alt="<?php echo $titulo; ?>" data-id-lugar="<?php echo $idLugar; ?>">
+                   </button>
+                  </div>
+
+        <?php
+            }
+        } else {
+            // If there are no favorite places
+            echo "<p>Não há lugares favoritos.</p>";
+        }
+      
+        // Libera os resultados e fecha a conexão
+        mysqli_free_result($result);
+        mysqli_close($conexao);
+        ?>
+
+    </div>
 </div>
 <footer>
     <div class="base">
@@ -102,63 +165,58 @@ if (!isset($_SESSION['id_cadastro'])) {
       <button class="pi">
         <div class="ub">
           <a href="index.html">
-      <img src="./img/Urban.png" height="60px"class="pi1">
-      
+            <img src="./img/Urban.png" height="60px" class="pi1">
           </a> 
         </div>
+      </button>
 
-    </button>
+      <div class="insta">
+        <img src="./img/insta.png" onclick="window.location.href='https://www.instagram.com/UrbanClubSantos/';" style="cursor: pointer;"> 
+        <p ><a href="https://www.instagram.com/UrbanClubSantos/">Instagram</a></p> 
+      </div>
 
-<div class="insta">
-  <img src="./img/insta.png" onclick="window.location.href='https://www.instagram.com/UrbanClubSantos/';" style="cursor: pointer;"> 
-    <p ><a href="https://www.instagram.com/UrbanClubSantos/" >Instagram</a></p> 
- </div>
-
-
-<div class="rede">
-  <img src="./img/DISCOED.png" onclick="window.location.href='https://twitter.com/UrbanClub_ofc?t=Fht9QqwDdwFeynMv1H5Nhw&s=08';"  style="cursor: pointer;">
-    <p ><a href="https://twitter.com/UrbanClub_ofc?t=Fht9QqwDdwFeynMv1H5Nhw&s=08" >Discord</a></p> 
-</div>
-
-</div>
-<div class="direita">
-
-<h1>Desenvolvedores</h1>
-<p>Andrey Vanolli</p>
-<p>Felipe Amaral</p>
-<p>Gabriel Cosme</p>
-<p>Gabriel Recco</p>
-<p class="jm">João Macedo</p>
-<h1>Contato da empresa </h1>
-<p>urbanclub07@gmail.com</p>
-
-</div>
-
-<div class="meio">
-  <div class="artista">
-      <div class="art">
-       <img src="./img/artista.png">
-       <p>Arte:</p>
-        <p >Patricio Diniz</p>
+      <div class="rede">
+        <img src="./img/DISCOED.png" onclick="window.location.href='https://twitter.com/UrbanClub_ofc?t=Fht9QqwDdwFeynMv1H5Nhw&s=08';" style="cursor: pointer;">
+        <p ><a href="https://twitter.com/UrbanClub_ofc?t=Fht9QqwDdwFeynMv1H5Nhw&s=08">Discord</a></p> 
       </div>
     </div>
-  <div class="insta2">
-    
-    <img src="./img/insta.png" onclick="window.location.href='https://www.instagram.com/patricio.ilustra/';"  style="cursor: pointer;"> 
-      <p ><a href="https://www.instagram.com/patricio.ilustra/">patricio.ilustra</a></p> 
-  </div>
-  <div class="insta2">
-    <img  src="./img/Behance.png" onclick="window.location.href='https://www.behance.net/PatricioDiniz';" style="cursor: pointer;"> 
-      <p ><a href="https://www.behance.net/PatricioDiniz">Patricio Diniz  </a></p> 
-  </div>
 
-</div>
-<div class="canto2">
-  <h1>Legal</h1>
-  <p>Politica de privacidade</p>
-  <p>Termos de uso</p>  
-  <p class="rules">2023 direitos reservados</p></div>
-</div>
+    <div class="direita">
+      <h1>Desenvolvedores</h1>
+      <p>Andrey Vanolli</p>
+      <p>Felipe Amaral</p>
+      <p>Gabriel Cosme</p>
+      <p>Gabriel Recco</p>
+      <p class="jm">João Macedo</p>
+      <h1>Contato da empresa </h1>
+      <p>urbanclub07@gmail.com</p>
+    </div>
+
+    <div class="meio">
+      <div class="artista">
+        <div class="art">
+          <img src="./img/artista.png">
+          <p>Arte:</p>
+          <p>Patricio Diniz</p>
+        </div>
+      </div>
+      <div class="insta2">
+        <img src="./img/insta.png" onclick="window.location.href='https://www.instagram.com/patricio.ilustra/';" style="cursor: pointer;"> 
+        <p><a href="https://www.instagram.com/patricio.ilustra/">patricio.ilustra</a></p> 
+      </div>
+      <div class="insta2">
+        <img src="./img/Behance.png" onclick="window.location.href='https://www.behance.net/PatricioDiniz';" style="cursor: pointer;"> 
+        <p><a href="https://www.behance.net/PatricioDiniz">Patricio Diniz</a></p> 
+      </div>
+    </div>
+
+    <div class="canto2">
+      <h1>Legal</h1>
+      <p>Politica de privacidade</p>
+      <p>Termos de uso</p>  
+      <p class="rules">2023 direitos reservados</p>
+    </div>
+  </div>
 </footer>
 </body>
 </html>

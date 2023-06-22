@@ -77,8 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idLugar']) && isset($
     
         // Construir a resposta incluindo o commentId e o texto do comentário
         $response = 'comentario_adicionado:' . $commentId . ':' . $comentario;
-        $coment = $comentario .' - '.'0 avaliações';
-        echo $response;
+        $coment = $comentario .' - '.'1 avaliações';
       } else {
         echo "Erro ao obter o texto do comentário";
       }
@@ -121,7 +120,7 @@ $conexao->close();
            </button>
 
            <button type="submit">
-           <a href="./conta.html">
+           <a href="./conta.php">
            <img src="./img/Login.svg" alt="login" class="login">
            </a>
            </button>
@@ -171,13 +170,14 @@ $conexao->close();
     <span class="hover-text">Favoritar lugar</span>
   </button>
 </form>
+<!-- Eu tentei tirar do form e fechar só no btn-coment, ele não funcionou-->
 <form method="POST" action="mapa.php">
 
   <button id="btn-coment" type="submit" class="btn-with-hover-text" name="coment">
     <img src="./img/coment.png" alt="comentário">
     <span class="hover-text">Comentar</span>
   </button>
- 
+ <!-- Não mexe, só arruma a aparencia-->
   <button id="btn-compar" type="button" class="btn-with-hover-text">
     <img src="./img/compar.png" alt="compartilhar">
     <span class="hover-text">Compartilhar</span>
@@ -208,7 +208,11 @@ $conexao->close();
   <div class="comentario" data-id="1">
   <?php echo $_SESSION['apelido'];?>
 <br>
-<?php echo $coment ;?>
+<?php
+if (!empty($coment)) { 
+  echo $coment ;
+}
+ ?>
 
   </div>
 
