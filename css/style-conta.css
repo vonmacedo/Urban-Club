@@ -11,6 +11,21 @@ body{
     height: 100vh;
     width:100% 
 }
+p{
+font-weight: 600;
+font-family: 'Roboto', sans-serif;
+
+
+}
+ button{
+   font-family: 'Roboto',sans-serif;
+   font-weight: 600;
+   font-size: 1.125rem
+ }
+
+ .info-container{
+   margin-bottom: 0.53em;
+ }
 
 .btn-login {
   display: flex;
@@ -45,7 +60,7 @@ body{
 .start button{
   padding: 5px 10px; /* Ajuste o padding para aumentar o tamanho do fundo */
   margin-left: 10px; /* Adiciona um espaçamento entre os botões */
-  background-color: #F42100; /* Cor de fundo do botão */
+  background-color: #FF2A00; /* Cor de fundo do botão */
   border: none; /* Remove a borda do botão */
   border-radius: 10%;
 }.aval {
@@ -53,9 +68,34 @@ body{
   flex-direction: column;
   align-items: center;
 }
-
 .avaliacao {
-  margin-top: 20px; /* Adiciona espaço entre as avaliações */
+  margin-top: 1.25em; /* Adiciona espaço entre as avaliações */
+}
+
+.am{
+  margin-right: 36.4em;
+font-size: 1.125rem;
+
+}
+
+
+.ava{margin-top: 0.50em;}
+
+.usercenter{
+  margin-top: 6.7em;
+}
+
+.mail {
+margin-bottom: 1.3em;
+}
+
+.friend{
+  margin-top: 2em;
+}
+
+.friend2{
+  margin-top: 0.54em;
+  margin-bottom: 6em;
 }
 
 .aval{
@@ -85,6 +125,9 @@ body{
     background-color: darkblue;
     border-radius: 50%;
   margin-right: 2%;
+height: 10.9375em;
+margin-top: 6.6em;
+
   }.friend-container {
     display: flex;
     flex-direction: column;
