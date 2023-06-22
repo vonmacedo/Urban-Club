@@ -49,7 +49,7 @@ if (!isset($_SESSION['id_cadastro'])) {
         <button class="btnprivatemap">Editar Perfil</button>
         <button class="btnfollow">Editar Mapa Privado</button>
       </div>
-      <h2><?php echo $_SESSION['email']; ?></h2>
+      <h2 class ="mail"><?php echo $_SESSION['email']; ?></h2>
       <div class="info-container">
         <h3>0</h3>
         <h3>AMIGOS</h3>
@@ -58,7 +58,12 @@ if (!isset($_SESSION['id_cadastro'])) {
         <h3>0</h3>
         <h3>AVALIAÇÕES</h3>
       </div>
-      <p>*DESCRIÇÃO*</p>
+      <p>
+        || FOTOGRAFIA || LIVROS || BASQUETE || MÚSICA
+<br class="desc">T.I. ETEC ETEC ARISTÓTELES FERREIRA <br class="d2">
+17y repletos de muitos momento, livros e música
+
+      </p>
     </div>
   </div>
 </div>
@@ -66,17 +71,17 @@ if (!isset($_SESSION['id_cadastro'])) {
 
 
 <div class="friend-container">
-  <p>Amigos</p>
+  <p class="am">Amigos</p>
   <div class="friend-info">
-    <img src="./img/1con.png" class="friend">
+<img src="./img/recco.png" alt="foto-recco">  
   </div>
-  <p class="friend2">nomedoamigo</p>
+  <p class="friend2">Recco</p>
 </div>
 
 
 </div>
 <div class="aval">
-  <h1>AVALIAÇÕES</h1>
+  <h1 class="ava" >AVALIAÇÕES</h1>
   <div class="avaliacao">
     <h4>Adicione seu primeiro local</h4>
     <div class="comentario">
@@ -85,7 +90,10 @@ if (!isset($_SESSION['id_cadastro'])) {
 </div>
 
 </div>
+
 <div class="lugarvisitado">
+<p>EXIBIR OS FAVORITOS AQUI</p>
+
   <button><img src=""</button>
 </div>
 <footer>
