@@ -10,13 +10,9 @@ if (!isset($_SESSION['id_cadastro'])) {
 
 // Verifica se o botão "Salvar" foi clicado
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idLugar']) && isset($_POST['title'])) {
-  $idLugar = $_POST['idLugar'];
-  $title = $_POST['title'];
-}
-  // Verifica se o comentário está definido
- 
+    $idLugar = $_POST['idLugar'];
+    $title = $_POST['title'];
 
-    // Verifica se o lugar já está nos favoritos do usuário
     $sql = "SELECT * FROM FAV WHERE id_lugar = ? AND id_cadastro = ?";
     $stmt = $conexao->prepare($sql);
     $stmt->bind_param("ii", $idLugar, $_SESSION['id_cadastro']);
@@ -34,20 +30,69 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idLugar']) && isset($
     $stmt->bind_param("iss", $idLugar, $title, $_SESSION['id_cadastro']);
 
     if ($stmt->execute()) {
+      echo "favorito_adicionado";
+    } else {
+      echo "Erro ao adicionar favorito: " . $stmt->error;
+    }
 
-      // Insere o comentário no banco de dados
-     
+    $stmt->close();
+  }
 
-  $stmt->close();
-} else {
-  echo "Requisição inválida.";
-  echo  $_SESSION['id_cadastro'];
-  echo $_SESSION['apelido'];
-  echo  $_SESSION['email'];
-}
+  // Verifica se é uma ação de comentar
+  if (isset($_POST['coment']) && isset($_POST['idLugar']) && isset($_POST['comentario'])) {
+    $idLugar = $_POST['idLugar'];
+    $comentario = $_POST['comentario'];
+
+    // Verifica se o comentário já existe para o mesmo usuário e lugar
+    $sql = "SELECT * FROM comentario WHERE id_cadastro = ? AND id_lugar = ?";
+    $stmt = $conexao->prepare($sql);
+    $stmt->bind_param('ii', $_SESSION['id_cadastro'], $idLugar);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $comentarioExistente = false;
+    while ($row = $result->fetch_assoc()) {
+      if ($row['comentario'] == $comentario) {
+        $comentarioExistente = true;
+        break;
+      }
+    }
+    // Insere o comentário no banco de dados
+    $sql = "INSERT INTO comentario (comentario, id_cadastro, id_lugar) VALUES (?, ?, ?)";
+    $stmt = $conexao->prepare($sql);
+    $stmt->bind_param('sii', $comentario, $_SESSION['id_cadastro'], $idLugar);
+    
+    if ($stmt->execute()) {
+      $commentId = $stmt->insert_id;
+    
+      // Obter o texto do comentário a partir do ID do cadastro, ID do lugar e ID do comentário
+      $sql = "SELECT comentario FROM comentario WHERE id_cadastro = ? AND id_lugar = ? AND cd_comentario = ?";
+      $stmt = $conexao->prepare($sql);
+      $stmt->bind_param('iii', $_SESSION['id_cadastro'], $idLugar, $commentId);
+      $stmt->execute();
+      $result = $stmt->get_result();
+    
+      if ($row = $result->fetch_assoc()) {
+        $comentario = $row['comentario'];
+    
+        // Construir a resposta incluindo o commentId e o texto do comentário
+        $response = 'comentario_adicionado:' . $commentId . ':' . $comentario;
+        $coment = $comentario .' - '.'0 avaliações';
+        echo $response;
+      } else {
+        echo "Erro ao obter o texto do comentário";
+      }
+    } else {
+      echo "Erro ao adicionar comentário: " . $stmt->error;
+    }
+    
+
+    $stmt->close();
+  }
 
 $conexao->close();
 ?>
+
 
 
 
@@ -97,7 +142,7 @@ $conexao->close();
             <img id="tipo-imagem" src="" alt="Tipo de Local"><div id="typel"></div>
           </li>
           <div class="container">
-            <div id="log"><p>5</p></div>
+            <div id="log"><p>0</p></div>
             <div class="feedback">
 
               <div class="rating">
@@ -126,10 +171,13 @@ $conexao->close();
     <span class="hover-text">Favoritar lugar</span>
   </button>
 </form>
-  <button id="btn-coment" type="button" class="btn-with-hover-text">
+<form method="POST" action="mapa.php">
+
+  <button id="btn-coment" type="submit" class="btn-with-hover-text" name="coment">
     <img src="./img/coment.png" alt="comentário">
     <span class="hover-text">Comentar</span>
   </button>
+ 
   <button id="btn-compar" type="button" class="btn-with-hover-text">
     <img src="./img/compar.png" alt="compartilhar">
     <span class="hover-text">Compartilhar</span>
@@ -150,18 +198,23 @@ $conexao->close();
     </div>
     </div>
     <div id="lane2">
-    <form class="coment_form" action="" method="post" name="comentario">
-  <div class="input-box-coment">
-    <label for="comentario"></label>
-    <div class="input-coment">
-      <input type="text" name="comentario" id="comentario" required placeholder="Comentar">
-    </div>
+    <form method="POST" action="mapa.php">
+    <input type="hidden" name="idCadastro" value="1"> <!-- Substitua o valor do campo com o ID do cadastro do usuário logado -->
+    <input type="hidden" name="idLugar" value="1"> <!-- Substitua o valor do campo com o ID do lugar onde o comentário está sendo adicionado -->
+    <label for="comentario">Comentários:</label><br>
+    <textarea name="comentario" id="comentario" rows="1"></textarea><br><br>
+  </form>
+  <div id="comentarios-container">
+  <div class="comentario" data-id="1">
+  <?php echo $_SESSION['apelido'];?>
+<br>
+<?php echo $coment ;?>
+
   </div>
-  <button id="btn-comentar" type="POST">Comentar</button>
-</form>
-<div class="review">
-  <p>EXEMPLO</p>
+
 </div>
+
+
 
 
     </div>

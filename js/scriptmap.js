@@ -137,7 +137,9 @@ function initMap() {
     marker.addListener('click', function() {
       var idLugar = this.idLugar;
       var title = this.title;
-    
+    // Dentro da função 'openMarker'
+document.querySelector('input[name="idLugar"]').value = this.idLugar; // Atualiza o valor do campo 'idLugar' com o ID do lugar clicado
+
       // Criar objeto FormData
       var formData = new FormData();
       formData.append('idLugar', idLugar);
@@ -298,38 +300,30 @@ navigator.geolocation.getCurrentPosition(function(position) {
 }, function() {
   window.alert('Não foi possível obter a localização do usuário.');
 });
-}
+function handleComentarioResponse(response) {
+  if (response.startsWith("comentario_adicionado")) {
+    var parts = response.split(":");
+    var commentId = parts[1];
+    var comentario = parts[2];
 
-document.getElementsByClassName('btn-comentar')[0].addEventListener('submit', function(e) {
-  e.preventDefault(); // Evita o envio padrão do formulário
-  
-  // Obter o valor do campo de comentário
-  var comentario = document.getElementById('comentario').value;
-  
-  // Criar objeto FormData e adicionar o valor do campo de comentário
-  var formData2 = new FormData();
-  formData2.append('comentario', comentario);
-  
-  // Enviar a requisição AJAX
-  fetch('mapa.php', {
-    method: 'POST',
-    body: formData2
-  })
-  .then(function(response) {
-    if (response.ok) {
-      return response.text();
-    } else {
-      throw new Error('Erro na requisição AJAX: ' + response.status);
-    }
-  })
-  .then(function(responseText) {
-    // A resposta do servidor PHP está pronta
-    console.log(responseText);
-    
-    // Limpar o campo de comentário
-    document.getElementById('comentario').value = '';
-  })
-  .catch(function(error) {
-    console.error(error);
-  });
-});
+    // Crie um novo elemento HTML para exibir o comentário
+    var commentElement = document.createElement("div");
+    commentElement.innerHTML = "<p><strong>Comentário #" + commentId + ":</strong> " + comentario + "</p>";
+
+    // Encontre o local na página onde você deseja exibir os comentários
+    var commentsContainer = document.getElementById("comments-container");
+
+    // Adicione o novo comentário ao conteúdo existente
+    commentsContainer.appendChild(commentElement);
+
+    // Recarregue a página após um breve atraso para que o novo comentário seja exibido
+    setTimeout(function() {
+      location.reload();
+    }, 1000);
+  } else {
+    console.error("Erro ao adicionar comentário");
+  }
+}
+var textarea = document.getElementById("comentario"); // Substitua "my-textarea" pelo ID da sua textarea
+textarea.style.resize = "none";
+}
