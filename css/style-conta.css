@@ -69,7 +69,8 @@ font-family: 'Roboto', sans-serif;
   align-items: center;
 }
 .avaliacao {
-  margin-top: 1.25em; /* Adiciona espaço entre as avaliações */
+  margin-top: 1.25em; 
+
 }
 
 .am{
@@ -83,6 +84,14 @@ font-size: 1.125rem;
 
 }
 
+.tes{
+  border: 1px solid #F42100;
+border-radius: 10px;
+text-align: justify ;
+  max-width: 400px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
 .avaliacoes-container {
   display: flex;
   flex-wrap: wrap;
@@ -95,6 +104,7 @@ line-height: 1.5;
 
 }
 .avaliacao {
+
   flex-basis: calc(50% - 0.5em); /* Definir a largura para 50% menos o espaçamento entre os comentários */
   margin-bottom: 1em;
 }

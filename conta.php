@@ -113,7 +113,7 @@ if (!isset($_SESSION['id_cadastro'])) {
 
 <div class="avaliacoes-container">
 
-
+<div class="tes">
   <?php
   $query = "SELECT C.comentario, L.titulo
             FROM comentario AS C
@@ -139,6 +139,7 @@ if (!isset($_SESSION['id_cadastro'])) {
   // Libera os resultados
   mysqli_free_result($result);
   ?>
+  </div>
 </div>
 </div>
   </div>
