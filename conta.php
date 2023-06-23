@@ -7,6 +7,10 @@ session_start(); // Inicia a sessão
 if (!isset($_SESSION['id_cadastro'])) {
   die("Usuário não está logado");
 }
+$queryAvaliacoes = "SELECT COUNT(DISTINCT comentario) AS totalAvaliacoes FROM comentario WHERE id_cadastro = {$_SESSION['id_cadastro']}";
+$resultAvaliacoes = mysqli_query($conexao, $queryAvaliacoes);
+$rowAvaliacoes = mysqli_fetch_assoc($resultAvaliacoes);
+$totalAvaliacoes = $rowAvaliacoes['totalAvaliacoes'];
 ?>
 
 <!DOCTYPE html>
@@ -55,8 +59,8 @@ if (!isset($_SESSION['id_cadastro'])) {
         <h3>AMIGOS</h3>
         <h3>0</h3>
         <h3>LOCAIS SALVOS</h3>
-        <h3>1</h3>
-        <h3>AVALIAÇÕES</h3>
+        <h3><?php echo $totalAvaliacoes; ?></h3>
+    <h3><?php echo ($totalAvaliacoes == 1) ? 'AVALIAÇÃO' : 'AVALIAÇÕES'; ?></h3>
       </div>
       <p class="desc">
         || FOTOGRAFIA || LIVROS || BASQUETE || MÚSICA
@@ -109,7 +113,7 @@ if (!isset($_SESSION['id_cadastro'])) {
 
 </div>
 <div class="aval">
-  <h1 class="ava">AVALIAÇÕES</h1>
+  <h1 class="ava"><?php echo ($totalAvaliacoes == 1) ? 'AVALIAÇÃO' : 'AVALIAÇÕES'; ?></h1>
 
   <div class="avaliacoes-container">
 
@@ -135,7 +139,7 @@ if (!isset($_SESSION['id_cadastro'])) {
               echo "<div class='avaliacao'>";
               echo "<div class='comentario-container'>";
               echo "<div class='comentario-image'>";
-              echo '<img src="./img/perfil.png" alt="Imagem do perfil" width="50" height="50" style="margin-right: 10px;">';
+              echo '<img src="./img/perfil.png" alt="Imagem do perfil" width="50" height="50" style="margin-right: 10px; background-color: #00417D;     border-radius: 50%;">';
               echo "</div>";
               echo "<div class='comentario-content'>";
               echo $_SESSION['apelido'] . '<br>';

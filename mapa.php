@@ -74,10 +74,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idLugar']) && isset($
     
       if ($row = $result->fetch_assoc()) {
         $comentario = $row['comentario'];
-    
+        $queryAvaliacoes = "SELECT COUNT(DISTINCT comentario) AS totalAvaliacoes FROM comentario WHERE id_cadastro = {$_SESSION['id_cadastro']}";
+        $resultAvaliacoes = mysqli_query($conexao, $queryAvaliacoes);
+        $rowAvaliacoes = mysqli_fetch_assoc($resultAvaliacoes);
+        $totalAvaliacoes = $rowAvaliacoes['totalAvaliacoes'];
         // Construir a resposta incluindo o commentId e o texto do comentário
         $response = 'comentario_adicionado:' . $commentId . ':' . $comentario;
-        $coment = $comentario .' - '.'1 avaliações';
+        $coment = $comentario .' - ' . $totalAvaliacoes . ' ' . (($totalAvaliacoes == 1) ? 'Avaliação' : 'Avaliações');
+
       } else {
         echo "Erro ao obter o texto do comentário";
       }
