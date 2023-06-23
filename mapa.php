@@ -206,17 +206,19 @@ $conexao->close();
   </form>
   <hr>
   <div id="comentarios-container">
-  <div class="comentario" data-id="1">
-  <?php echo $_SESSION['apelido'];?>
-<br>
-<?php
-if (!empty($coment)) { 
-  echo $coment ;
+  <div class="comentario comentario-branco" data-id="1">
+<?php 
+if (!empty($coment)) {
+  echo '<div style="display: flex; align-items: center; position: fixed; top: 0; left: 0;">';
+  echo '<img src="./img/perfil.png" alt="Imagem do perfil" width="50" height="50" style="margin-right: 10px;">';
+  echo '<div>';
+  echo $_SESSION['apelido'] . '<br>';
+  echo $coment;
+  echo '</div>';
+  echo '</div>';
 }
- ?>
-
+?>
   </div>
-
 </div>
 
 
