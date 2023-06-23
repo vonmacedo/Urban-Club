@@ -119,11 +119,11 @@ $conexao->close();
             </a>
            </button>
 
-           <button type="submit">
-           <a href="./conta.php">
-           <img src="./img/Login.svg" alt="login" class="login">
-           </a>
-           </button>
+           <button  class="teste" type="submit">
+    <a href="./conta.php">
+    <img src="./img/Login.svg" alt="login" class="login">
+    </a>
+    </button>
         </div>
         
                 <div class="vl"></div> 
@@ -206,6 +206,7 @@ $conexao->close();
   </form>
   <hr>
   <div id="comentarios-container">
+<<<<<<< HEAD
   <div class="comentario comentario-branco" data-id="1">
 <?php 
 if (!empty($coment)) {
@@ -216,6 +217,18 @@ if (!empty($coment)) {
   echo $coment;
   echo '</div>';
   echo '</div>';
+=======
+  <div class="comentario" data-id="1">
+  <?php 
+  if (!empty($coment)) { 
+    echo $_SESSION['apelido'];
+  }
+  ?>
+<br>
+<?php
+if (!empty($coment)) { 
+  echo $coment ;
+>>>>>>> 8d79d9434cbfe48e8eab6e8bc22118d9ba968863
 }
 ?>
   </div>

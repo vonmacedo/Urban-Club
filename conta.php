@@ -32,8 +32,8 @@ if (!isset($_SESSION['id_cadastro'])) {
      </a>
     </button>
 
-    <button type="submit">
-    <a href="./conta.html">
+    <button  class="teste" type="submit">
+    <a href="./conta.php">
     <img src="./img/Login.svg" alt="login" class="login">
     </a>
     </button>
@@ -113,6 +113,7 @@ if (!isset($_SESSION['id_cadastro'])) {
 
   <div class="avaliacoes-container">
 
+<<<<<<< HEAD
     <?php
     $query = "SELECT C.comentario, L.titulo
               FROM comentario AS C
@@ -120,9 +121,18 @@ if (!isset($_SESSION['id_cadastro'])) {
               WHERE C.id_cadastro = {$_SESSION['id_cadastro']}";
 
     $result = mysqli_query($conexao, $query);
+=======
+<div class="tes">
+  <?php
+  $query = "SELECT C.comentario, L.titulo
+            FROM comentario AS C
+            INNER JOIN lugares AS L ON C.id_lugar = L.id_lugar
+            WHERE C.id_cadastro = {$_SESSION['id_cadastro']}";
+>>>>>>> 8d79d9434cbfe48e8eab6e8bc22118d9ba968863
 
     $comentariosExibidos = array(); // Array para armazenar os comentários exibidos
 
+<<<<<<< HEAD
     if (mysqli_num_rows($result) > 0) {
       $comentariosExibidos = array(); // Array to store displayed comments
   
@@ -149,66 +159,90 @@ if (!isset($_SESSION['id_cadastro'])) {
               $comentariosExibidos[] = $comentario;
           }
       }
+=======
+  if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+      $comentario = $row['comentario'];
+      $lugar = $row['titulo'];
+
+     echo "<div class='comentario'>";
+
+      echo "<div class='avaliacao'>";
+      echo "<h3>Comentário: " . $comentario . "</h3>";
+      echo "<p>Lugar: " . $lugar . "</p>";
+      echo "</div>";
+      echo "</div>";
+
+    }
+>>>>>>> 8d79d9434cbfe48e8eab6e8bc22118d9ba968863
   } else {
       echo "<p>Não há avaliações disponíveis.</p>";
   }
 
+<<<<<<< HEAD
     // Libera os resultados
     mysqli_free_result($result);
     ?>
   </div>
+=======
+  // Libera os resultados
+  mysqli_free_result($result);
+  ?>
+  </div>
+</div>
+>>>>>>> 8d79d9434cbfe48e8eab6e8bc22118d9ba968863
 </div>
   </div>
 </div>
 
 <div class="lugarvisitado">
+    <?php
+    // Obtém os lugares favoritos do usuário
+    $query = "SELECT lugares.id_lugar, lugares.titulo, lugares.longitude, lugares.latitude FROM FAV 
+    INNER JOIN lugares ON FAV.id_lugar = lugares.id_lugar
+    WHERE FAV.id_cadastro = {$_SESSION['id_cadastro']}";
 
-        <?php
-        // Obtém os lugares favoritos do usuário
-        $query = "SELECT lugares.id_lugar, lugares.titulo, lugares.longitude, lugares.latitude FROM FAV 
-        INNER JOIN lugares ON FAV.id_lugar = lugares.id_lugar
-        WHERE FAV.id_cadastro = {$_SESSION['id_cadastro']}";
+    // Execute the query
+    $result = mysqli_query($conexao, $query);
 
-        // Execute the query
-        $result = mysqli_query($conexao, $query);
+    // Check if there are results
+    if (mysqli_num_rows($result) > 0) {
+        $counter = 0;
+        while ($row = mysqli_fetch_assoc($result)) {
+            $idLugar = $row['id_lugar'];
+            $titulo = $row['titulo'];
+            $longitude = $row['longitude'];
+            $latitude = $row['latitude'];
 
-        // Check if there are results
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                $idLugar = $row['id_lugar'];
-                $titulo = $row['titulo'];
-                $longitude = $row['longitude'];
-                $latitude = $row['latitude'];
-
-                // Check if there is an image for the current place
-                if (isset($imagensFavoritos[$idLugar])) {
-                    $imagem = $imagensFavoritos[$idLugar];
-                } else {
-                    // Use the placeholder image if no specific image is available
-                    $imagem = './img/placeholder.jpg';
-                }
-        ?>
-
-                <div class="favorito">
-                    <h3><?php echo $titulo; ?></h3>
-                   
-                   <button> <img src="<?php echo $imagem; ?>" alt="<?php echo $titulo; ?>" data-id-lugar="<?php echo $idLugar; ?>">
-                   </button>
-                  </div>
-
-        <?php
+            // Check if there is an image for the current place
+            if (isset($imagensFavoritos[$idLugar])) {
+                $imagem = $imagensFavoritos[$idLugar];
+            } else {
+                // Use the placeholder image if no specific image is available
+                $imagem = './img/placeholder.jpg';
             }
-        } else {
-            // If there are no favorite places
-            echo "<p>Não há lugares favoritos.</p>";
-        }
-      
-        // Libera os resultados e fecha a conexão
-        mysqli_free_result($result);
-        mysqli_close($conexao);
-        ?>
 
-    </div>
+            if ($counter % 2 === 0) {
+                echo '<div class="favorito-row">';
+            }
+    ?>
+            <div class="favorito">
+                <h3><?php echo $titulo; ?></h3>
+                <button>
+                    <img src="<?php echo $imagem; ?>" alt="<?php echo $titulo; ?>" data-id-lugar="<?php echo $idLugar; ?>">
+                </button>
+            </div>
+    <?php
+            if ($counter % 2 !== 0 || $counter === mysqli_num_rows($result) - 1) {
+                echo '</div>';
+            }
+            $counter++;
+        }
+    } else {
+        // If there are no favorite places
+        echo "<p>Não há lugares favoritos.</p>";
+    }
+    ?>
 </div>
 <footer>
     <div class="base">
