@@ -140,11 +140,13 @@ function initMap() {
     // Dentro da função 'openMarker'
 document.querySelector('input[name="idLugar"]').value = this.idLugar; // Atualiza o valor do campo 'idLugar' com o ID do lugar clicado
 
+var latitude = this.position.lat();
+  var longitude = this.position.lng();
+  obterEndereco(latitude, longitude); 
       // Criar objeto FormData
       var formData = new FormData();
       formData.append('idLugar', idLugar);
       formData.append('title', title);
-    
       // Fazer a requisição AJAX usando Fetch API
       fetch('mapa.php', {
         method: 'POST',
@@ -166,8 +168,23 @@ document.querySelector('input[name="idLugar"]').value = this.idLugar; // Atualiz
       });
       var aside = document.getElementById('aside');
       aside.classList.remove('hidden');
-
-      document.getElementById('localizacao').textContent = this.position;
+      function obterEndereco(latitude, longitude) {
+        var geocoder = new google.maps.Geocoder();
+        var latLng = new google.maps.LatLng(latitude, longitude);
+      
+        geocoder.geocode({ 'latLng': latLng }, function(results, status) {
+          if (status === google.maps.GeocoderStatus.OK) {
+            if (results[0]) {
+              var address = results[0].formatted_address;
+              document.getElementById('localizacao').textContent = address;
+            } else {
+              console.log('Endereço não encontrado');
+            }
+          } else {
+            console.log('Geocoder falhou: ' + status);
+          }
+        });
+      }
       document.getElementById('aberto-24h').textContent = this.tempo;
       document.getElementById('tipo-local').textContent = this.icpv;
 
