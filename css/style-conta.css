@@ -73,16 +73,38 @@ font-family: 'Roboto', sans-serif;
 }
 
 .am{
+  margin-bottom: -1em;
   margin-right: 36.4em;
 font-size: 1.125rem;
 
 }
 
+.ava{font-size: 26px;
+
+}
+
+.avaliacoes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 1em;
+  gap: 1em; /* Adiciona espaçamento entre as avaliações */
+}
+.desc{
+line-height: 1.5;
+
+}
+.avaliacao {
+  flex-basis: calc(50% - 0.5em); /* Definir a largura para 50% menos o espaçamento entre os comentários */
+  margin-bottom: 1em;
+}
+
+
 
 .ava{margin-top: 0.50em;}
 
 .usercenter{
-  margin-top: 6.7em;
+  margin-top: 2.4em;
 }
 
 .mail {
@@ -128,7 +150,8 @@ margin-bottom: 1.3em;
 height: 10.9375em;
 margin-top: 6.6em;
 
-  }.friend-container {
+  }
+  .friend-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -136,14 +159,33 @@ margin-top: 6.6em;
   
   .friend-info {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    border:  2px solid #F42100; 
+    margin-top: 1em;
+  }
+  
+  .friend {
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .friend img {
+    height: 80px;
+    border: 2px solid #F42100;
     border-radius: 50%;
   }
   
-  .friend-info .friend {
-    margin-right: 10px; /* Adiciona um espaçamento entre a imagem e o texto */
+  .friend-name {
+    margin-top: 0.5em;
+    margin-bottom: 0.8em;
   }
+  
+  .friend-info .friend-image {
+    margin-right: 5px;
+  }
+  
   
   
   .text-container {
@@ -165,6 +207,11 @@ margin-top: 6.6em;
     margin-right: 10px; /* Adiciona um espaçamento entre os elementos h3 */
   }
   
+.lugarvisitado{
+  display: flex;
+  justify-content: space-between;
+}
+
 
   footer{
     background-color: #F42100;
@@ -304,4 +351,32 @@ margin-top: 6.6em;
   font-size: 22px;
       margin-top: 50px;
         }
-      
+ 
+        @media (min-width: 1300px) and (max-width: 1400px) {
+          /* FOOTER /*/
+          .pi{
+            margin-left: 2.5em;
+            margin-right: 50px;
+          }
+    
+          .insta{
+            margin-left:4.3em;
+          }
+    
+          .rede{
+            margin-left: 4.3em;
+          }
+    
+    
+          .meio{
+            visibility: hidden;
+          }
+    
+          .direita{
+    
+          margin-right: -30.25em;
+          }
+          
+        }
+    
+    

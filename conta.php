@@ -58,9 +58,9 @@ if (!isset($_SESSION['id_cadastro'])) {
         <h3>1</h3>
         <h3>AVALIAÇÕES</h3>
       </div>
-      <p>
+      <p class="desc">
         || FOTOGRAFIA || LIVROS || BASQUETE || MÚSICA
-<br class="desc">T.I. ETEC ETEC ARISTÓTELES FERREIRA <br class="d2">
+<br >T.I. ETEC ETEC ARISTÓTELES FERREIRA <br class="d2">
 17y repletos de muitos momento, livros e música
 
       </p>
@@ -71,14 +71,48 @@ if (!isset($_SESSION['id_cadastro'])) {
 <div class="friend-container">
   <p class="am">Amigos</p>
   <div class="friend-info">
-    <img src="./img/recco.png" alt="foto-recco">  
-  </div>
-  <p class="friend2">Recco</p>
+    <div class="friend">
+      <img src="./img/recco.png" alt="foto-recco">
+      <p class="friend-name">Recco</p>
+    </div>
+    <div class="friend">
+      <img src="./img/andrey.png" alt="foto-andrey">
+      <p class="friend-name">Andrey</p>
+    </div>
+    <div class="friend">
+      <img src="./img/lipe.png" alt="foto-lipe">
+      <p class="friend-name">Lipe</p>
+    </div>
+    <div class="friend">
+      <img src="./img/gabriel.png" alt="foto-gabriel">
+      <p class="friend-name">Gabriel</p>
 </div>
+
+      <div class="friend">
+<img src="./img/jv.png" alt="foto-joao">
+<p class="friend-name">Jão</p>
+</div>
+
+<div class="friend">
+<img src="./img/add.png" alt="">
+
+<p class="friend-name">Adicionar Amigo</p>
+</div>
+
+
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 </div>
 <div class="aval">
-  <h1 class="ava">AVALIAÇÕES</h1>
+<h1 class="ava">AVALIAÇÕES</h1>
+
+<div class="avaliacoes-container">
+
 
   <?php
   $query = "SELECT C.comentario, L.titulo
@@ -105,7 +139,7 @@ if (!isset($_SESSION['id_cadastro'])) {
   // Libera os resultados
   mysqli_free_result($result);
   ?>
-
+</div>
 </div>
   </div>
 </div>

@@ -298,6 +298,26 @@ height: 26.4px;
 }
 
 
+textarea{
+text-decoration: none;
+  color: #fff;
+ background-color: #000000;
+ border: none;
+}
+
+#comentario{
+  border: none;
+  outline: none;
+}
+
+hr{
+  margin-top: -20px;
+    width: 96%;
+    height: 1px;
+    background-color:#F42100;
+    border: none;
+  }
+
 @media (min-width: 1300px) and (max-width: 1400px) {
 .pesq{
   margin-left: 40em;

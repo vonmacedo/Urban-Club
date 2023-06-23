@@ -202,8 +202,9 @@ $conexao->close();
     <input type="hidden" name="idCadastro" value="1"> <!-- Substitua o valor do campo com o ID do cadastro do usuário logado -->
     <input type="hidden" name="idLugar" value="1"> <!-- Substitua o valor do campo com o ID do lugar onde o comentário está sendo adicionado -->
     <label for="comentario">Comentários:</label><br>
-    <textarea name="comentario" id="comentario" rows="1"></textarea><br><br>
+    <textarea name="comentario" id="comentario" rows="1" placeholder="Comentar"></textarea><br><br>
   </form>
+  <hr>
   <div id="comentarios-container">
   <div class="comentario" data-id="1">
   <?php echo $_SESSION['apelido'];?>
