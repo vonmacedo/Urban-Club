@@ -119,11 +119,11 @@ $conexao->close();
             </a>
            </button>
 
-           <button type="submit">
-           <a href="./conta.php">
-           <img src="./img/Login.svg" alt="login" class="login">
-           </a>
-           </button>
+           <button  class="teste" type="submit">
+    <a href="./conta.php">
+    <img src="./img/Login.svg" alt="login" class="login">
+    </a>
+    </button>
         </div>
         
                 <div class="vl"></div> 

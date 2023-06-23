@@ -32,6 +32,13 @@ body{
     cursor: pointer;
     transition: 200ms;
 }
+
+.btn-login .teste  {
+  margin-right: 2.0%;
+ 
+}
+
+
 .input-box-coment{
     display: flex;
     align-items: center;
