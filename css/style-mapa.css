@@ -27,7 +27,6 @@ body{
     border: none;
     margin-inline: 1%;
 }
-
 .btn-login button:hover {
     cursor: pointer;
     transition: 200ms;

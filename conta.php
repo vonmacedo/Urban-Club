@@ -109,37 +109,54 @@ if (!isset($_SESSION['id_cadastro'])) {
 
 </div>
 <div class="aval">
-<h1 class="ava">AVALIAÇÕES</h1>
+  <h1 class="ava">AVALIAÇÕES</h1>
 
-<div class="avaliacoes-container">
+  <div class="avaliacoes-container">
 
+    <?php
+    $query = "SELECT C.comentario, L.titulo
+              FROM comentario AS C
+              INNER JOIN lugares AS L ON C.id_lugar = L.id_lugar
+              WHERE C.id_cadastro = {$_SESSION['id_cadastro']}";
 
-  <?php
-  $query = "SELECT C.comentario, L.titulo
-            FROM comentario AS C
-            INNER JOIN lugares AS L ON C.id_lugar = L.id_lugar
-            WHERE C.id_cadastro = {$_SESSION['id_cadastro']}";
+    $result = mysqli_query($conexao, $query);
 
-  $result = mysqli_query($conexao, $query);
+    $comentariosExibidos = array(); // Array para armazenar os comentários exibidos
 
-  if (mysqli_num_rows($result) > 0) {
-    while ($row = mysqli_fetch_assoc($result)) {
-      $comentario = $row['comentario'];
-      $lugar = $row['titulo'];
-
-      echo "<div class='avaliacao'>";
-      echo "<h3>Comentário: " . $comentario . "</h3>";
-      echo "<p>Lugar: " . $lugar . "</p>";
-      echo "</div>";
-    }
+    if (mysqli_num_rows($result) > 0) {
+      $comentariosExibidos = array(); // Array to store displayed comments
+  
+      while ($row = mysqli_fetch_assoc($result)) {
+          $comentario = $row['comentario'];
+          $lugar = $row['titulo'];
+  
+          // Check if the comment has been displayed before displaying it again
+          if (!in_array($comentario, $comentariosExibidos)) {
+              echo "<div class='avaliacao'>";
+              echo "<div class='comentario-container'>";
+              echo "<div class='comentario-image'>";
+              echo '<img src="./img/perfil.png" alt="Imagem do perfil" width="50" height="50" style="margin-right: 10px;">';
+              echo "</div>";
+              echo "<div class='comentario-content'>";
+              echo $_SESSION['apelido'] . '<br>';
+              echo "<h3>Comentário: " . $comentario . "</h3>";
+              echo "<p>Lugar: " . $lugar . "</p>";
+              echo "</div>";
+              echo "</div>";
+              echo "</div>";
+  
+              // Add the comment to the array of displayed comments
+              $comentariosExibidos[] = $comentario;
+          }
+      }
   } else {
-    echo "<p>Não há avaliações disponíveis.</p>";
+      echo "<p>Não há avaliações disponíveis.</p>";
   }
 
-  // Libera os resultados
-  mysqli_free_result($result);
-  ?>
-</div>
+    // Libera os resultados
+    mysqli_free_result($result);
+    ?>
+  </div>
 </div>
   </div>
 </div>
