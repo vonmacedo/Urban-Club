@@ -119,11 +119,11 @@ $conexao->close();
             </a>
            </button>
 
-           <button  class="teste" type="submit">
-    <a href="./conta.php">
-    <img src="./img/Login.svg" alt="login" class="login">
-    </a>
-    </button>
+           <button type="submit">
+           <a href="./conta.php">
+           <img src="./img/Login.svg" alt="login" class="login">
+           </a>
+           </button>
         </div>
         
                 <div class="vl"></div> 
@@ -206,32 +206,23 @@ $conexao->close();
   </form>
   <hr>
   <div id="comentarios-container">
-<<<<<<< HEAD
-  <div class="comentario comentario-branco" data-id="1">
-<?php 
-if (!empty($coment)) {
-  echo '<div style="display: flex; align-items: center; position: fixed; top: 0; left: 0;">';
-  echo '<img src="./img/perfil.png" alt="Imagem do perfil" width="50" height="50" style="margin-right: 10px;">';
-  echo '<div>';
-  echo $_SESSION['apelido'] . '<br>';
-  echo $coment;
-  echo '</div>';
-  echo '</div>';
-=======
-  <div class="comentario" data-id="1">
+  <div class="comentario" data-id="1" style="color: white !important;">
   <?php 
-  if (!empty($coment)) { 
-    echo $_SESSION['apelido'];
-  }
-  ?>
-<br>
+if (!empty($coment)) {
+  echo '<img src="./img/perfil.png" alt="Imagem do perfil">';
+  echo $_SESSION['apelido'];
+  echo '<br>';
+  echo 'GOSTOS'
+}
+?>
 <?php
 if (!empty($coment)) { 
-  echo $coment ;
->>>>>>> 8d79d9434cbfe48e8eab6e8bc22118d9ba968863
+  echo $coment;
 }
 ?>
   </div>
+</div>
+
 </div>
 
 
