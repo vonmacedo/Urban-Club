@@ -207,7 +207,11 @@ $conexao->close();
   <hr>
   <div id="comentarios-container">
   <div class="comentario" data-id="1">
-  <?php echo $_SESSION['apelido'];?>
+  <?php 
+  if (!empty($coment)) { 
+    echo $_SESSION['apelido'];
+  }
+  ?>
 <br>
 <?php
 if (!empty($coment)) { 
