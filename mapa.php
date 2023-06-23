@@ -212,7 +212,7 @@ if (!empty($coment)) {
   echo '<img src="./img/perfil.png" alt="Imagem do perfil">';
   echo $_SESSION['apelido'];
   echo '<br>';
-  echo 'GOSTOS'
+  echo 'GOSTOS';
 }
 ?>
 <?php
