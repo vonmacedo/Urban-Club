@@ -37,8 +37,11 @@ body{
   margin-right: 2.0%;
  
 }
+.btn-with-hover-text{
+margin-right: 23px;
 
 
+}
 .input-box-coment{
     display: flex;
     align-items: center;
@@ -232,7 +235,7 @@ h1{
 
 #imgrow {
     margin-top: 2%;
-    gap: 20px;
+    gap: 15px;
       display: flex;
       justify-content: center;
       align-items: center;    
