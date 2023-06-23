@@ -201,7 +201,7 @@ $conexao->close();
     <form method="POST" action="mapa.php">
     <input type="hidden" name="idCadastro" value="1"> <!-- Substitua o valor do campo com o ID do cadastro do usuário logado -->
     <input type="hidden" name="idLugar" value="1"> <!-- Substitua o valor do campo com o ID do lugar onde o comentário está sendo adicionado -->
-    <label for="comentario">Comentários:</label><br>
+    <label for="comentario"style="color: white !important;" >Comentários:</label><br>
     <textarea name="comentario" id="comentario" rows="1" placeholder="Comentar"></textarea><br><br>
   </form>
   <hr>
@@ -209,15 +209,13 @@ $conexao->close();
   <div class="comentario" data-id="1" style="color: white !important;">
   <?php 
 if (!empty($coment)) {
-  echo '<img src="./img/perfil.png" alt="Imagem do perfil">';
-  echo $_SESSION['apelido'];
-  echo '<br>';
-  echo 'GOSTOS';
-}
-?>
-<?php
-if (!empty($coment)) { 
+  echo '<div style="display: flex; align-items: center;">';
+  echo '<img src="./img/perfil.png" alt="Imagem do perfil" width="50" height="50" style="margin-right: 10px; background-color: #00417D;     border-radius: 50%;">';
+  echo '<div>';
+  echo $_SESSION['apelido'] . '<br>';
   echo $coment;
+  echo '</div>';
+  echo '</div>';
 }
 ?>
   </div>

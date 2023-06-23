@@ -113,7 +113,6 @@ if (!isset($_SESSION['id_cadastro'])) {
 
   <div class="avaliacoes-container">
 
-<<<<<<< HEAD
     <?php
     $query = "SELECT C.comentario, L.titulo
               FROM comentario AS C
@@ -121,18 +120,9 @@ if (!isset($_SESSION['id_cadastro'])) {
               WHERE C.id_cadastro = {$_SESSION['id_cadastro']}";
 
     $result = mysqli_query($conexao, $query);
-=======
-<div class="tes">
-  <?php
-  $query = "SELECT C.comentario, L.titulo
-            FROM comentario AS C
-            INNER JOIN lugares AS L ON C.id_lugar = L.id_lugar
-            WHERE C.id_cadastro = {$_SESSION['id_cadastro']}";
->>>>>>> 8d79d9434cbfe48e8eab6e8bc22118d9ba968863
 
     $comentariosExibidos = array(); // Array para armazenar os comentários exibidos
 
-<<<<<<< HEAD
     if (mysqli_num_rows($result) > 0) {
       $comentariosExibidos = array(); // Array to store displayed comments
   
@@ -159,38 +149,14 @@ if (!isset($_SESSION['id_cadastro'])) {
               $comentariosExibidos[] = $comentario;
           }
       }
-=======
-  if (mysqli_num_rows($result) > 0) {
-    while ($row = mysqli_fetch_assoc($result)) {
-      $comentario = $row['comentario'];
-      $lugar = $row['titulo'];
-
-     echo "<div class='comentario'>";
-
-      echo "<div class='avaliacao'>";
-      echo "<h3>Comentário: " . $comentario . "</h3>";
-      echo "<p>Lugar: " . $lugar . "</p>";
-      echo "</div>";
-      echo "</div>";
-
-    }
->>>>>>> 8d79d9434cbfe48e8eab6e8bc22118d9ba968863
   } else {
       echo "<p>Não há avaliações disponíveis.</p>";
   }
 
-<<<<<<< HEAD
     // Libera os resultados
     mysqli_free_result($result);
     ?>
   </div>
-=======
-  // Libera os resultados
-  mysqli_free_result($result);
-  ?>
-  </div>
-</div>
->>>>>>> 8d79d9434cbfe48e8eab6e8bc22118d9ba968863
 </div>
   </div>
 </div>
