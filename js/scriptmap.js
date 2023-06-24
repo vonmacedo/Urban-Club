@@ -206,9 +206,10 @@ var latitude = this.position.lat();
   map.addListener('click', function(event) {
     var aside = document.getElementById('aside');
     var asideContent = document.getElementById('aside-content');
-
+    var comentario = document.getElementById("comentario-container");
     // Verifica se o clique ocorreu fora do aside
     if (!aside.contains(event.target) && asideContent !== event.target) {
+      comentario.style.display = "none";
       aside.classList.add('hidden'); // Adiciona a classe 'hidden' para esconder o aside
     }
   });

@@ -7,7 +7,6 @@ session_start(); // Inicia a sessão
 if (!isset($_SESSION['id_cadastro'])) {
   die("Usuário não está logado");
 }
-
 // Verifica se o botão "Salvar" foi clicado
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idLugar']) && isset($_POST['title'])) {
     $idLugar = $_POST['idLugar'];
@@ -93,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idLugar']) && isset($
     $stmt->close();
   }
 
-$conexao->close();
+
 ?>
 
 
@@ -205,25 +204,44 @@ $conexao->close();
     <form method="POST" action="mapa.php">
     <input type="hidden" name="idCadastro" value="1"> <!-- Substitua o valor do campo com o ID do cadastro do usuário logado -->
     <input type="hidden" name="idLugar" value="1"> <!-- Substitua o valor do campo com o ID do lugar onde o comentário está sendo adicionado -->
-    <label for="comentario"style="color: white !important;" >Comentários:</label><br>
+    <label for="comentario"style="color: white !important;" ></label><br>
     <textarea name="comentario" id="comentario" rows="1" placeholder="Comentar"></textarea><br><br>
   </form>
   <hr>
-  <div id="comentarios-container">
-  <div class="comentario" data-id="1" style="color: white !important;">
+  <div id="comentario-container" class="comentario" style="color: white !important;">
   <?php 
 if (!empty($coment)) {
-  echo '<div style="display: flex; align-items: center;">';
-  echo '<img src="./img/perfil.png" alt="Imagem do perfil" width="50" height="50" style="margin-right: 10px; background-color: #00417D;     border-radius: 50%;">';
-  echo '<div>';
-  echo $_SESSION['apelido'] . '<br>';
-  echo $coment;
-  echo '</div>';
-  echo '</div>';
+  $queryComentarios = "SELECT DISTINCT comentario FROM comentario WHERE id_lugar = ?";
+  $stmtComentarios = $conexao->prepare($queryComentarios);
+  $stmtComentarios->bind_param('i', $_POST['idLugar']);
+  $stmtComentarios->execute();
+  $resultComentarios = $stmtComentarios->get_result();
+
+  // Verificar se existem comentários
+  if ($resultComentarios->num_rows > 0) {
+    while ($comentario = $resultComentarios->fetch_assoc()) {
+      echo '<div class="comentario" style="color: white !important;">';
+      echo '<div style="display: flex; align-items: center;">';
+      echo '<img src="./img/perfil.png" alt="Imagem do perfil" width="50" height="50" style="margin-right: 10px; background-color: #00417D; border-radius: 50%;">';
+      echo '<div>';
+      echo $idLugar;
+      echo $_SESSION['apelido'] . '<br>';
+      echo $comentario['comentario'] . ' - ' . $totalAvaliacoes . ' ' . (($totalAvaliacoes == 1) ? 'Avaliação' : 'Avaliações');
+      echo '</div>';
+      echo '</div>';
+      echo '</div>';
+    }
+  } else {
+    echo '<div class="comentario" style="color: white !important;">';
+    echo 'Nenhum comentário encontrado.';
+    echo '</div>';
+  }
+
+  $stmtComentarios->close();
 }
+$conexao->close();
 ?>
   </div>
-</div>
 
 </div>
 
