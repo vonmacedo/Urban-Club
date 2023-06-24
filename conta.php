@@ -116,8 +116,9 @@ $totalAvaliacoes = $rowAvaliacoes['totalAvaliacoes'];
   <h1 class="ava"><?php echo ($totalAvaliacoes == 1) ? 'AVALIAÇÃO' : 'AVALIAÇÕES'; ?></h1>
 
   <div class="avaliacoes-container">
-
+<div class="tes" >
     <?php
+
     $query = "SELECT C.comentario, L.titulo
               FROM comentario AS C
               INNER JOIN lugares AS L ON C.id_lugar = L.id_lugar
@@ -133,33 +134,36 @@ $totalAvaliacoes = $rowAvaliacoes['totalAvaliacoes'];
       while ($row = mysqli_fetch_assoc($result)) {
           $comentario = $row['comentario'];
           $lugar = $row['titulo'];
-  
+
           // Check if the comment has been displayed before displaying it again
           if (!in_array($comentario, $comentariosExibidos)) {
               echo "<div class='avaliacao'>";
-              echo "<div class='comentario-container'>";
+              echo "<div class='comentario-container comentario'>";
               echo "<div class='comentario-image'>";
               echo '<img src="./img/perfil.png" alt="Imagem do perfil" width="50" height="50" style="margin-right: 10px; background-color: #00417D;     border-radius: 50%;">';
               echo "</div>";
-              echo "<div class='comentario-content'>";
+              echo "<div class='comentario-content' style= ' width:500px; text-align: justify;
+              ;'>";
               echo $_SESSION['apelido'] . '<br>';
               echo "<h3>Comentário: " . $comentario . "</h3>";
-              echo "<p>Lugar: " . $lugar . "</p>";
+              echo "<p  style= '  margin-top:10px; text-align: center'>Lugar: " . $lugar . "</p>";
               echo "</div>";
               echo "</div>";
               echo "</div>";
-  
+
               // Add the comment to the array of displayed comments
               $comentariosExibidos[] = $comentario;
           }
+
       }
   } else {
       echo "<p>Não há avaliações disponíveis.</p>";
   }
-
+  
     // Libera os resultados
     mysqli_free_result($result);
     ?>
+    </div>
   </div>
 </div>
   </div>

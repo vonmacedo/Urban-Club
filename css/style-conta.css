@@ -89,15 +89,35 @@ font-size: 1.125rem;
 
 }
 
+.avaliacoes-container{
+  display: flex;
+  justify-content: center;
+
+}
+
+.tes{
+  text-align: center;
+}
+
+.cometario-container{
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+
+}
+
 .avaliacoes-container .tes{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 1em;
+  text-align: center;
   gap: 1em; /* Adiciona espaçamento entre as avaliações */
 }
 
-.comentario {
+.comentario{
+text-align: center;
   border: 1px solid #F42100;
   border-radius: 10px;
   margin-bottom: 10px; /* Espaçamento entre os comentários */
@@ -105,8 +125,14 @@ font-size: 1.125rem;
 }
 
 
+.comentario-content{
+text-align: center;
+}
 
+ .avaliacoes-container .local{
 
+  margin-top: 10px;
+}
 .desc{
 line-height: 1.5;
 
@@ -143,12 +169,7 @@ margin-bottom: 1.3em;
   border-bottom:  2px solid #F42100; 
   margin-bottom: 30px;
 }
-.comentario{
-  margin-top: 10px;
-  margin-bottom: 30px;
-  border-top:  2px solid #F42100; 
-  border-left:  2px solid #F42100; 
-}
+
 .usercenter {
   display: flex;
   justify-content: center;
