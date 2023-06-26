@@ -224,7 +224,6 @@ if (!empty($coment)) {
       echo '<div style="display: flex; align-items: center;">';
       echo '<img src="./img/perfil.png" alt="Imagem do perfil" width="50" height="50" style="margin-right: 10px; background-color: #00417D; border-radius: 50%;">';
       echo '<div>';
-      echo $idLugar;
       echo $_SESSION['apelido'] . '<br>';
       echo $comentario['comentario'] . ' - ' . $totalAvaliacoes . ' ' . (($totalAvaliacoes == 1) ? 'Avaliação' : 'Avaliações');
       echo '</div>';
